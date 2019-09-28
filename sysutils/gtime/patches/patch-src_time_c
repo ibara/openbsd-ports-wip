@@ -1,0 +1,56 @@
+$OpenBSD$
+
+Fix -Wincompatible-pointer-types-discards-qualifiers warnings.
+
+Index: src/time.c
+--- src/time.c.orig
++++ src/time.c
+@@ -317,10 +317,10 @@ for details about the options it supports.\n",
+ static void
+ fprintargv (fp, argv, filler)
+      FILE *fp;
+-     const char *const *argv;
++     char *const *argv;
+      const char *filler;
+ {
+-  const char *const *av;
++  char *const *av;
+ 
+   av = argv;
+   fputs (*av, fp);
+@@ -424,7 +424,7 @@ static void
+ summarize (fp, fmt, command, resp)
+      FILE *fp;
+      const char *fmt;
+-     const char **command;
++     char **command;
+      RESUSE *resp;
+ {
+   unsigned long r;		/* Elapsed real milliseconds.  */
+@@ -636,7 +636,7 @@ summarize (fp, fmt, command, resp)
+ 
+    Return the command line to run and gather statistics on.  */
+ 
+-static const char **
++static char **
+ getargs (argc, argv)
+      int argc;
+      char **argv;
+@@ -716,7 +716,7 @@ getargs (argc, argv)
+ 	exit (EXIT_CANCELED);		/* Out of memory.  */
+     }
+ 
+-  return (const char **) &argv[optind];
++  return &argv[optind];
+ }
+ 
+ /* Run command CMD and return statistics on it.
+@@ -763,7 +763,7 @@ main (argc, argv)
+      int argc;
+      char **argv;
+ {
+-  const char **command_line;
++  char **command_line;
+   RESUSE res;
+   int status;
+ 

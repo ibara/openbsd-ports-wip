@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Remove -Werror=* flags.
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -17055,7 +17055,7 @@ fi
+ 
+ 
+ CFLAGS="$CFLAGS -std=c99"
+-CXXFLAGS="$CXXFLAGS -Werror=return-type -Werror=unused-result -Werror=reorder"
++CXXFLAGS="$CXXFLAGS"
+     ax_cxx_compile_cxx11_required=true
+   ac_ext=cpp
+ ac_cpp='$CXXCPP $CPPFLAGS'

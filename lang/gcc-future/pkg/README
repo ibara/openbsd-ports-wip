@@ -1,0 +1,11 @@
+$OpenBSD$
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+gcc-future
+==========
+gcc-future is a daily snapshot of the tip of the GCC development tree.
+
+You should add ${TRUEPREFIX}/gnu/bin to your $PATH.

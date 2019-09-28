@@ -1,0 +1,17 @@
+$OpenBSD$
+
+Index: unixio.c
+--- unixio.c.orig
++++ unixio.c
+@@ -39,9 +39,11 @@
+   and strip it from inbound characters.
+ */
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <sys/stat.h>
+ #include <time.h>
+ #include <errno.h>
++#include <unistd.h>
+ #ifndef O_WRONLY
+ #include <sys/file.h>
+ #ifdef X_OK

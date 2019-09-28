@@ -1,0 +1,23 @@
+$OpenBSD$
+
+Index: aee.c
+--- aee.c.orig
++++ aee.c
+@@ -1543,7 +1543,7 @@ struct bufr *buf_alloc()	/* allocate space for buffers
+ 	temp_buf->main_buffer = FALSE;
+ 	temp_buf->edit_buffer = FALSE;
+ 	temp_buf->dos_file = FALSE;
+-	temp_buf->journ_fd = NULL;
++	temp_buf->journ_fd = 0;
+ 	return (temp_buf);
+ }
+ 
+@@ -2509,7 +2509,7 @@ char *string;		/* string containing user command		*/
+ 	}
+ 	if (shell_fork)
+ 	{
+-		printf(press_ret_to_cont_str);
++		printf("%s", press_ret_to_cont_str);
+ 		fflush(stdout);
+ 		while (((in = getchar()) != '\n') && (in != '\r'))
+ 			;

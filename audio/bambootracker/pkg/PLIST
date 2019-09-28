@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/BambooTracker
+@man man/man1/BambooTracker.1
+share/applications/BambooTracker.desktop
+share/pixmaps/
+share/pixmaps/BambooTracker.png
+@tag update-desktop-database

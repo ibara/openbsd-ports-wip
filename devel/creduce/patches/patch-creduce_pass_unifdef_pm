@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Use system unifdef.
+
+Index: creduce/pass_unifdef.pm
+--- creduce/pass_unifdef.pm.orig
++++ creduce/pass_unifdef.pm
+@@ -29,7 +29,7 @@ sub check_prereqs () {
+     if ((defined $abs_bindir) && ($FindBin::RealBin eq $abs_bindir)) {
+ 	# This script is in the installation directory.
+ 	# Use the installed `unifdef'.
+-	$path = libexecdir . "/unifdef";
++	$path = "/usr/bin/unifdef";
+     } else {
+ 	# Assume that this script is in the C-Reduce build tree.
+ 	# Use the `unifdef' that is also in the build tree.

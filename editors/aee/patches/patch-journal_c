@@ -1,0 +1,40 @@
+$OpenBSD$
+
+Index: journal.c
+--- journal.c.orig
++++ journal.c
+@@ -72,6 +72,7 @@ char *jrn_vers_str = "@(#)                           j
+ #include "aee.h"
+ 
+ #include <time.h>
++#include <wchar.h>
+ 
+ /*
+  |	writes the contents of the line, updates the value stored in 
+@@ -215,7 +216,7 @@ struct text *line;
+ 	{
+ 		wmove(com_win, 0, 0);
+ 		wstandout(com_win);
+-		wprintf(com_win, journal_err_str);
++		wprintw(com_win, journal_err_str);
+ 		wstandend(com_win);
+ 		wrefresh(com_win);
+ 		return;
+@@ -310,7 +311,7 @@ char *file_name;
+ 		 |	Unable to open journal file.
+ 		 */
+ 
+-		buffer->journ_fd = NULL;
++		buffer->journ_fd = 0;
+ 		return(1);
+ 	}
+ 
+@@ -860,7 +861,7 @@ struct bufr *buffer;
+ 	{
+ 		wprintw(com_win, cant_opn_rcvr_fil_msg);
+ 		buffer->journalling = FALSE;
+-		buffer->journ_fd = NULL;
++		buffer->journ_fd = 0;
+ 		return;
+ 	}
+ 

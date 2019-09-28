@@ -1,0 +1,4 @@
+wmapmload is a dockapp for Window Maker that monitors your battery
+status.
+
+This package is a fork that adds OpenBSD support.

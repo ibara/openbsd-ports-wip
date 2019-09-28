@@ -1,0 +1,16 @@
+$OpenBSD$
+
+time_t is %lld.
+
+Index: src/purging_rmw.c
+--- src/purging_rmw.c.orig
++++ src/purging_rmw.c
+@@ -215,7 +215,7 @@ is_time_to_purge (st_time *st_time_var)
+   fp = fopen (file_lastpurge, "w");
+   if (fp)
+   {
+-    fprintf (fp, "%ld\n", st_time_var->now);
++    fprintf (fp, "%lld\n", st_time_var->now);
+     close_file (fp, file_lastpurge, __func__);
+ 
+     /*

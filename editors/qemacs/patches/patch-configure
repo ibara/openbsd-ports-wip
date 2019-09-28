@@ -1,0 +1,41 @@
+$OpenBSD$
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -36,7 +36,7 @@ case "$cpu" in
+   i386|i486|i586|i686|i86pc|BePC)
+     cpu="x86"
+     ;;
+-  x86_64)
++  x86_64|amd64)
+     cpu="x86_64"
+     ;;
+   armv4l)
+@@ -167,7 +167,7 @@ if test -d "./ffmpeg" ; then
+     ffmpeg_srcdir="./ffmpeg"
+ fi
+ 
+-if test -f "/usr/include/png.h" ; then
++if test -f "/usr/local/include/png.h" ; then
+     png="yes"
+ fi
+ 
+@@ -181,16 +181,12 @@ for x11path in /usr /opt/X11 /usr/X11R6; do
+         if test -f "$x11path/include/X11/extensions/Xv.h" ; then
+             xv="yes"
+         fi
+-        if test -f "$x11path/include/X11/extensions/Xshm.h" ; then
++        if test -f "$x11path/include/X11/extensions/XShm.h" ; then
+             xshm="yes"
+         fi
+         break
+     fi
+ done
+-
+-if test -z `which texi2html` ; then
+-    doc="no"
+-fi
+ 
+ usage () {
+     cat << EOF

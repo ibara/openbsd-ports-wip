@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/qe
+@bin bin/qemacs
+@bin bin/tqe
+@man man/man1/qe.1
+share/qe/
+share/qe/kmaps
+share/qe/ligatures
+!%%no_x11%%

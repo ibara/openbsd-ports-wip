@@ -1,0 +1,12 @@
+$OpenBSD$
+
+Index: src/main.cpp
+--- src/main.cpp.orig
++++ src/main.cpp
+@@ -297,5 +297,5 @@ int main(int argc, char *argv[])
+     ChannelManager::getInstance()->checkFavourites();
+ 
+     // Start
+-    return app.exec();
++    exit(app.exec());
+ }

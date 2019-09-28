@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v$
+@conflict nmh-*
+@bin bin/sf
+@bin bin/show
+@man man/man1/sf.1
+@man man/man1/show.1
+share/dfshow/
+share/dfshow/default
+share/dfshow/hot-dog-stand
+share/dfshow/light
+share/dfshow/monochrome
+share/dfshow/neutral
+share/dfshow/nt
+share/examples/dfshow/
+share/examples/dfshow/dfshow.conf
+@sample ${SYSCONFDIR}/dfshow.conf

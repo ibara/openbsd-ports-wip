@@ -1,0 +1,32 @@
+$OpenBSD$
+
+Index: create.mk.xae
+--- create.mk.xae.orig
++++ create.mk.xae
+@@ -25,7 +25,7 @@ then
+ 	strip_option=""
+ 	other_cflags="-DNO_CATGETS"
+ else
+-	strip_option="-s"
++	strip_option=""
+ fi
+ 
+ # check for stdlib.h
+@@ -185,7 +185,7 @@ fi
+ 
+ echo "DEFINES =	-DXAE -Dxae11 $catgets " > xae_dir/make.xae
+ echo "" >> xae_dir/make.xae
+-echo "CFLAGS =	$HAS_UNISTD $HAS_STDARG $HAS_STDLIB $HAS_CTYPE $HAS_SYS_IOCTL $HAS_SYS_WAIT $X_headers $five_include $X_libs $five_lib $other_cflags" >> xae_dir/make.xae
++echo "CFLAGS =	$HAS_UNISTD $HAS_STDARG $HAS_STDLIB $HAS_CTYPE $HAS_SYS_IOCTL $HAS_SYS_WAIT $X_headers $five_include $five_lib $other_cflags" >> xae_dir/make.xae
+ echo "" >> xae_dir/make.xae
+ echo "" >> xae_dir/make.xae
+ echo "all :	xae" >> xae_dir/make.xae
+@@ -197,7 +197,7 @@ CC_CMD = cc \$(DEFINES) -I.. -c \$(CFLAGS)
+ OBJS = aee.o control.o format.o localize.o srch_rep.o delete.o mark.o motion.o keys.o help.o windows.o journal.o file.o
+ 
+ xae :	\$(OBJS) Xcurse.o xif.o
+-	cc -o ../xae \$(OBJS) Xcurse.o xif.o \$(CFLAGS) -lX11
++	cc -o ../xae \$(OBJS) Xcurse.o xif.o \$(CFLAGS) $X_libs -lX11
+ 
+ 
+ 

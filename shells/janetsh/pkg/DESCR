@@ -1,0 +1,13 @@
+Janet shell or Janetsh for short is an interactive shell and scripting
+tool for unix like operating systems based on the Janet programming
+language.
+
+Features:
+* Highly customizable
+* Functional and imperative standard library
+* Seamless mixing of system commands and janet code
+* 300+ functions and macros in the core library
+* Mutable and immutable arrays, hashtables, and string types
+* Powerful lisp macros
+* Runtime loadable extension modules written in C/C++/rust/zig...
+* Small and fast

@@ -1,0 +1,18 @@
+$OpenBSD$
+
+Index: Makefile.lin
+--- Makefile.lin.orig
++++ Makefile.lin
+@@ -9,10 +9,10 @@ CFLAGS = -std=gnu89 -O3 -Wall -Wextra -pedantic
+ all: gopherus gopherus-sdl
+ 
+ gopherus: gopherus.o dnscache.o history.o int2str.o net-lin.o parseurl.o startpg.o ui-curse.o wordwrap.o
+-	$(CC) gopherus.o dnscache.o history.o int2str.o net-lin.o parseurl.o startpg.o ui-curse.o wordwrap.o -o gopherus -lncurses $(CFLAGS)
++	$(CC) gopherus.o dnscache.o history.o int2str.o net-lin.o parseurl.o startpg.o ui-curse.o wordwrap.o -o gopherus -lncurses $(LDFLAGS)
+ 
+ gopherus-sdl: gopherus.o dnscache.o history.o int2str.o net-lin.o parseurl.o startpg.o ui-sdl.o wordwrap.o
+-	$(CC) gopherus.o dnscache.o history.o int2str.o net-lin.o parseurl.o startpg.o ui-sdl.o wordwrap.o -o gopherus-sdl -lSDL2 $(CFLAGS)
++	$(CC) gopherus.o dnscache.o history.o int2str.o net-lin.o parseurl.o startpg.o ui-sdl.o wordwrap.o -o gopherus-sdl -lSDL2 $(LDFLAGS)
+ 
+ net-lin.o: net/net-lin.c
+ 	$(CC) -c net/net-lin.c -o net-lin.o $(CFLAGS)

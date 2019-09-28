@@ -1,0 +1,13 @@
+AVFS is a virtual file system layer for transparently accessing the
+content of archives and remote directories just like local files.
+Currently it can natively access tar, rar, zip, ar, gzip, bzip2, ftp,
+http, dav, and some others.
+
+AVFS also supports extfs, the same extensible interface as known from
+Midnight Commander, so AVFS can be extended to support new file systems
+easily. Support for debian archives, rpm archives, iso9660 images, patch
+files and other archives like lha, arj or cpio is available.
+
+AVFS can be used with FUSE to enable access to archives from any
+application. AVFS can also be used as a stand-alone shared library if
+FUSE is not available or unwanted.

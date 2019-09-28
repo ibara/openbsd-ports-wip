@@ -1,0 +1,25 @@
+$OpenBSD$
+
+libmarkdown must be discovered out-of-band or the compile fails
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -39,7 +39,6 @@ c_args = [
+ 
+ # Find libMarkdown
+ cc = meson.get_compiler('c')
+-libmarkdown = cc.find_library('markdown', required: true)
+ 
+ # Let's define our executable
+ add_project_arguments(['--vapidir', join_paths(meson.current_source_dir(), 'vapi')], language: 'vala')
+@@ -73,8 +72,7 @@ executable(
+         dependency('gtksourceview-3.0'),
+         dependency('gtk+-3.0'),
+         dependency('webkit2gtk-4.0'),
+-        dependency('gtkspell3-3.0'),
+-        libmarkdown
++        dependency('gtkspell3-3.0')
+     ],
+     vala_args: [
+         meson.source_root() + '/vapi/config.vapi',

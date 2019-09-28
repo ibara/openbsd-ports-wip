@@ -1,0 +1,3 @@
+emacs-future is an unmodified build of GNU Emacs, with the exception of
+minor modifications for building and testing purposes, taken from the
+tip of the development tree.

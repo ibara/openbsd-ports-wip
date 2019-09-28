@@ -1,0 +1,25 @@
+$OpenBSD$
+
+all target
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -15,6 +15,8 @@ OBJ      = $(SRC:%.c=$(OBJDIR)/%.o) $(AMD64OBJ) $(ARM6
+ 
+ CFLAGS += -Wall -Wextra -std=c99 -g -pedantic
+ 
++all: $(OBJDIR)/$(BIN)
++
+ $(OBJDIR)/$(BIN): $(OBJ) $(OBJDIR)/timestamp
+ 	@test -z "$(V)" || echo "ld $@"
+ 	$(V)$(CC) $(LDFLAGS) $(OBJ) -o $@
+@@ -43,7 +45,7 @@ config.h:
+ 	*)                                             \
+ 		echo "#define Defasm Gaself";          \
+ 		case `uname -m` in                     \
+-		*aarch64*)                             \
++		*arm64*)                               \
+ 			echo "#define Deftgt T_arm64"; \
+ 			;;                             \
+ 		*)                                     \

@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/gwhich
+@info info/which.info
+@man man/man1/gwhich.1

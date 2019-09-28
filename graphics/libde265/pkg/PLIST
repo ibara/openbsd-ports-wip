@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v$
+include/libde265/
+include/libde265/de265-version.h
+include/libde265/de265.h
+lib/libde265.a
+lib/libde265.la
+@lib lib/libde265.so.${LIBde265_VERSION}
+lib/pkgconfig/libde265.pc

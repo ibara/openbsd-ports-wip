@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: src/files/textfile.cpp
+--- src/files/textfile.cpp.orig
++++ src/files/textfile.cpp
+@@ -73,7 +73,7 @@ bool cTextFile::LoadFile(wxString filename)
+             progress.Update(percent, temp) ;
+             wxYield() ;
+ 
+-            mDocument->Insert(linetext) ;
++            mDocument->Insert(std::string(linetext.mb_str())) ;
+ 
+             mDocument->Insert(HARD_RETURN) ;
+         }

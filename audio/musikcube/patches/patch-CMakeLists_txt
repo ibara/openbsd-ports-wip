@@ -1,0 +1,60 @@
+$OpenBSD$
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -18,7 +18,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -Wn
+ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g")
+ # enable for additional memory checking with fsanitize
+ # set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g3 -fsanitize=address,undefined")
+-set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O2")
++set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE}")
+ 
+ if (${LINK_STATICALLY} MATCHES "true")
+   set(Boost_USE_STATIC_LIBS ON)
+@@ -42,7 +42,7 @@ set (EXECUTABLE_OUTPUT_PATH ${musikcube_SOURCE_DIR}/bi
+ 
+ link_directories ("${musikcube_SOURCE_DIR}/bin/plugins")
+ 
+-if (CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
++if (CMAKE_SYSTEM_NAME MATCHES "FreeBSD" OR CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
+   set (musikcube_LINK_LIBS ${BOOST_LINK_LIBS} curl pthread crypto)
+ else()
+   set (musikcube_LINK_LIBS ${BOOST_LINK_LIBS} dl curl pthread crypto)
+@@ -64,7 +64,7 @@ endif()
+ 
+ # "/usr/local" doesn't seem to be included by default on macOS 10.12+
+ # "/opt/local" is the default installation location for MacPorts
+-if (CMAKE_SYSTEM_NAME MATCHES "Darwin" OR CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
++if (CMAKE_SYSTEM_NAME MATCHES "Darwin" OR CMAKE_SYSTEM_NAME MATCHES "FreeBSD" OR CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
+   link_directories ("/usr/local/lib")
+   link_directories ("/usr/local/opt/openssl/lib")
+   include_directories("/usr/local/include")
+@@ -73,7 +73,7 @@ endif ()
+ 
+ if (EXISTS "/etc/arch-release" OR EXISTS "/etc/manjaro-release" OR NO_NCURSESW)
+   add_definitions (-DNO_NCURSESW)
+-elseif(CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
++elseif(CMAKE_SYSTEM_NAME MATCHES "FreeBSD" OR CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
+   add_definitions (-DNO_NCURSESW)
+ endif()
+ 
+@@ -106,7 +106,7 @@ endif()
+ 
+ set(USE_BUNDLED_TAGLIB "false")
+ 
+-if (CMAKE_SYSTEM_NAME MATCHES "FreeBSD" OR CMAKE_SYSTEM_NAME MATCHES "Darwin")
++if (CMAKE_SYSTEM_NAME MATCHES "FreeBSD" OR CMAKE_SYSTEM_NAME MATCHES "Darwin" OR CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
+   set(USE_BUNDLED_TAGLIB "false")
+ elseif (CMAKE_SYSTEM_NAME MATCHES "Linux")
+   find_program(LSB_RELEASE lsb_release)
+@@ -168,6 +168,9 @@ elseif (CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
+     add_subdirectory(src/plugins/alsaout) # disabled by default
+     add_dependencies(musikcube alsaout)
+   endif()
++elseif (CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
++  add_subdirectory(src/plugins/sndioout)
++  add_dependencies(musikcube sndioout)
+ elseif (CMAKE_SYSTEM_NAME MATCHES "Darwin")
+   add_subdirectory(src/plugins/coreaudioout)
+   add_dependencies(musikcube coreaudioout)

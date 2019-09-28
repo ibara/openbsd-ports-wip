@@ -1,0 +1,16 @@
+QEmacs (for Quick Emacs) is a very small but powerful UNIX editor.
+It has features that even big editors lack:
+
+* Full screen editor with an Emacs look and feel with all Emacs common
+  features.
+* Full UTF8 support, including bidirectional editing respecting the
+  Unicode bidi algorithm. Arabic and Indic scripts handling.
+* WYSIWYG HTML/XML/CSS2 mode graphical editing. Also supports lynx like
+  rendering on VT100 terminals.
+* Input methods for most languages, including Chinese (input methods
+  come from the Yudit editor).
+* Hexadecimal editing mode with insertion and block commands. Unicode
+  hexa editing of UTF8 files also supported.
+* X11 support. Support multiple proportionnal fonts at the same time (as
+  XEmacs). X Input methods supported. Xft extension supported for anti
+  aliased font display.

@@ -1,0 +1,18 @@
+$OpenBSD$
+
+Remove -Werror.
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -17999,8 +17999,8 @@ $as_echo "#define ENABLE_PARALLEL_TILE_DECODING 1" >>c
+ fi
+ 
+ 
+-CXXFLAGS="$CXXFLAGS -Wall -Werror -Wsign-compare -Wconversion -Wno-sign-conversion -Wno-error=conversion"
+-CFLAGS="$CFLAGS -Wall -Werror -Wsign-compare -Wconversion -Wno-sign-conversion -Wno-error=conversion"
++CXXFLAGS="$CXXFLAGS -Wall -Wsign-compare -Wconversion -Wno-sign-conversion -Wno-error=conversion"
++CFLAGS="$CFLAGS -Wall -Wsign-compare -Wconversion -Wno-sign-conversion -Wno-error=conversion"
+ 
+ { $as_echo "$as_me:${as_lineno-$LINENO}: ---------------------------------------" >&5
+ $as_echo "$as_me: ---------------------------------------" >&6;}

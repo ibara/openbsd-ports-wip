@@ -1,0 +1,88 @@
+@comment $OpenBSD: PLIST,v$
+gnu/
+gnu/bin/
+@bin gnu/bin/addr2line
+@bin gnu/bin/ar
+@bin gnu/bin/as
+@bin gnu/bin/c++filt
+@bin gnu/bin/elfedit
+@bin gnu/bin/gdb
+gnu/bin/gdb-add-index
+@bin gnu/bin/gprof
+@bin gnu/bin/ld
+@bin gnu/bin/nm
+@bin gnu/bin/objcopy
+@bin gnu/bin/objdump
+@bin gnu/bin/ranlib
+@bin gnu/bin/readelf
+@bin gnu/bin/size
+@bin gnu/bin/strings
+@bin gnu/bin/strip
+gnu/include/
+gnu/include/gdb/
+gnu/include/gdb/jit-reader.h
+gnu/share/
+gnu/share/gdb/
+gnu/share/gdb/syscalls/
+gnu/share/gdb/syscalls/aarch64-linux.xml
+gnu/share/gdb/syscalls/amd64-linux.xml
+gnu/share/gdb/syscalls/arm-linux.xml
+gnu/share/gdb/syscalls/freebsd.xml
+gnu/share/gdb/syscalls/gdb-syscalls.dtd
+gnu/share/gdb/syscalls/i386-linux.xml
+gnu/share/gdb/syscalls/mips-n32-linux.xml
+gnu/share/gdb/syscalls/mips-n64-linux.xml
+gnu/share/gdb/syscalls/mips-o32-linux.xml
+gnu/share/gdb/syscalls/ppc-linux.xml
+gnu/share/gdb/syscalls/ppc64-linux.xml
+gnu/share/gdb/syscalls/s390-linux.xml
+gnu/share/gdb/syscalls/s390x-linux.xml
+gnu/share/gdb/syscalls/sparc-linux.xml
+gnu/share/gdb/syscalls/sparc64-linux.xml
+gnu/share/gdb/system-gdbinit/
+gnu/share/gdb/system-gdbinit/elinos.py
+gnu/share/gdb/system-gdbinit/wrs-linux.py
+@info gnu/share/info/
+@info gnu/share/info/annotate.info
+@info gnu/share/info/as.info
+@info gnu/share/info/bfd.info
+@info gnu/share/info/binutils.info
+@info gnu/share/info/gdb.info
+@info gnu/share/info/gprof.info
+@info gnu/share/info/stabs.info
+@mandir gnu/share/man/
+gnu/share/man/man1/
+@man gnu/share/man/man1/addr2line.1
+@man gnu/share/man/man1/ar.1
+@man gnu/share/man/man1/as.1
+@man gnu/share/man/man1/c++filt.1
+@man gnu/share/man/man1/dlltool.1
+@man gnu/share/man/man1/elfedit.1
+@man gnu/share/man/man1/gdb-add-index.1
+@man gnu/share/man/man1/gdb.1
+@man gnu/share/man/man1/gdbserver.1
+@man gnu/share/man/man1/gprof.1
+@man gnu/share/man/man1/nm.1
+@man gnu/share/man/man1/objcopy.1
+@man gnu/share/man/man1/objdump.1
+@man gnu/share/man/man1/ranlib.1
+@man gnu/share/man/man1/readelf.1
+@man gnu/share/man/man1/size.1
+@man gnu/share/man/man1/strings.1
+@man gnu/share/man/man1/strip.1
+@man gnu/share/man/man1/windmc.1
+@man gnu/share/man/man1/windres.1
+gnu/share/man/man5/
+@man gnu/share/man/man5/gdbinit.5
+gnu/x86_64-unknown-openbsd6.6/
+gnu/x86_64-unknown-openbsd6.6/bin/
+@bin gnu/x86_64-unknown-openbsd6.6/bin/ar
+@bin gnu/x86_64-unknown-openbsd6.6/bin/as
+@bin gnu/x86_64-unknown-openbsd6.6/bin/ld
+@bin gnu/x86_64-unknown-openbsd6.6/bin/nm
+@bin gnu/x86_64-unknown-openbsd6.6/bin/objcopy
+@bin gnu/x86_64-unknown-openbsd6.6/bin/objdump
+@bin gnu/x86_64-unknown-openbsd6.6/bin/ranlib
+@bin gnu/x86_64-unknown-openbsd6.6/bin/readelf
+@bin gnu/x86_64-unknown-openbsd6.6/bin/strip
+share/doc/pkg-readmes/${PKGSTEM}

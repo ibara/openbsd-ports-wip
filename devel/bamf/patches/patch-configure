@@ -1,0 +1,25 @@
+$OpenBSD$
+
+Remove -Werror.
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -4118,7 +4118,7 @@ fi
+     esac
+ 
+     if test "$enable_compile_warnings" = "error" ; then
+-        warning_flags="$warning_flags -Werror"
++        warning_flags="$warning_flags"
+     fi
+ 
+         for option in $warning_flags; do
+@@ -15374,7 +15374,7 @@ rm -f core conftest.err conftest.$ac_objext \
+   rm -f conf.gtktest
+ 
+ 
+-CFLAGS="$CFLAGS -Wall -Werror -Wno-error=deprecated-declarations -Wempty-body -Wformat-security -Winit-self -Warray-bounds -Wimplicit-function-declaration -lm"
++CFLAGS="$CFLAGS -Wall -Wno-error=deprecated-declarations -Wempty-body -Wformat-security -Winit-self -Warray-bounds -Wimplicit-function-declaration -lm"
+ 
+ 
+ 

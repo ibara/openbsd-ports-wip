@@ -1,0 +1,5 @@
+LV2 is a plugin standard for audio systems. It defines a minimal yet
+extensible C API for plugin code and a format for plugin "bundles".
+
+This package contains specifications (C headers and Turtle files),
+documentation generation tools, and example plugins.

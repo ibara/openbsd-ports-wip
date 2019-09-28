@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/oragono
+share/examples/oragono/
+share/examples/oragono/ircd.yaml

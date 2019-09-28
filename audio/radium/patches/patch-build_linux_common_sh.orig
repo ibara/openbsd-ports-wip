@@ -1,0 +1,11 @@
+$OpenBSD$
+
+Index: build_linux_common.sh
+--- build_linux_common.sh.orig
++++ build_linux_common.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/bin/env bash
+ 
+ set -e
+ 

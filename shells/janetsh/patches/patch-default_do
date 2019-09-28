@@ -1,0 +1,36 @@
+$OpenBSD$
+
+Index: default.do
+--- default.do.orig
++++ default.do
+@@ -41,18 +41,18 @@ case $target in
+     ;;
+   install)
+     redo-ifchange all
+-    mkdir -p "$PREFIX/bin/"
+-    mkdir -p "$PREFIX/lib/janetsh"
+-    v install ./src/shlib.so "$PREFIX/lib/janetsh/"
+-    v install ./src/*.janet "$PREFIX/lib/janetsh/"
+-    v install ./src/janetsh-posix-wrapper "$PREFIX/bin"
+-    echo "writing $PREFIX/bin/janetsh"
+-    head -n 1 ./src/janetsh > "$PREFIX/bin/janetsh"
+-    echo "(array/insert module/paths 0 " >> "$PREFIX/bin/janetsh"
+-    echo "  [\"$PREFIX/lib/janetsh/:all:.janet\" :source]" >> "$PREFIX/bin/janetsh"
+-    echo "  [\"$PREFIX/lib/janetsh/:all:.:native:\" :native])" >> "$PREFIX/bin/janetsh"
+-    tail -n +2 ./src/janetsh >> "$PREFIX/bin/janetsh"
+-    v chmod +x "$PREFIX/bin/janetsh"
++    mkdir -p "$DESTDIR$PREFIX/bin/"
++    mkdir -p "$DESTDIR$PREFIX/lib/janetsh"
++    v install ./src/shlib.so "$DESTDIR$PREFIX/lib/janetsh/"
++    v install ./src/*.janet "$DESTDIR$PREFIX/lib/janetsh/"
++    v install ./src/janetsh-posix-wrapper "$DESTDIR$PREFIX/bin"
++    echo "writing $DESTDIR$PREFIX/bin/janetsh"
++    head -n 1 ./src/janetsh > "$DESTDIR$PREFIX/bin/janetsh"
++    echo "(array/insert module/paths 0 " >> "$DESTDIR$PREFIX/bin/janetsh"
++    echo "  [\"$DESTDIR$PREFIX/lib/janetsh/:all:.janet\" :source]" >> "$DESTDIR$PREFIX/bin/janetsh"
++    echo "  [\"$DESTDIR$PREFIX/lib/janetsh/:all:.:native:\" :native])" >> "$DESTDIR$PREFIX/bin/janetsh"
++    tail -n +2 ./src/janetsh >> "$DESTDIR$PREFIX/bin/janetsh"
++    v chmod +x "$DESTDIR$PREFIX/bin/janetsh"
+     ;;
+   uninstall)
+     v rm -rf "$PREFIX/lib/janetsh"

@@ -1,0 +1,4 @@
+TimGM6mb is a freely redistributable (GPLv2) SoundFont distributed with
+MuseScore 1.3. This package also includes a GUS patchset created by
+converting the SoundFont into a GUS patchset which is usable by
+TiMidity++.

@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/levee
+bin/lv
+@man man/man1/levee.1
+@man man/man1/lv.1

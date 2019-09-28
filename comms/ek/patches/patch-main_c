@@ -1,0 +1,27 @@
+$OpenBSD$
+
+Index: main.c
+--- main.c.orig
++++ main.c
+@@ -44,9 +44,10 @@
+ #include "debug.h"	/* Debugging */
+ #include "platform.h"	/* Platform-specific includes and definitions */
+ #include "kermit.h"	/* Kermit symbols and data structures */
+-#ifdef __linux
++#include <ctype.h>
+ #include <errno.h>
+-#endif /* __linux */
++#include <stdlib.h>
++#include <unistd.h>
+ 
+ /*
+   Sample prototypes for i/o functions.
+@@ -289,7 +290,7 @@ doarg(char c) {				/* Command-line option parser */
+     return(action);
+ }
+ 
+-void
++int
+ main(int argc, char ** argv) {
+     int status, rx_len, i, x;
+     char c;

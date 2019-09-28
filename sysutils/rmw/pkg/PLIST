@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/rmw
+@man man/man1/rmw.1
+share/doc/rmw/
+share/doc/rmw/ABOUT-NLS
+share/doc/rmw/AUTHORS.md
+share/doc/rmw/COPYING
+share/doc/rmw/ChangeLog
+share/doc/rmw/NEWS
+share/doc/rmw/README.md
+share/doc/rmw/THANKS
+share/doc/rmw/rmwrc.example
+share/locale/de_DE/
+share/locale/de_DE/LC_MESSAGES/
+share/locale/de_DE/LC_MESSAGES/rmw.mo
+share/locale/nl_NL/
+share/locale/nl_NL/LC_MESSAGES/
+share/locale/nl_NL/LC_MESSAGES/rmw.mo

@@ -1,0 +1,19 @@
+$OpenBSD$
+
+This is always (supposed to be) false on OpenBSD.
+No need to make the check (which will do the wrong thing).
+The first imported version to OpenBSD was MPV_MAKE_VERSION(1, 101).
+
+Index: src/player/mpvobject.h
+--- src/player/mpvobject.h.orig
++++ src/player/mpvobject.h
+@@ -9,9 +9,6 @@
+ 
+ #include <mpv/client.h>
+ 
+-#if MPV_CLIENT_API_VERSION < MPV_MAKE_VERSION(1, 28)
+-#define USE_OPENGL_CB
+-#endif
+ 
+ #ifdef USE_OPENGL_CB
+ #include <mpv/opengl_cb.h>

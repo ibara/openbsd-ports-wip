@@ -1,0 +1,28 @@
+@comment $OpenBSD: PLIST,v$
+bin/creduce
+@bin libexec/clang_delta
+@bin libexec/clex
+@bin libexec/strlex
+@bin libexec/topformflat
+share/creduce/
+share/creduce/perl/
+share/creduce/perl/creduce_config.pm
+share/creduce/perl/creduce_regexes.pm
+share/creduce/perl/creduce_utils.pm
+share/creduce/perl/pass_balanced.pm
+share/creduce/perl/pass_blank.pm
+share/creduce/perl/pass_clang.pm
+share/creduce/perl/pass_clang_binsrch.pm
+share/creduce/perl/pass_clex.pm
+share/creduce/perl/pass_comments.pm
+share/creduce/perl/pass_ifs.pm
+share/creduce/perl/pass_include_includes.pm
+share/creduce/perl/pass_includes.pm
+share/creduce/perl/pass_indent.pm
+share/creduce/perl/pass_ints.pm
+share/creduce/perl/pass_line_markers.pm
+share/creduce/perl/pass_lines.pm
+share/creduce/perl/pass_peep.pm
+share/creduce/perl/pass_special.pm
+share/creduce/perl/pass_ternary.pm
+share/creduce/perl/pass_unifdef.pm

@@ -1,0 +1,70 @@
+$OpenBSD$
+
+Unhardcode some variables.
+Let lacc link itself during the stage3 build.
+Install the stage3 compiler.
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -1,12 +1,12 @@
+ .POSIX:
+ .SUFFIXES:
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ BINDIR = $(PREFIX)/bin
+ LIBDIR = $(PREFIX)/lib
+ SRCDIR = $(CURDIR)$(.CURDIR)
+ 
+-CC = cc -Wno-psabi
+-CFLAGS = -Wall -pedantic -Wno-missing-braces
++CC ?= cc -Wno-psabi
++CFLAGS ?= -Wall -pedantic -Wno-missing-braces
+ 
+ SOURCES = \
+ 	src/lacc.c \
+@@ -71,9 +71,10 @@ bin/bootstrap/lacc: bin/lacc
+ 	for file in $(SOURCES) ; do \
+ 		target=$(@D)/$$(basename $$file .c).o ; \
+ 		$? -std=c89 -Iinclude -c $$file -o $$target \
+-			-D'LACC_LIB_PATH="$(LIBDIR_SOURCE)"' ; \
++			-D'LACC_LIB_PATH="$(LIBDIR_SOURCE)"' \
++			-DNDEBUG ; \
+ 	done
+-	$(CC) $(@D)/*.o -o $@
++	$? $(@D)/*.o -o $@
+ 
+ bin/selfhost/lacc: bin/bootstrap/lacc
+ 	@mkdir -p $(@D)
+@@ -81,14 +82,15 @@ bin/selfhost/lacc: bin/bootstrap/lacc
+ 		name=$$(basename $$file .c) ; \
+ 		target=$(@D)/$${name}.o ; \
+ 		$? -std=c89 -Iinclude -c $$file -o $$target \
+-			-D'LACC_LIB_PATH="$(LIBDIR_SOURCE)"' ; \
++			-D'LACC_LIB_PATH="$(LIBDIR_SOURCE)"' \
++			-DNDEBUG ; \
+ 		diff bin/bootstrap/$${name}.o $$target ; \
+ 	done
+-	$(CC) $(@D)/*.o -o $@
++	$? $(@D)/*.o -o $@
+ 
+ bin/include: $(INCLUDES)
+ 	mkdir -p $@
+-	cp $? --target-directory=$@
++	gcp $? --target-directory=$@
+ 
+ test-c89: $(TARGET)
+ 	for file in $$(find test/ -maxdepth 1 -type f -iname '*.c') ; do \
+@@ -124,9 +126,9 @@ test-sqlite: $(TARGET)
+ test: test-c89 test-c99 test-c11
+ test-all: test test-gnu test-asm test-linker test-sqlite
+ 
+-install: bin/release/lacc
+-	mkdir -p $(LIBDIR_TARGET)
+-	cp $(LIBDIR_SOURCE)/*.h $(LIBDIR_TARGET)/
++install: bin/selfhost/lacc
++	mkdir -p $(LIBDIR_TARGET)/include
++	cp $(LIBDIR_SOURCE)/include/*.h $(LIBDIR_TARGET)/include
+ 	cp $? $(BINDIR)/lacc
+ 
+ uninstall:

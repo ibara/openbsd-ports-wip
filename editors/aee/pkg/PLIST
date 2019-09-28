@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/aee
+@bin bin/xae
+lib/help.ae
+@man man/man1/aee.1

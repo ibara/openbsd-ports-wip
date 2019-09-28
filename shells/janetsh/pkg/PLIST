@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v$
+bin/janetsh
+bin/janetsh-posix-wrapper
+lib/janetsh/
+lib/janetsh/posixsh.janet
+lib/janetsh/sh.janet
+lib/janetsh/shlib.so

@@ -1,0 +1,23 @@
+$OpenBSD$
+
+Index: orion.pro
+--- orion.pro.orig
++++ orion.pro
+@@ -6,7 +6,7 @@
+ 
+ QT     += gui qml network widgets quickcontrols2
+ 
+-QMAKE_CXXFLAGS += -Wall -O2
++QMAKE_CXXFLAGS += -Wall
+ 
+ CONFIG += c++14
+ #CONFIG += console
+@@ -123,7 +123,7 @@ multimedia {
+ 
+ DISTFILES += src/qml/icon/orion.svg
+ 
+-linux:!android: {
++unix:!android: {
+     QT += dbus
+ 
+     HEADERS += src/notification/notificationsender.h

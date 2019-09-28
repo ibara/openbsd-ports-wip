@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: create.mk.aee
+--- create.mk.aee.orig
++++ create.mk.aee
+@@ -115,7 +115,7 @@ then
+ 	strip_option=""
+ 	other_cflags="-DNO_CATGETS"
+ else
+-	strip_option="-s"
++	strip_option=""
+ fi
+ 
+ # check for existence of select.h (on AIX)

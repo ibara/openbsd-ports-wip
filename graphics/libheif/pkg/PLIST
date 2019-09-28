@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/heif-convert
+@bin bin/heif-enc
+@bin bin/heif-info
+@bin bin/heif-thumbnailer
+include/libheif/
+include/libheif/heif.h
+include/libheif/heif_cxx.h
+include/libheif/heif_plugin.h
+include/libheif/heif_version.h
+lib/libheif.a
+lib/libheif.la
+@lib lib/libheif.so.${LIBheif_VERSION}
+lib/pkgconfig/libheif.pc
+share/mime/packages/heif.xml
+share/thumbnailers/
+share/thumbnailers/heif.thumbnailer
+@tag update-mime-database

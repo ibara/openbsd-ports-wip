@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: src/notification/notificationmanager.cpp
+--- src/notification/notificationmanager.cpp.orig
++++ src/notification/notificationmanager.cpp
+@@ -52,7 +52,7 @@ void NotificationManager::showNext()
+     if (!queue.isEmpty()){
+         NotificationData *data = queue.takeFirst();
+ 
+-#if defined(Q_OS_MAC) || defined (Q_OS_LINUX)
++#if defined(Q_OS_MAC) || defined (Q_OS_LINUX) || defined(Q_OS_OPENBSD)
+         //NotificationSender deletes itself after displaying message
+         NotificationSender *msg = new NotificationSender(net);
+         msg->pushNotification(data->title, data->message, data->imgUrl);

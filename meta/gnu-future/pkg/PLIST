@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v$
+share/doc/pkg-readmes/${PKGSTEM}

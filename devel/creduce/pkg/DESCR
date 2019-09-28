@@ -1,0 +1,11 @@
+C-Reduce is a tool that takes a large C, C++, or OpenCL file that has a
+property of interest (such as triggering a compiler bug) and
+automatically produces a much smaller C/C++ file that has the same
+property. It is intended for use by people who discover and report bugs
+in compilers and other tools that process source code.
+
+C-Reduce is a fixpoint computation that calls a collection of plugins.
+It is these plugins that actually transform the test case that is being
+reduced. C-Reduce is thus very easy to improve and extend. Additionally,
+the C-Reduce core can exploit multiple cores without exposing plugins to
+concurrency.

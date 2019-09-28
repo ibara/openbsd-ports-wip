@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -46,7 +46,7 @@ endif
+ 
+ #TCFLAGS := -DCONFIG_TINY -m32 $(CFLAGS) -Os
+ #TLDFLAGS := -m32 $(LDFLAGS)
+-TCFLAGS := -DCONFIG_TINY $(CFLAGS) -Os
++TCFLAGS := -DCONFIG_TINY $(CFLAGS)
+ TLDFLAGS := $(LDFLAGS)
+ 
+ ifdef TARGET_ARCH_X86

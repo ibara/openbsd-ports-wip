@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Squash clang warnings.
+
+Index: main.c
+--- main.c.orig
++++ main.c
+@@ -232,7 +232,7 @@ char **argv;
+ 	switch (mode) {
+ 	default:do {
+ 		    mode = editcore();
+-	case E_EDIT:1;
++	case E_EDIT:(void)1;
+ 		} while (execmode(mode));
+ 	}
+     }

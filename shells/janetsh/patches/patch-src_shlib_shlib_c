@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: src/shlib/shlib.c
+--- src/shlib/shlib.c.orig
++++ src/shlib/shlib.c
+@@ -16,6 +16,8 @@
+ #include <history.h>
+ #endif
+ 
++extern char *strndup(const char *, size_t);
++
+ #define panic_errno(NAME, e)                                                   \
+   do {                                                                         \
+     janet_setdyn("errno", janet_wrap_integer(e));                              \

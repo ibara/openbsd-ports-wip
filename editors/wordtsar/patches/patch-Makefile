@@ -1,0 +1,55 @@
+$OpenBSD$
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -0,0 +1,49 @@
++# WordTsar Makefile
++
++CXX ?= c++
++CXXFLAGS ?= -O2 -pipe
++CXXFLAGS += -std=gnu++11 `wx-config --cxxflags`
++LDFLAGS += `wx-config --libs`
++
++PREFIX ?= /usr/local
++
++PROG =	wordtsar
++
++OBJS =	src/buffer/buffer.o \
++	src/buffer/gapbuffer.o \
++	src/document/document.o \
++	src/document/math.o \
++	src/files/rtf/read/rtfparser.o \
++	src/files/rtf/write/rtfwriter.o \
++	src/files/file.o \
++	src/files/rtffile.o \
++	src/files/textfile.o \
++	src/files/wordstarfile.o \
++	src/gui/dialogs/cfind.o \
++	src/gui/dialogs/cfindandreplace.o \
++	src/gui/dialogs/cspellcheck.o \
++	src/gui/dialogs/pagelayout.o \
++	src/gui/dialogs/preferences.o \
++	src/gui/editor/editorctrl.o \
++	src/gui/layout/fontcache.o \
++	src/gui/layout/layout.o \
++	src/gui/print/printout.o \
++	src/gui/ruler/rulerctrl.o \
++	src/gui/spellcheck/centerword.o \
++	src/gui/spellcheck/clinuxspellcheck.o \
++	src/gui/spellcheck/cspellcheckword.o \
++	src/gui/wordtsar.o \
++	src/gui/wordtsarapp.o \
++	src/input/wordtsarinput.o
++
++.cpp.o:
++	${CXX} ${CXXFLAGS}  -c -o $@ $<
++
++all: ${OBJS}
++	${CXX} ${LDFLAGS} -o ${PROG} ${OBJS} -L${LOCALBASE}/lib -lhunspell-1.6
++
++install:
++	install -c -s -m 555 ${PROG} ${PREFIX}/bin
++
++clean:
++	rm -f ${PROG} ${OBJS}

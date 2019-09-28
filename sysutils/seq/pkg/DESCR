@@ -1,0 +1,3 @@
+The seq utility prints a sequence of numbers, one per line (default),
+from first (default 1), to near last as possible, in increments of incr
+(default 1). When first is larger than last, the default incr is -1.
