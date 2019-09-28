@@ -28,7 +28,7 @@ CONFIGURE_ARGS =	--cc="${CC}" \
 .if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS +=	--disable-x11
 .else
-WANTLIB += X11 Xext Xv png16
+WANTLIB += X11 Xext Xv png
 LIB_DEPENDS =	graphics/png
 .endif
 

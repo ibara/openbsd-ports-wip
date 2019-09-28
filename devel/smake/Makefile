@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-V =		2019.08.13
+V =		2019.09.22
 COMMENT =	Sun-derived make utility
 DISTNAME =	schily-${V:S/./-/g}
 PKGNAME =	smake-${V}

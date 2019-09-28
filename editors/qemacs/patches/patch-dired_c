@@ -3,7 +3,7 @@ $OpenBSD$
 Index: dired.c
 --- dired.c.orig
 +++ dired.c
-@@ -374,7 +374,7 @@ static int format_date(char *dest, int size,
+@@ -377,7 +377,7 @@ static int format_date(char *dest, int size,
                     systm.tm_year + 1900); /* year */
          break;
      case TF_SECONDS:
