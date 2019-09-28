@@ -5,7 +5,7 @@ CATEGORIES =	multimedia x11
 
 GH_ACCOUNT =	olive-editor
 GH_PROJECT =	olive
-GH_TAGNAME =	0.1.0
+GH_TAGNAME =	0.1.1
 
 HOMEPAGE =	https://www.olivevideoeditor.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -30,8 +30,6 @@ RUN_DEPENDS =	${BUILD_DEPENDS} \
 		devel/desktop-file-utils \
 		misc/shared-mime-info \
 		x11/gtk+3,-guic
-
-CONFIGURE_ARGS =	-DCMAKE_CXX_FLAGS="-O0 -pipe -g"
 
 NO_TEST =	Yes
 

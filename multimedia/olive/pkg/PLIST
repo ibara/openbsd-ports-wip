@@ -81,17 +81,6 @@ share/olive-editor/effects/volumetriclight.frag
 share/olive-editor/effects/volumetriclight.xml
 share/olive-editor/effects/wave.frag
 share/olive-editor/effects/wave.xml
-share/olive-editor/ts/
-share/olive-editor/ts/olive_ar.qm
-share/olive-editor/ts/olive_bs.qm
-share/olive-editor/ts/olive_cs.qm
-share/olive-editor/ts/olive_de.qm
-share/olive-editor/ts/olive_es.qm
-share/olive-editor/ts/olive_fr.qm
-share/olive-editor/ts/olive_id.qm
-share/olive-editor/ts/olive_it.qm
-share/olive-editor/ts/olive_ru.qm
-share/olive-editor/ts/olive_sr.qm
 @tag update-desktop-database
 @tag update-mime-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
