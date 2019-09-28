@@ -5,7 +5,7 @@ time_t is %lld.
 Index: src/purging_rmw.c
 --- src/purging_rmw.c.orig
 +++ src/purging_rmw.c
-@@ -215,7 +215,7 @@ is_time_to_purge (st_time *st_time_var)
+@@ -217,7 +217,7 @@ is_time_to_purge (st_time *st_time_var, const char* da
    fp = fopen (file_lastpurge, "w");
    if (fp)
    {

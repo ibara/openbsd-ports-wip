@@ -25,6 +25,9 @@ MODULES =	devel/qmake \
 LIB_DEPENDS =	multimedia/mpv \
 		x11/qt5/qtquickcontrols2
 
+RUN_DEPENDS =	x11/qt5/qtgraphicaleffects \
+		x11/qt5/qtquickcontrols
+
 NO_TEST =	Yes
 
 # No install routine

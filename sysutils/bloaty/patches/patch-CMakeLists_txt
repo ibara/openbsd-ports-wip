@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Remove hardcoded -O2.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -42,7 +42,7 @@ include_directories("${CMAKE_CURRENT_BINARY_DIR}/src")
+ # Baseline build flags.
+ set(CMAKE_CXX_FLAGS "-std=c++11 -W -Wall -Wno-sign-compare")
+ set(CMAKE_CXX_FLAGS_DEBUG "-g1")
+-set(CMAKE_CXX_FLAGS_RELEASE "-O2")
++set(CMAKE_CXX_FLAGS_RELEASE "")
+ set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O2 -g1")
+ 
+ if(APPLE)

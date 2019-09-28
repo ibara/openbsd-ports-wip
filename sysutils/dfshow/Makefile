@@ -6,7 +6,7 @@ CATEGORIES =	sysutils
 
 GH_ACCOUNT =	roberthawdon
 GH_PROJECT =	dfshow
-GH_TAGNAME =	v0.8.1-beta
+GH_TAGNAME =	v0.8.2-beta
 
 HOMEPAGE =	https://dfshow.op-ezy.co.uk/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

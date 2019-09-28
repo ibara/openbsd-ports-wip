@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-V =		0.7.03
+V =		0.7.04
 COMMENT =	safe-remove command line utility
 DISTNAME =	rmw-${V}
 CATEGORIES =	sysutils

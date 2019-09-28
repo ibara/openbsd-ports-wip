@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-V =		0.10
+V =		0.10.1
 COMMENT =	ncurses file manager with vi keybindings
 DISTNAME =	vifm-${V}
 EXTRACT_SUFX =	.tar.bz2
