@@ -1,0 +1,25 @@
+$OpenBSD$
+
+Remove hardcoded optimization flags.
+
+Index: src/microcode/configure
+--- src/microcode/configure.orig
++++ src/microcode/configure
+@@ -5237,7 +5237,7 @@ if test ${GCC} = yes; then
+     LDFLAGS=${SAVED_LDFLAGS}
+ 
+     if test ${enable_debugging} = no; then
+-	CFLAGS="-O3 ${CFLAGS}"
++	CFLAGS="${CFLAGS}"
+     else
+ 	CFLAGS="-O0 -g -DENABLE_DEBUGGING_TOOLS ${CFLAGS}"
+ 	LDFLAGS="${LDFLAGS} -g"
+@@ -5547,7 +5547,7 @@ esac
+ 
+ if test "${DO_GCC_TESTS}" = yes; then
+     if test "${GNU_LD}" = yes; then
+-	SCHEME_LDFLAGS="${SCHEME_LDFLAGS} -export-dynamic"
++	SCHEME_LDFLAGS="${SCHEME_LDFLAGS} -Wl,--export-dynamic"
+     fi
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ELF binaries" >&5
+ $as_echo_n "checking for ELF binaries... " >&6; }
