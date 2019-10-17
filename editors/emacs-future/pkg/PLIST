@@ -747,6 +747,10 @@ gnu/share/emacs/27.0.50/etc/images/splash.pbm
 gnu/share/emacs/27.0.50/etc/images/splash.png
 gnu/share/emacs/27.0.50/etc/images/splash.svg
 gnu/share/emacs/27.0.50/etc/images/splash.xpm
+gnu/share/emacs/27.0.50/etc/images/tabs/
+gnu/share/emacs/27.0.50/etc/images/tabs/README
+gnu/share/emacs/27.0.50/etc/images/tabs/close.xpm
+gnu/share/emacs/27.0.50/etc/images/tabs/new.xpm
 gnu/share/emacs/27.0.50/etc/images/tree-widget/
 gnu/share/emacs/27.0.50/etc/images/tree-widget/default/
 gnu/share/emacs/27.0.50/etc/images/tree-widget/default/README
@@ -2234,6 +2238,8 @@ gnu/share/emacs/27.0.50/lisp/image/exif.el.gz
 gnu/share/emacs/27.0.50/lisp/image/exif.elc
 gnu/share/emacs/27.0.50/lisp/image/gravatar.el.gz
 gnu/share/emacs/27.0.50/lisp/image/gravatar.elc
+gnu/share/emacs/27.0.50/lisp/image/image-converter.el.gz
+gnu/share/emacs/27.0.50/lisp/image/image-converter.elc
 gnu/share/emacs/27.0.50/lisp/imenu.el.gz
 gnu/share/emacs/27.0.50/lisp/imenu.elc
 gnu/share/emacs/27.0.50/lisp/indent.el.gz
@@ -3039,6 +3045,8 @@ gnu/share/emacs/27.0.50/lisp/obsolete/tpu-extras.el.gz
 gnu/share/emacs/27.0.50/lisp/obsolete/tpu-extras.elc
 gnu/share/emacs/27.0.50/lisp/obsolete/tpu-mapper.el.gz
 gnu/share/emacs/27.0.50/lisp/obsolete/tpu-mapper.elc
+gnu/share/emacs/27.0.50/lisp/obsolete/url-ns.el.gz
+gnu/share/emacs/27.0.50/lisp/obsolete/url-ns.elc
 gnu/share/emacs/27.0.50/lisp/obsolete/vc-arch.el.gz
 gnu/share/emacs/27.0.50/lisp/obsolete/vc-arch.elc
 gnu/share/emacs/27.0.50/lisp/obsolete/vi.el.gz
@@ -3617,6 +3625,10 @@ gnu/share/emacs/27.0.50/lisp/svg.el.gz
 gnu/share/emacs/27.0.50/lisp/svg.elc
 gnu/share/emacs/27.0.50/lisp/t-mouse.el.gz
 gnu/share/emacs/27.0.50/lisp/t-mouse.elc
+gnu/share/emacs/27.0.50/lisp/tab-bar.el.gz
+gnu/share/emacs/27.0.50/lisp/tab-bar.elc
+gnu/share/emacs/27.0.50/lisp/tab-line.el.gz
+gnu/share/emacs/27.0.50/lisp/tab-line.elc
 gnu/share/emacs/27.0.50/lisp/tabify.el.gz
 gnu/share/emacs/27.0.50/lisp/tabify.elc
 gnu/share/emacs/27.0.50/lisp/talk.el.gz
@@ -3848,8 +3860,6 @@ gnu/share/emacs/27.0.50/lisp/url/url-news.el.gz
 gnu/share/emacs/27.0.50/lisp/url/url-news.elc
 gnu/share/emacs/27.0.50/lisp/url/url-nfs.el.gz
 gnu/share/emacs/27.0.50/lisp/url/url-nfs.elc
-gnu/share/emacs/27.0.50/lisp/url/url-ns.el.gz
-gnu/share/emacs/27.0.50/lisp/url/url-ns.elc
 gnu/share/emacs/27.0.50/lisp/url/url-parse.el.gz
 gnu/share/emacs/27.0.50/lisp/url/url-parse.elc
 gnu/share/emacs/27.0.50/lisp/url/url-privacy.el.gz

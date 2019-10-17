@@ -1,0 +1,13 @@
+spdlog is a very fast C++ logging library.
+
+Features:
+* Very fast
+* Feature rich formatting
+* Backtrace support - store debug or other messages in a ring buffer and
+  display later on demand
+* Custom formatting
+* Multi/Single threaded loggers
+* Easily extendable with custom log targets (just implement a single
+  function in the sink interface)
+* Severity based filtering - threshold levels can be modified in runtime
+  as well as in compile time

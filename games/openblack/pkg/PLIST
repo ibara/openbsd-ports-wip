@@ -1,0 +1,33 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/openblack
+share/applications/
+share/applications/openblack.desktop
+share/doc/openblack/
+share/doc/openblack/IMGUI_LICENSE.txt
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/128x128/
+share/icons/hicolor/128x128/apps/
+share/icons/hicolor/128x128/apps/openblack.png
+share/icons/hicolor/256x256/
+share/icons/hicolor/256x256/apps/
+share/icons/hicolor/256x256/apps/openblack.png
+share/icons/hicolor/64x64/
+share/icons/hicolor/64x64/apps/
+share/icons/hicolor/64x64/apps/openblack.png
+share/openblack/
+share/openblack/shaders/
+share/openblack/shaders/line.frag
+share/openblack/shaders/line.vert
+share/openblack/shaders/object.frag
+share/openblack/shaders/object.vert
+share/openblack/shaders/skin.frag
+share/openblack/shaders/skin.vert
+share/openblack/shaders/sky.frag
+share/openblack/shaders/sky.vert
+share/openblack/shaders/terrain.frag
+share/openblack/shaders/terrain.vert
+share/openblack/shaders/water.frag
+share/openblack/shaders/water.vert
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

@@ -2,7 +2,7 @@
 
 COMMENT =	GNU tools in development
 DISTFILES =	# empty
-PKGNAME =	gnu-future-20190927
+PKGNAME =	gnu-future-20191014
 #REVISION =	0
 CATEGORIES =	meta
 

@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Missing #include <string>
+
+Index: src/Renderer.h
+--- src/Renderer.h.orig
++++ src/Renderer.h
+@@ -24,6 +24,7 @@
+ #include <array>
+ #include <chrono>
+ #include <memory>
++#include <string>
+ #include <vector>
+ 
+ #include <SDL.h>

@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-V =		2019.09.22
+V =		2019.10.07
 COMMENT =	Sun-derived make utility
 DISTNAME =	schily-${V:S/./-/g}
 PKGNAME =	smake-${V}
@@ -17,17 +17,12 @@ WANTLIB += c
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=schilytools/}
 
-# gcc only!
-COMPILER =		ports-gcc
-COMPILER_LANGS =	c
-
-# Use gcc-10 because I like using it.
-MAKE_ENV =	CC="${LOCALBASE}/gnu/bin/gcc" \
-		CXX="${LOCALBASE}/gnu/bin/g++" \
+MAKE_ENV =	CC="${CC}" \
+		CXX="${CXX}" \
 		COPTOPT="${CFLAGS}" \
-		CC_COM_DEF="${LOCALBASE}/gnu/bin/gcc" \
-		CXX_COM_DEF="${LOCALBASE}/gnu/bin/g++" \
-		ENV_CC="${LOCALBASE}/gnu/bin/gcc" \
+		CC_COM_DEF="${CC}" \
+		CXX_COM_DEF="${CXX}" \
+		ENV_CC="${CC}" \
 		ac_cv_func_vfork_works=yes
 
 NO_TEST =	Yes

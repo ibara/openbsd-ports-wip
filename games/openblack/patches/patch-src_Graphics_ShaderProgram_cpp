@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Missing #include <array>
+
+Index: src/Graphics/ShaderProgram.cpp
+--- src/Graphics/ShaderProgram.cpp.orig
++++ src/Graphics/ShaderProgram.cpp
+@@ -20,6 +20,7 @@
+ 
+ #include <Graphics/ShaderProgram.h>
+ 
++#include <array>
+ #include <cassert>
+ #include <cstring>
+ 

@@ -1,0 +1,15 @@
+$OpenBSD$
+
+No -ldl.
+
+Index: external/glad/CMakeLists.txt
+--- external/glad/CMakeLists.txt.orig
++++ external/glad/CMakeLists.txt
+@@ -11,6 +11,6 @@ add_library(glad STATIC
+ )
+ target_include_directories(glad PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+ if(NOT WIN32)
+-	target_link_libraries(glad PUBLIC dl)
++	target_link_libraries(glad PUBLIC)
+ endif()
+ 

@@ -1,0 +1,7 @@
+openblack is an open source reimplementation of the Black & White (2001)
+game engine written in modern C++ and modern OpenGL.
+
+While this package and the game engine are open source, one still needs
+to provide the original game assets from Black & White, which is not
+open source. You will need to purchase the original game to use this
+package.

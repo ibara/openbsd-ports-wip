@@ -1,0 +1,25 @@
+$OpenBSD$
+
+Remove hardcoded optimization flags.
+
+Index: external/entt/CMakeLists.txt
+--- external/entt/CMakeLists.txt.orig
++++ external/entt/CMakeLists.txt
+@@ -87,17 +87,6 @@ if(USE_ASAN)
+     target_link_libraries(EnTT INTERFACE $<$<AND:$<CONFIG:Debug>,$<NOT:$<CXX_COMPILER_ID:MSVC>>>:-fsanitize=address -fno-omit-frame-pointer>)
+ endif()
+ 
+-if(USE_COMPILE_OPTIONS)
+-    target_compile_options(
+-        EnTT
+-        INTERFACE $<$<AND:$<CONFIG:Debug>,$<NOT:$<CXX_COMPILER_ID:MSVC>>>:-O0 -g>
+-        # it seems that -O3 ruins a bit the performance when using clang ...
+-        INTERFACE $<$<AND:$<CONFIG:Release>,$<CXX_COMPILER_ID:Clang>>:-O2>
+-        # ... on the other side, GCC is incredibly comfortable with it.
+-        INTERFACE $<$<AND:$<CONFIG:Release>,$<CXX_COMPILER_ID:GNU>>:-O3>
+-    )
+-endif()
+-
+ if(HAS_LIBCPP)
+     target_compile_options(EnTT BEFORE INTERFACE -stdlib=libc++)
+ endif()

@@ -701,6 +701,7 @@ gnu/include/c++/10.0.0/regex
 gnu/include/c++/10.0.0/scoped_allocator
 gnu/include/c++/10.0.0/set
 gnu/include/c++/10.0.0/shared_mutex
+gnu/include/c++/10.0.0/span
 gnu/include/c++/10.0.0/sstream
 gnu/include/c++/10.0.0/stack
 gnu/include/c++/10.0.0/stdexcept
@@ -819,7 +820,6 @@ gnu/include/c++/10.0.0/x86_64-unknown-openbsd6.6/bits/time_members.h
 gnu/include/c++/10.0.0/x86_64-unknown-openbsd6.6/ext/
 gnu/include/c++/10.0.0/x86_64-unknown-openbsd6.6/ext/opt_random.h
 gnu/lib/
-gnu/lib/-gdb.py
 gnu/lib/gcc/
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/
@@ -985,6 +985,7 @@ gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/align.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/all-tree.def
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/alloc-pool.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/ansidecl.h
+gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/array-traits.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/asan.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/attribs.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/auto-host.h
@@ -1103,6 +1104,7 @@ gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/flag-types.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/flags.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/fold-const-call.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/fold-const.h
+gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/function-abi.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/function.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/gcc-plugin.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/gcc-rich-location.h
@@ -1261,6 +1263,8 @@ gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/print-rtl.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/print-tree.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/profile-count.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/profile.h
+gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/range-op.h
+gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/range.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/read-md.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/read-rtl-function.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/real.h
@@ -1352,6 +1356,7 @@ gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/tree-pass.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/tree-phinodes.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/tree-pretty-print.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/tree-scalar-evolution.h
+gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/tree-sra.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/tree-ssa-address.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/tree-ssa-alias.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/tree-ssa-ccp.h
@@ -1399,7 +1404,6 @@ gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/vr-values.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/vtable-verify.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/wide-int-bitmask.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/wide-int-print.h
-gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/wide-int-range.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/wide-int.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/xcoff.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/xcoffout.h

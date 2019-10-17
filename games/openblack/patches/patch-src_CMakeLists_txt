@@ -1,0 +1,19 @@
+$OpenBSD$
+
+Install things to the right place.
+
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -139,9 +139,9 @@ endforeach()
+ if (UNIX)
+   install(TARGETS openblack RUNTIME DESTINATION bin)
+   install(FILES ${OPENBLACK_SHADERS}
+-          DESTINATION bin/shaders)
++          DESTINATION share/openblack/shaders)
+   install(FILES ../external/imgui/imgui/LICENSE.txt
+-          DESTINATION "share/licenses/openblack"
++          DESTINATION "share/doc/openblack"
+           RENAME "IMGUI_LICENSE.txt")
+   install(FILES "${CMAKE_SOURCE_DIR}/assets/resource/shortcut/openblack.desktop"
+           DESTINATION "share/applications")

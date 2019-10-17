@@ -2,7 +2,7 @@
 
 COMMENT =	GNU Compiler Collection, tip of tree
 DISTFILES =	# empty
-PKGNAME =	gcc-future-10.0.0pl20190927
+PKGNAME =	gcc-future-10.0.0pl20191014
 #REVISION =	0
 CATEGORIES =	lang
 

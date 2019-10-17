@@ -2,7 +2,7 @@
 
 COMMENT =	GNU core utilities, tip of tree
 DISTFILES =	# empty
-PKGNAME =	coreutils-future-8.31.50pl20190926
+PKGNAME =	coreutils-future-8.31.54pl20191014
 #REVISION =	0
 CATEGORIES =	sysutils
 

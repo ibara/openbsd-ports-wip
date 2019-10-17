@@ -2,7 +2,7 @@
 
 COMMENT =	GNU Binutils, tip of tree
 DISTFILES =	# empty
-PKGNAME =	binutils-future-2.33.50pl20190927
+PKGNAME =	binutils-future-2.33.50pl20191014
 #REVISION =	0
 CATEGORIES =	devel
 
