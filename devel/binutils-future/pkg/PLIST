@@ -21,6 +21,8 @@ gnu/bin/gdb-add-index
 gnu/include/
 gnu/include/gdb/
 gnu/include/gdb/jit-reader.h
+gnu/lib/
+gnu/lib/charset.alias
 gnu/share/
 gnu/share/gdb/
 gnu/share/gdb/syscalls/

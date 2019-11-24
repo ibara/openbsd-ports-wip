@@ -1,0 +1,40 @@
+$OpenBSD$
+
+For future arch support
+
+Index: src/microcode/confshared.h
+--- src/microcode/confshared.h.orig
++++ src/microcode/confshared.h
+@@ -220,6 +220,7 @@ typedef enum
+   FASL_X86_64,
+   FASL_PPC64,
+   FASL_IA64,
++  FASL_AARCH64,
+   FASL_ARM,
+ } fasl_arch_t;
+ 
+@@ -594,6 +595,11 @@ extern void win32_stack_reset (void);
+ #  define CURRENT_FASL_ARCH	FASL_IA64
+ #endif
+ 
++#ifdef __aarch64__
++#  define MACHINE_TYPE		"aarch64"
++#  define CURRENT_FASL_ARCH	FASL_AARCH64
++#endif
++
+ #ifdef __arm__
+ #  define MACHINE_TYPE		"arm"
+ #  define CURRENT_FASL_ARCH	FASL_ARM
+@@ -622,6 +628,12 @@ extern void win32_stack_reset (void);
+ #  else
+ #    define PC_ZERO_BITS 0
+ #  endif
++#endif
++
++/* This seems to be missing on modern Unix.  At least, it is needed
++   on OpenBSD non-x86.  */
++#ifndef HEAP_IN_LOW_MEMORY
++#  define HEAP_IN_LOW_MEMORY	1
+ #endif
+ 
+ #define PC_ALIGNED_P(pc)						\

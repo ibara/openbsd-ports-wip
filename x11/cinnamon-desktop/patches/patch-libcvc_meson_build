@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: libcvc/meson.build
+--- libcvc/meson.build.orig
++++ libcvc/meson.build
+@@ -41,7 +41,7 @@ libcvc = shared_library('cvc',
+     '-DWITH_INTROSPECTION',
+   ],
+   install: true,
+-  version: '0.0.0',
++  version: '0.0',
+ )
+ 
+ gnome.generate_gir(libcvc,

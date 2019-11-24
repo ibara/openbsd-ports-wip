@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	open source reimplementaton of Black & White game
-DISTNAME =	openblack-0.0.0.20190924
+DISTNAME =	openblack-0.0.0.20191107
 CATEGORIES =	games x11
 
 HOMEPAGE =	https://www.bwfiles.com/
@@ -18,6 +18,9 @@ MASTER_SITES =	https://mirrors.nycbug.org/pub/distfiles/
 COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake
+
+BUILD_DEPENDS =	devel/cxxopts \
+		games/entt
 
 LIB_DEPENDS =	devel/sdl2
 

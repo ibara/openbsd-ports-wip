@@ -1,0 +1,23 @@
+$OpenBSD$
+
+Index: lib/portability.h
+--- lib/portability.h.orig
++++ lib/portability.h
+@@ -126,7 +126,7 @@ char *strcasestr(const char *haystack, const char *nee
+ #define bswap_32(x) OSSwapInt32(x)
+ #define bswap_64(x) OSSwapInt64(x)
+ 
+-#elif defined(__FreeBSD__)
++#elif defined(__FreeBSD__) || defined(__OpenBSD__)
+ 
+ #include <sys/endian.h>
+ 
+@@ -177,7 +177,7 @@ char *strcasestr(const char *haystack, const char *nee
+ 
+ #ifdef __APPLE__
+ #include <util.h>
+-#elif !defined(__FreeBSD__)
++#elif !defined(__FreeBSD__) && !defined(__OpenBSD__)
+ #include <pty.h>
+ #else
+ #include <termios.h>

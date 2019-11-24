@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v$
+bin/cjs
+@bin bin/cjs-console
+include/cjs-1.0/
+include/cjs-1.0/cjs/
+include/cjs-1.0/cjs/context.h
+include/cjs-1.0/cjs/coverage.h
+include/cjs-1.0/cjs/gjs.h
+include/cjs-1.0/cjs/macros.h
+include/cjs-1.0/cjs/profiler.h
+include/cjs-1.0/util/
+include/cjs-1.0/util/error.h
+lib/cjs/
+lib/cjs/girepository-1.0/
+lib/cjs/girepository-1.0/CjsPrivate-1.0.typelib
+lib/libcjs.a
+lib/libcjs.la
+@lib lib/libcjs.so.${LIBcjs_VERSION}
+lib/pkgconfig/cjs-1.0.pc

@@ -1,5 +1,8 @@
 # $OpenBSD$
 
+# XXX: maybe i386 too?
+ONLY_FOR_ARCHS =	amd64
+
 V ?=		10.1.10
 DISTNAME ?=	mit-scheme-${V}-svm1
 CATEGORIES ?=	lang

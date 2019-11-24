@@ -3,12 +3,12 @@
 ONLY_FOR_ARCHS =	aarch64 amd64
 
 COMMENT =	small, fast C11 compiler
-DISTNAME =	cproc-0.0.0.20190814
+DISTNAME =	cproc-0.0.0.20191120
 CATEGORIES =	lang
 
 GH_ACCOUNT =	michaelforney
 GH_PROJECT =	cproc
-GH_COMMIT =	fe7815a6e0ef7f4a90798febaa877e8247fe991c
+GH_COMMIT =	f12ae432305a0cdef1bf46ce1617637eaaf72cbc
 
 HOMEPAGE =	https://git.sr.ht/~mcf/cproc
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

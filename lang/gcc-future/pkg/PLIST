@@ -80,6 +80,7 @@ gnu/include/c++/10.0.0/bits/indirect_array.h
 gnu/include/c++/10.0.0/bits/invoke.h
 gnu/include/c++/10.0.0/bits/ios_base.h
 gnu/include/c++/10.0.0/bits/istream.tcc
+gnu/include/c++/10.0.0/bits/iterator_concepts.h
 gnu/include/c++/10.0.0/bits/list.tcc
 gnu/include/c++/10.0.0/bits/locale_classes.h
 gnu/include/c++/10.0.0/bits/locale_classes.tcc
@@ -104,6 +105,7 @@ gnu/include/c++/10.0.0/bits/quoted_string.h
 gnu/include/c++/10.0.0/bits/random.h
 gnu/include/c++/10.0.0/bits/random.tcc
 gnu/include/c++/10.0.0/bits/range_access.h
+gnu/include/c++/10.0.0/bits/range_cmp.h
 gnu/include/c++/10.0.0/bits/refwrap.h
 gnu/include/c++/10.0.0/bits/regex.h
 gnu/include/c++/10.0.0/bits/regex.tcc
@@ -182,6 +184,7 @@ gnu/include/c++/10.0.0/climits
 gnu/include/c++/10.0.0/clocale
 gnu/include/c++/10.0.0/cmath
 gnu/include/c++/10.0.0/codecvt
+gnu/include/c++/10.0.0/compare
 gnu/include/c++/10.0.0/complex
 gnu/include/c++/10.0.0/complex.h
 gnu/include/c++/10.0.0/concepts
@@ -697,6 +700,7 @@ gnu/include/c++/10.0.0/pstl/unseq_backend_simd.h
 gnu/include/c++/10.0.0/pstl/utils.h
 gnu/include/c++/10.0.0/queue
 gnu/include/c++/10.0.0/random
+gnu/include/c++/10.0.0/ranges
 gnu/include/c++/10.0.0/ratio
 gnu/include/c++/10.0.0/regex
 gnu/include/c++/10.0.0/scoped_allocator
@@ -707,6 +711,7 @@ gnu/include/c++/10.0.0/sstream
 gnu/include/c++/10.0.0/stack
 gnu/include/c++/10.0.0/stdexcept
 gnu/include/c++/10.0.0/stdlib.h
+gnu/include/c++/10.0.0/stop_token
 gnu/include/c++/10.0.0/streambuf
 gnu/include/c++/10.0.0/string
 gnu/include/c++/10.0.0/string_view
@@ -820,7 +825,6 @@ gnu/include/c++/10.0.0/x86_64-unknown-openbsd6.6/bits/stdtr1c++.h
 gnu/include/c++/10.0.0/x86_64-unknown-openbsd6.6/bits/time_members.h
 gnu/include/c++/10.0.0/x86_64-unknown-openbsd6.6/ext/
 gnu/include/c++/10.0.0/x86_64-unknown-openbsd6.6/ext/opt_random.h
-gnu/lib/
 gnu/lib/gcc/
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/
@@ -970,10 +974,10 @@ gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/install-tools/include/README
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/install-tools/include/limits.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/install-tools/macro_list
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/install-tools/mkheaders.conf
-gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/libcaf_single.a
+@static-lib gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/libcaf_single.a
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/libcaf_single.la
-gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/libgcc.a
-gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/libgcov.a
+@static-lib gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/libgcc.a
+@static-lib gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/libgcov.a
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/gtype.state
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/
@@ -1092,6 +1096,7 @@ gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/dwarf2out.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/edit-context.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/emit-rtl.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/errors.h
+gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/escaped_string.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/et-forest.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/except.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/explow.h
@@ -1242,12 +1247,6 @@ gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/options.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/opts-diagnostic.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/opts.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/output.h
-gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/params-enum.h
-gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/params-list.h
-gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/params-options.h
-gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/params.def
-gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/params.h
-gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/params.list
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/pass-instances.def
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/pass_manager.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/passes.def
@@ -1397,6 +1396,7 @@ gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/typed-splay-tree.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/ubsan.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/valtrack.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/value-prof.h
+gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/value-range.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/varasm.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/vec-perm-indices.h
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/include/vec.h
@@ -1414,40 +1414,40 @@ gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/libcc1plugin.la
 @lib gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/libcc1plugin.so.${LIBcc1plugin_VERSION}
 gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/libcp1plugin.la
 @lib gnu/lib/gcc/x86_64-unknown-openbsd6.6/10.0.0/plugin/libcp1plugin.so.${LIBcp1plugin_VERSION}
-gnu/lib/libatomic.a
+@static-lib gnu/lib/libatomic.a
 gnu/lib/libatomic.la
 @lib gnu/lib/libatomic.so.${LIBatomic_VERSION}
 gnu/lib/libcc1.la
 @lib gnu/lib/libcc1.so.${LIBcc1_VERSION}
-gnu/lib/libgfortran.a
+@static-lib gnu/lib/libgfortran.a
 gnu/lib/libgfortran.la
 @lib gnu/lib/libgfortran.so.${LIBgfortran_VERSION}
 gnu/lib/libgfortran.spec
-gnu/lib/libgomp.a
+@static-lib gnu/lib/libgomp.a
 gnu/lib/libgomp.la
 @lib gnu/lib/libgomp.so.${LIBgomp_VERSION}
 gnu/lib/libgomp.spec
-gnu/lib/libitm.a
+@static-lib gnu/lib/libitm.a
 gnu/lib/libitm.la
 @lib gnu/lib/libitm.so.${LIBitm_VERSION}
 gnu/lib/libitm.spec
-gnu/lib/libobjc.a
+@static-lib gnu/lib/libobjc.a
 gnu/lib/libobjc.la
 @lib gnu/lib/libobjc.so.${LIBobjc_VERSION}
-gnu/lib/libquadmath.a
+@static-lib gnu/lib/libquadmath.a
 gnu/lib/libquadmath.la
 @lib gnu/lib/libquadmath.so.${LIBquadmath_VERSION}
-gnu/lib/libssp.a
+@static-lib gnu/lib/libssp.a
 gnu/lib/libssp.la
 @lib gnu/lib/libssp.so.${LIBssp_VERSION}
-gnu/lib/libssp_nonshared.a
+@static-lib gnu/lib/libssp_nonshared.a
 gnu/lib/libssp_nonshared.la
 gnu/lib/libstdc++.*-gdb.py
-gnu/lib/libstdc++fs.a
+@static-lib gnu/lib/libstdc++fs.a
 gnu/lib/libstdc++fs.la
-gnu/lib/libsupc++.a
+@static-lib gnu/lib/libsupc++.a
 gnu/lib/libsupc++.la
-gnu/lib/libxstdc++.a
+@static-lib gnu/lib/libxstdc++.a
 gnu/lib/libxstdc++.la
 @lib gnu/lib/libxstdc++.so.${LIBxstdc++_VERSION}
 gnu/libexec/

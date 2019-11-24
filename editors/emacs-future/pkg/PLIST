@@ -909,6 +909,7 @@ gnu/share/emacs/27.0.50/etc/srecode/el.srt
 gnu/share/emacs/27.0.50/etc/srecode/getset-cpp.srt
 gnu/share/emacs/27.0.50/etc/srecode/java.srt
 gnu/share/emacs/27.0.50/etc/srecode/make.srt
+gnu/share/emacs/27.0.50/etc/srecode/proj-test.srt
 gnu/share/emacs/27.0.50/etc/srecode/template.srt
 gnu/share/emacs/27.0.50/etc/srecode/test.srt
 gnu/share/emacs/27.0.50/etc/srecode/texi.srt

@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: libxapp/meson.build
+--- libxapp/meson.build.orig
++++ libxapp/meson.build
+@@ -42,7 +42,7 @@ libxapp = library('xapp',
+     sources  : xapp_headers + xapp_sources + xapp_enums,
+     include_directories: [top_inc],
+     version: meson.project_version(),
+-    soversion: '1',
++    soversion: '0.0',
+     dependencies: libdeps,
+     c_args: ['-Wno-declaration-after-statement'],
+     link_args: [ '-Wl,-Bsymbolic', '-Wl,-z,relro', '-Wl,-z,now', '-lm'],

@@ -1,0 +1,23 @@
+$OpenBSD$
+
+Index: lib/portability.c
+--- lib/portability.c.orig
++++ lib/portability.c
+@@ -49,7 +49,7 @@ int xgetrandom(void *buf, unsigned buflen, unsigned fl
+ // Get list of mounted filesystems, including stat and statvfs info.
+ // Returns a reversed list, which is good for finding overmounts and such.
+ 
+-#if defined(__APPLE__) || defined(__FreeBSD__)
++#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ 
+ #include <sys/mount.h>
+ 
+@@ -236,7 +236,7 @@ int xnotify_wait(struct xnotify *not, char **path)
+ 
+ #else
+ 
+-#include <sys/inotify.h>
++#include <LOCALBASE/include/inotify/sys/inotify.h>
+ 
+ struct xnotify *xnotify_init(int max)
+ {

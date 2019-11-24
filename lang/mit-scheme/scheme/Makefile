@@ -5,6 +5,7 @@ PKGNAME =	mit-scheme-${V}
 
 WANTLIB += X11 c curses m xcb
 
+# svm backend doesn't need a pre-existing mit-scheme binary
 MAKE_FLAGS =	MIT_SCHEME_EXE="/usr/bin/true"
 
 # Test says to export this.

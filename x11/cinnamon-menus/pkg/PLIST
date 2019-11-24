@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v$
+include/cinnamon-menus-3.0/
+include/cinnamon-menus-3.0/gmenu-tree.h
+lib/girepository-1.0/CMenu-3.0.typelib
+lib/libcinnamon-menu-3.so
+@lib lib/libcinnamon-menu-3.so.${LIBcinnamon-menu-3_VERSION}
+lib/pkgconfig/libcinnamon-menu-3.0.pc
+share/gir-1.0/CMenu-3.0.gir

@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -29,7 +29,6 @@ top_inc = include_directories('.')
+ subdir('libxapp')
+ subdir('po')
+ subdir('pygobject')
+-subdir('files')
+ subdir('schemas')
+ 
+ if get_option('docs')

@@ -5,7 +5,7 @@ Install things to the right place.
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -139,9 +139,9 @@ endforeach()
+@@ -144,9 +144,9 @@ endforeach()
  if (UNIX)
    install(TARGETS openblack RUNTIME DESTINATION bin)
    install(FILES ${OPENBLACK_SHADERS}

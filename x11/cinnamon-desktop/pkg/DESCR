@@ -1,0 +1,7 @@
+cinnamon-desktop contains the libcinnamon-desktop library, the
+cinnamon-about program as well as some desktop-wide documents.
+
+The libcinnamon-desktop library provides API shared by several
+applications on the desktop, but that cannot live in the platform for
+various reasons. There is no API or ABI guarantee, although we are doing
+our best to provide stability.

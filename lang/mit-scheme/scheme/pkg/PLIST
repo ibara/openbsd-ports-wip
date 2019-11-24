@@ -1110,7 +1110,7 @@ lib/mit-scheme-svm1/x11-screen/x11-screen.com
 lib/mit-scheme-svm1/x11-screen/x11-screen.scm
 lib/mit-scheme-svm1/x11-shim.a
 lib/mit-scheme-svm1/x11-shim.la
-lib/mit-scheme-svm1/x11-shim.so
+@so lib/mit-scheme-svm1/x11-shim.so
 lib/mit-scheme-svm1/x11-types.bin
 lib/mit-scheme-svm1/x11/make.scm
 lib/mit-scheme-svm1/x11/x11-base.bci

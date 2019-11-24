@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v$
+include/cxxopts.hpp
+lib/cmake/
+lib/cmake/cxxopts/
+lib/cmake/cxxopts/cxxopts-config-version.cmake
+lib/cmake/cxxopts/cxxopts-config.cmake
+lib/cmake/cxxopts/cxxopts-targets.cmake

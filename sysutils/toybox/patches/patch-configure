@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Need to use gmake.
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -7,7 +7,7 @@
+ if [ "$(basename "$0")" == configure ]
+ then
+   echo "Assuming you want 'make defconfig', but you should probably check the README."
+-  make defconfig
++  gmake defconfig
+   exit $?
+ fi
+ 

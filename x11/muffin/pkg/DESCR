@@ -1,0 +1,4 @@
+Muffin is the window management library for the Cinnamon desktop
+(libmuffin) and its sample WM binary (muffin).
+
+It is based on Mutter 3.2.1.

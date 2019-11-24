@@ -1,0 +1,27 @@
+$OpenBSD$
+
+Index: toys/other/chrt.c
+--- toys/other/chrt.c.orig
++++ toys/other/chrt.c
+@@ -75,8 +75,10 @@ void chrt_main(void)
+     if ((pol &= ~SCHED_RESET_ON_FORK)<ARRAY_LEN(polnames)) s = polnames[pol];
+     printf("pid %ld's current scheduling policy: %s%s\n", TT.p, s, R);
+ 
++#ifndef __OpenBSD__
+     if (sched_getparam(TT.p, (void *)&pri)) perror_exit("sched_getparam");
+     printf("pid %ld's current scheduling priority: %d\n", TT.p, pri);
++#endif
+ 
+     return;
+   }
+@@ -91,8 +93,10 @@ void chrt_main(void)
+     sched_get_priority_max(pol));
+   if (toys.optflags&FLAG_R) pol |= SCHED_RESET_ON_FORK;
+ 
++#ifndef __OpenBSD__
+   if (sched_setscheduler(TT.p, pol, (void *)&pri))
+     perror_exit("sched_setscheduler");
++#endif
+ 
+   if (*(toys.optargs+1)) xexec(toys.optargs+1);
+ }

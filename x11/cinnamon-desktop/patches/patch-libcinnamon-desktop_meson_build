@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: libcinnamon-desktop/meson.build
+--- libcinnamon-desktop/meson.build.orig
++++ libcinnamon-desktop/meson.build
+@@ -56,7 +56,7 @@ libcinnamon_desktop = shared_library('cinnamon-desktop
+   ],
+   dependencies: cinnamon_deps,
+   install: true,
+-  version: LT_VERSION,
++  version: '0.0',
+ )
+ 
+ install_headers(

@@ -5,8 +5,8 @@ Missing #include <string>
 Index: src/3D/MeshPack.h
 --- src/3D/MeshPack.h.orig
 +++ src/3D/MeshPack.h
-@@ -23,6 +23,7 @@
- #define OPENBLACK_MESHPACK_H
+@@ -21,6 +21,7 @@
+ #pragma once
  
  #include <memory>
 +#include <string>

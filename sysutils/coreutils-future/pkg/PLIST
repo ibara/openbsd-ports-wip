@@ -109,7 +109,7 @@ gnu/bin/
 @bin gnu/bin/yes
 gnu/libexec/
 gnu/libexec/coreutils/
-gnu/libexec/coreutils/libstdbuf.so
+@so gnu/libexec/coreutils/libstdbuf.so
 gnu/share/
 @info gnu/share/info/
 @info gnu/share/info/coreutils.info

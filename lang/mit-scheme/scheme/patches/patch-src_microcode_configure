@@ -1,6 +1,7 @@
 $OpenBSD$
 
 Remove hardcoded optimization flags.
+Fix export-dynamic linker flag.
 
 Index: src/microcode/configure
 --- src/microcode/configure.orig
