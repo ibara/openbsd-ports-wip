@@ -1,0 +1,67 @@
+$OpenBSD$
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -226,6 +226,9 @@ AC_CHECK_HEADER(sys/acct.h,
+ 						)
+ 				)
+ 		)
++		AC_EGREP_HEADER(ac_exitcode, sys/acct.h,
++				AC_DEFINE(HAVE_ACEXITCODE, 1, [Define if <sys/acct.h> has the AC_EXITCODE field.])
++		)
+ 		AC_EGREP_HEADER([comp_t],[sys/acct.h],[AC_DEFINE(HAVE_COMP_T, 1, Define if <sys/acct.h> uses the COMP_T type.)])
+   ) ]
+ )
+@@ -251,7 +254,11 @@ AC_RUN_IFELSE([AC_LANG_PROGRAM([[
+ #      if defined(sgi) || defined(SVR4)
+ #        define WTMP_FILE "/usr/adm/wtmp"
+ #      else
+-#        define WTMP_FILE "/usr/adm/wtmp"
++#        if defined(__OpenBSD__)
++#          define WTMP_FILE "/var/log/wtmp"
++#        else
++#          define WTMP_FILE "/usr/adm/wtmp"
++#        endif
+ #      endif
+ #    endif
+ #  endif
+@@ -271,7 +278,11 @@ AC_RUN_IFELSE([AC_LANG_PROGRAM([[
+ #        if defined(sgi) || defined(SVR4) || defined(M_XENIX)
+ #          define ACCT_FILE "/usr/adm/pacct"
+ #        else
+-#          define ACCT_FILE "/usr/adm/acct"
++#          if defined(__OpenBSD__)
++#            define ACCT_FILE "/var/account/acct"
++#          else
++#            define ACCT_FILE "/usr/adm/acct"
++#          endif
+ #        endif
+ #      endif
+ #    endif
+@@ -289,7 +300,11 @@ AC_RUN_IFELSE([AC_LANG_PROGRAM([[
+ #      if defined(sgi) || defined(SVR4)
+ #        define SAVACCT_FILE "/usr/adm/savacct"
+ #      else
+-#        define SAVACCT_FILE "/usr/adm/savacct"
++#        if defined(__OpenBSD__)
++#          define SAVACCT_FILE "/var/account/savacct"
++#        else
++#          define SAVACCT_FILE "/usr/adm/savacct"
++#        endif
+ #      endif
+ #    endif
+ #  endif
+@@ -306,7 +321,11 @@ AC_RUN_IFELSE([AC_LANG_PROGRAM([[
+ #      if defined(sgi) || defined(SVR4)
+ #        define USRACCT_FILE "/usr/adm/usracct"
+ #      else
+-#        define USRACCT_FILE "/usr/adm/usracct"
++#        if defined(__OpenBSD__)
++#          define USRACCT_FILE "/var/account/usracct"
++#        else
++#          define USRACCT_FILE "/usr/adm/usracct"
++#        endif
+ #      endif
+ #    endif
+ #  endif
