@@ -8,7 +8,7 @@ GH_PROJECT =	musikcube
 GH_TAGNAME =	0.60.1
 
 HOMEPAGE =	https://musikcube.com/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # BSD
 PERMIT_PACKAGE =	Yes

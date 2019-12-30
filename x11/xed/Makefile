@@ -7,7 +7,7 @@ GH_ACCOUNT =	linuxmint
 GH_PROJECT =	xed
 GH_TAGNAME =	2.2.3
 
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

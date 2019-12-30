@@ -9,7 +9,7 @@ GH_ACCOUNT =	rerrahkr
 GH_PROJECT =	BambooTracker
 GH_TAGNAME =	v${V}
 
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

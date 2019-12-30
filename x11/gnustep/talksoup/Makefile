@@ -7,7 +7,7 @@ PKGNAME =	talksoup-${V}
 CATEGORIES =	net
 
 HOMEPAGE =	http://gap.nongnu.org/talksoup/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

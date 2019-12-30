@@ -5,7 +5,7 @@ DISTNAME =	oragono-1.1.1
 CATEGORIES =	net
 
 HOMEPAGE =	https://oragono.io/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # MIT
 PERMIT_PACKAGE =	Yes

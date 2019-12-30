@@ -9,7 +9,7 @@ GH_ACCOUNT =	elementary
 GH_PROJECT =	granite
 GH_TAGNAME =	5.2.3
 
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes

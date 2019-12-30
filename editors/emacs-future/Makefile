@@ -7,7 +7,7 @@ PKGNAME =	emacs-future-27.0.50pl20191117
 CATEGORIES =	editors
 
 HOMEPAGE =	https://www.gnu.org/software/emacs/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

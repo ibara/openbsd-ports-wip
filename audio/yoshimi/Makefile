@@ -6,7 +6,7 @@ EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	audio x11
 
 HOMEPAGE =	https://yoshimi.github.io/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

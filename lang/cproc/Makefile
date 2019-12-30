@@ -11,7 +11,7 @@ GH_PROJECT =	cproc
 GH_COMMIT =	f12ae432305a0cdef1bf46ce1617637eaaf72cbc
 
 HOMEPAGE =	https://git.sr.ht/~mcf/cproc
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # ISC
 PERMIT_PACKAGE =	Yes

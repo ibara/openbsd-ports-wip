@@ -9,7 +9,7 @@ CATEGORIES =	x11
 SHARED_LIBS +=	plank                     0.0 # 1.0
 
 HOMEPAGE =	https://launchpad.net/plank
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

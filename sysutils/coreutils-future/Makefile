@@ -7,7 +7,7 @@ PKGNAME =	coreutils-future-8.31.63pl20191116
 CATEGORIES =	sysutils
 
 HOMEPAGE =	https://www.gnu.org/software/coreutils/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

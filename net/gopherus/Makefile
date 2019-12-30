@@ -6,7 +6,7 @@ EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	net
 
 HOMEPAGE =	http://gopherus.sourceforge.net/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # BSD
 PERMIT_PACKAGE =	Yes

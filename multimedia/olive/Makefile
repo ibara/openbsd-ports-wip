@@ -8,7 +8,7 @@ GH_PROJECT =	olive
 GH_TAGNAME =	0.1.1
 
 HOMEPAGE =	https://www.olivevideoeditor.org/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

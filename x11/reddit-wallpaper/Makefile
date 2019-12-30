@@ -7,7 +7,7 @@ GH_ACCOUNT =	NuLL3rr0r
 GH_PROJECT =	reddit-wallpaper
 GH_TAGNAME =	v0.1.0
 
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # MIT
 PERMIT_PACKAGE =	Yes

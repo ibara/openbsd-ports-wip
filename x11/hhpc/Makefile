@@ -7,7 +7,7 @@ GH_ACCOUNT =	aktau
 GH_PROJECT =	hhpc
 GH_TAGNAME =	v0.3.1
 
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # BSD
 PERMIT_PACKAGE =	Yes

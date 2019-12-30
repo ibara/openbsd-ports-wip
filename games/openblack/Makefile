@@ -5,7 +5,7 @@ DISTNAME =	openblack-0.0.0.20191107
 CATEGORIES =	games x11
 
 HOMEPAGE =	https://www.bwfiles.com/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

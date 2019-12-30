@@ -8,7 +8,7 @@ EXTRACT_SUFX =	.tar
 CATEGORIES =	comms
 
 HOMEPAGE =	http://www.columbia.edu/kermit/ek.html
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # BSD
 PERMIT_PACKAGE =	Yes

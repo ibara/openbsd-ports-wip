@@ -8,7 +8,7 @@ EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	sysutils x11
 
 HOMEPAGE =	https://www.wxhexeditor.org/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # GPLv2 only
 PERMIT_PACKAGE =	Yes

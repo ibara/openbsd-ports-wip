@@ -7,7 +7,7 @@ PKGNAME =	wordtsar-${V}
 CATEGORIES =	editors x11
 
 HOMEPAGE =	http://wordtsar.ca/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # AGPLv3+
 PERMIT_PACKAGE =	Yes

@@ -7,7 +7,7 @@ CATEGORIES =	net
 SHARED_LIBS +=	fetch                     0.0 # 0.0
 
 HOMEPAGE =	https://www.freebsd.org/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # BSD
 PERMIT_PACKAGE =	Yes

@@ -8,7 +8,7 @@ GH_PROJECT =	entt
 GH_TAGNAME =	v3.2.0
 
 HOMEPAGE =	https://github.com/skypjack/entt/wiki
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # MIT
 PERMIT_PACKAGE =	Yes

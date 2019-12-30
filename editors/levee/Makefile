@@ -6,7 +6,7 @@ EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	editors
 
 HOMEPAGE =	https://www.pell.portland.or.us/~orc/Code/levee/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # BSD
 PERMIT_PACKAGE =	Yes

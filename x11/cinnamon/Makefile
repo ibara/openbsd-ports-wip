@@ -7,7 +7,7 @@ GH_ACCOUNT =	linuxmint
 GH_PROJECT =	cinnamon
 GH_TAGNAME =	4.2.4
 
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

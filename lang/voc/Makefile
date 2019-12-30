@@ -10,7 +10,7 @@ GH_ACCOUNT =	vishaps
 GH_PROJECT =	voc
 GH_TAGNAME =	2.1.0
 
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

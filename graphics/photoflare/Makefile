@@ -8,7 +8,7 @@ GH_PROJECT =	photoflare
 GH_TAGNAME =	v1.5.8.1
 
 HOMEPAGE =	https://photoflare.io/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # GPLv3 only
 PERMIT_PACKAGE =	Yes

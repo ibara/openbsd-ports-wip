@@ -9,7 +9,7 @@ GH_PROJECT =	janetsh
 GH_COMMIT =	60bd806125fe3c9d54935ad8bf91716b2a9c1987
 
 HOMEPAGE =	https://janet-shell.org/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # MIT
 PERMIT_PACKAGE =	Yes

@@ -6,7 +6,7 @@ DISTNAME =	shuf-${V}
 CATEGORIES =	sysutils textproc
 
 HOMEPAGE =	https://github.com/ibara/shuf
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # ISC
 PERMIT_PACKAGE =	Yes

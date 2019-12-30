@@ -7,7 +7,7 @@ PKGNAME =	binutils-future-2.33.50pl20191116
 CATEGORIES =	devel
 
 HOMEPAGE =	https://www.gnu.org/software/binutils/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

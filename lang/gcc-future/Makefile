@@ -20,7 +20,7 @@ SHARED_LIBS +=  xstdc++                   6.28 # 6.28
 SHARED_LIBS +=  lto_plugin                0.0 # 0.0
 
 HOMEPAGE =	https://gcc.gnu.org/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

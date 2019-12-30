@@ -7,7 +7,7 @@ PKGNAME =	gnu-future-20191017
 CATEGORIES =	meta
 
 HOMEPAGE =	https://www.gnu.org/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

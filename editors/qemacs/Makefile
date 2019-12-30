@@ -6,7 +6,7 @@ DISTNAME =	qemacs-5.2a
 CATEGORIES =	editors x11
 
 HOMEPAGE =	https://bellard.org/qemacs/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # LGPLv2.1+
 PERMIT_PACKAGE =	Yes

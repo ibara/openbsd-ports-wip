@@ -5,7 +5,7 @@ DISTNAME =	drumgizmo-0.9.17
 CATEGORIES =	audio x11
 
 HOMEPAGE =	https://www.drumgizmo.org/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

@@ -9,7 +9,7 @@ GH_ACCOUNT =	linuxmint
 GH_PROJECT =	muffin
 GH_TAGNAME =	4.2.2
 
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

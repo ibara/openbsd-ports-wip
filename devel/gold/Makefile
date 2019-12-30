@@ -9,7 +9,7 @@ PKGNAME =	gold-1.16pl0
 CATEGORIES =	devel
 
 HOMEPAGE =	https://sourceware.org/binutils/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
