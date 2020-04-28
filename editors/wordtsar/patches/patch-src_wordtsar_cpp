@@ -1,0 +1,24 @@
+$OpenBSD$
+
+Index: src/wordtsar.cpp
+--- src/wordtsar.cpp.orig
++++ src/wordtsar.cpp
+@@ -219,15 +219,11 @@ cWordTsar::cWordTsar(int argc, char *argv[], QWidget *
+     mEditor->setObjectName(QStringLiteral("mEditor"));
+     mEditor->SetFrame(this) ;
+ 
+-#ifdef Q_OS_MACOS
++#if defined(Q_OS_MACOS)
+     QFont font("Menlo", 12) ;
+-#endif
+-
+-#ifdef Q_OS_WINDOWS
++#elif defined(Q_OS_WINDOWS)
+     QFont font("Consolas", 12);
+-#endif
+-
+-#ifdef Q_OS_LINUX
++#else
+     QFont font("Monospace", 12) ;
+ #endif
+ 
