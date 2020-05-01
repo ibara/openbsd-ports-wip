@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: ui/ui-curse.c
+--- ui/ui-curse.c.orig
++++ ui/ui-curse.c
+@@ -10,7 +10,7 @@
+ #define _XOPEN_SOURCE_EXTENDED
+ 
+ #include <locale.h>
+-#include <ncursesw/curses.h>
++#include <curses.h>
+ #include <stdio.h> /* this one contains the NULL definition */
+ #include <string.h>
+ 
