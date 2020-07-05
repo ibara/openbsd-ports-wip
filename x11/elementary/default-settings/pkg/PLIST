@@ -1,0 +1,57 @@
+@comment $OpenBSD: PLIST,v$
+share/accountsservice/
+share/accountsservice/interfaces/
+share/accountsservice/interfaces/io.elementary.pantheon.AccountsService.xml
+share/applications/sessioninstaller.desktop
+share/cups/
+share/cups/data/
+share/cups/data/default-testpage.pdf
+share/dbus-1/interfaces/
+share/dbus-1/interfaces/io.elementary.pantheon.AccountsService.xml
+share/examples/elementary-default-settings/
+@sample ${SYSCONFDIR}/gtk-3.0/
+@sample ${SYSCONFDIR}/io.elementary.appcenter/
+@sample ${SYSCONFDIR}/profile.d/
+share/examples/elementary-default-settings/.inputrc
+@sample ${SYSCONFDIR}/skel/.inputrc
+share/examples/elementary-default-settings/appcenter.hiddenapps
+@sample ${SYSCONFDIR}/io.elementary.appcenter/appcenter.hiddenapps
+share/examples/elementary-default-settings/gtk-csd.sh
+share/examples/elementary-default-settings/pantheon-filechooser-module.sh
+share/examples/elementary-default-settings/plank/
+share/examples/elementary-default-settings/plank/dock1/
+share/examples/elementary-default-settings/plank/dock1/launchers/
+share/examples/elementary-default-settings/plank/dock1/launchers/gala-multitaskingview.dockitem
+share/examples/elementary-default-settings/plank/dock1/launchers/io.elementary.appcenter.dockitem
+share/examples/elementary-default-settings/plank/dock1/launchers/io.elementary.calendar.dockitem
+share/examples/elementary-default-settings/plank/dock1/launchers/io.elementary.music.dockitem
+share/examples/elementary-default-settings/plank/dock1/launchers/io.elementary.photos.dockitem
+share/examples/elementary-default-settings/plank/dock1/launchers/io.elementary.switchboard.dockitem
+share/examples/elementary-default-settings/plank/dock1/launchers/io.elementary.videos.dockitem
+share/examples/elementary-default-settings/plank/dock1/launchers/org.gnome.Epiphany.dockitem
+share/examples/elementary-default-settings/plank/dock1/launchers/org.pantheon.mail.dockitem
+share/examples/elementary-default-settings/pwfeedback
+share/examples/elementary-default-settings/qt-qpa-platformtheme.sh
+share/examples/elementary-default-settings/qt-style-override.sh
+share/examples/elementary-default-settings/settings.ini
+@sample ${SYSCONFDIR}/gtk-3.0/settings.ini
+share/glib-2.0/schemas/default-settings.gschema.override
+share/glib-2.0/schemas/plank-dockitems.gschema.override
+share/plymouth/
+share/plymouth/themes/
+share/plymouth/themes/elementary/
+share/plymouth/themes/elementary/elementary.grub
+share/plymouth/themes/elementary/elementary.plymouth
+share/plymouth/themes/elementary/elementary.script
+share/plymouth/themes/elementary/logo.png
+share/plymouth/themes/elementary/logo_blurred.png
+share/plymouth/themes/elementary/password_field.png
+share/plymouth/themes/elementary/password_field16.png
+share/plymouth/themes/elementary/progress_dot_off.png
+share/plymouth/themes/elementary/ubuntu_logo.png
+share/plymouth/themes/elementary/ubuntu_logo16.png
+share/plymouth/themes/ubuntu-text.plymouth
+share/polkit-1/
+share/polkit-1/actions/
+share/polkit-1/actions/io.elementary.pantheon.AccountsService.policy
+@tag update-desktop-database

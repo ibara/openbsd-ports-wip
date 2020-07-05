@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Generates code that is glibc-only.
+
+Index: core/Services/Calendar/Store.vala
+--- core/Services/Calendar/Store.vala.orig
++++ core/Services/Calendar/Store.vala
+@@ -73,7 +73,7 @@ public class Calendar.Store : Object {
+     }
+ 
+     private Store () {
+-        int week_start = Posix.NLTime.FIRST_WEEKDAY.to_string ().data[0];
++        int week_start = 1;
+         if (week_start >= 1 && week_start <= 7) {
+             week_starts_on = (GLib.DateWeekday) (week_start - 1);
+         }

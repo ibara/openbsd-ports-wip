@@ -23,7 +23,4 @@ LIB_DEPENDS =	databases/evolution-data-server \
 		x11/elementary/granite \
 		x11/elementary/wingpanel
 
-RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
-
 .include <bsd.port.mk>

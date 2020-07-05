@@ -1,0 +1,4 @@
+The location services agent appears whenever an application wants to
+request permission to use location services. From this dialog, you can
+see what level of access the application is requesting and either
+approve or deny its access to your current location.
