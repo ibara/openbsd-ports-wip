@@ -1,5 +1,7 @@
 # $OpenBSD$
 
+# XXX: Segfaults! Don't install!
+
 COMMENT =	privacy indicator for wingpanel
 DISTNAME =	${GH_PROJECT}-0.0.1pl20200528
 

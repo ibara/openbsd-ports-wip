@@ -2,8 +2,6 @@
 
 COMMENT =	default application setter for elementary OS
 
-#SHARED_LIBS +=	switchboard-2.0           0.0 # 2.0
-
 GH_PROJECT =	switchboard-plug-applications
 GH_TAGNAME =	2.1.7
 
