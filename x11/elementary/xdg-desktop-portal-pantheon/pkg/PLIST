@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v$
+@bin libexec/xdg-desktop-portal-pantheon
+share/xdg-desktop-portal/
+share/xdg-desktop-portal/portals/
+share/xdg-desktop-portal/portals/pantheon.portal
+xdg-desktop-portal-pantheon.service

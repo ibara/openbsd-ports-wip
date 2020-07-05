@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -4,7 +4,7 @@ prefix = get_option('prefix')
+ datadir = join_paths(prefix, get_option('datadir'))
+ libexecdir = join_paths(prefix, get_option('libexecdir'))
+ 
+-systemd_dep = dependency('systemd')
++systemd_dep = ''
+ 
+ glib_dep = dependency('glib-2.0')
+ gobject_dep = dependency('gobject-2.0')

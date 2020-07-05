@@ -1,0 +1,2 @@
+xdg-desktop-portal-pantheon provides D-Bus interfaces that are used by
+xdg-desktop-portal to implement portals.
