@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/gless
+@bin bin/glessecho
+@bin bin/glesskey
+@man man/man1/gless.1
+@man man/man1/glessecho.1
+@man man/man1/glesskey.1

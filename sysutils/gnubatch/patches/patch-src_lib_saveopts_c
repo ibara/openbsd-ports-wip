@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: src/lib/saveopts.c
+--- src/lib/saveopts.c.orig
++++ src/lib/saveopts.c
+@@ -19,6 +19,7 @@
+ #include <stdio.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
++#include <sys/wait.h>
+ #include "defaults.h"
+ #include "incl_unix.h"
+ #include "incl_ugid.h"

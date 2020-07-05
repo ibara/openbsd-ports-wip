@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -43,7 +43,7 @@ INSTALL		=	@INSTALL@
+ INSTALL_DATA	=	@INSTALL_DATA@
+ STAGED_INSTALL	=	false
+ 
+-all:	buildd build-src docdir
++all:	buildd build-src
+ 
+ buildd:	utild
+ 	$(HELPPARSE) $(MSGFILE) $(SRCDIR) $(BUILDDIR)

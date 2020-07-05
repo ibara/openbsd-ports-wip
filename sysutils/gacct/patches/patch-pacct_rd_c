@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Index: pacct_rd.c
+--- pacct_rd.c.orig
++++ pacct_rd.c
+@@ -161,7 +161,9 @@ void print_pacct_record(struct acct *rec, FILE *out)
+ 
+   (void)putchar('|');
+ 
++#ifdef ACEXITCODE
+   (void)fprintf(out, "%8d|", (rec->ac_exitcode >> 8));
++#endif
+ 
+   (void)fprintf(out, "%-8.8s|", this_dev);
+ 

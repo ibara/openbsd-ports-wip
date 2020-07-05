@@ -1,0 +1,23 @@
+$OpenBSD$
+
+Index: util/Makefile.in
+--- util/Makefile.in.orig
++++ util/Makefile.in
+@@ -24,7 +24,7 @@ exec_prefix	=	@exec_prefix@
+ BASE		=	..
+ HDRS		=	$(BASE)/src/hdrs
+ CC		=	@CC@
+-CCFLAGS		=	-O @gcc_useful_options@ @funny_compiler_options@
++CCFLAGS		=	$(PORT_CFLAGS) @gcc_useful_options@ @funny_compiler_options@
+ CFLAGS		=	$(CCFLAGS) -I$(BASE) -I$(HDRS)
+ LDFLAGS		=
+ GTKINCL		=	`pkg-config --cflags gtk+-2.0`
+@@ -55,7 +55,7 @@ shmdump:	shmdump.o
+ 	$(CC) $(LDFLAGS) -o $@ shmdump.o
+ 
+ gbch-passwd:	gbpasswd.o
+-	$(CC) $(LDFLAGS) -o $@ gbpasswd.o -lcrypt
++	$(CC) $(LDFLAGS) -o $@ gbpasswd.o
+ 	
+ gbch-pmenu:	pmenu.o
+ 	$(CC) $(LDFLAGS) -o $@ pmenu.o $(LIBCURSES)

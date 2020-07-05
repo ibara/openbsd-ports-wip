@@ -1,0 +1,16 @@
+$OpenBSD$
+
+No -lrt.
+
+Index: tools/CMakeLists.txt
+--- tools/CMakeLists.txt.orig
++++ tools/CMakeLists.txt
+@@ -16,7 +16,7 @@ pkg_check_modules( popt REQUIRED popt )
+ pkg_check_modules( expat REQUIRED expat )
+ 
+ set( TOOLS_INCLUDES ${dbus_INCLUDE_DIRS} ${sigc_INCLUDE_DIRS} ${cppgenerate_INCLUDE_DIRS} )
+-set( TOOLS_LINK dbus-cxx ${dbus_LDFLAGS} ${sigc_LDFLAGS} ${popt_LDFLAGS} ${expat_LDFLAGS} -lrt )
++set( TOOLS_LINK dbus-cxx ${dbus_LDFLAGS} ${sigc_LDFLAGS} ${popt_LDFLAGS} ${expat_LDFLAGS} )
+ 
+ 
+ link_directories( ${CMAKE_BINARY_DIR} )

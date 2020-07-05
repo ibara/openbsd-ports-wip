@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/di
+bin/mi
+@man man/man1/di.1
+share/locale/
+share/locale/de/
+share/locale/de/LC_MESSAGES/
+share/locale/en/
+share/locale/en/LC_MESSAGES/
+share/locale/es/
+share/locale/es/LC_MESSAGES/

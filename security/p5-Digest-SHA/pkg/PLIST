@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v$
+bin/shasum
+${P5ARCH}/
+${P5ARCH}/Digest/
+${P5ARCH}/Digest/SHA.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Digest/
+${P5ARCH}/auto/Digest/SHA/
+@so ${P5ARCH}/auto/Digest/SHA/SHA.so
+@man man/man1/shasum.1
+@man man/man3p/Digest::SHA.3p

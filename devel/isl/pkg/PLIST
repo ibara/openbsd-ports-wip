@@ -61,7 +61,7 @@ include/isl/val_type.h
 include/isl/vec.h
 include/isl/version.h
 include/isl/vertices.h
-lib/libisl.a
+@static-lib lib/libisl.a
 lib/libisl.la
 @lib lib/libisl.so.${LIBisl_VERSION}
 lib/libisl.so.${LIBisl_VERSION}-gdb.py

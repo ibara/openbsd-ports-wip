@@ -3,12 +3,12 @@
 ONLY_FOR_ARCHS =	amd64
 
 COMMENT =	simple, self-hosting C compiler
-DISTNAME =	lacc-0.0.0.20190815
+DISTNAME =	lacc-0.0.1pl20200105
 CATEGORIES =	lang
 
 GH_ACCOUNT =	larmel
 GH_PROJECT =	lacc
-GH_COMMIT =	03a9b6aeed187924bcb1febed7b6f87152cc2a5f
+GH_COMMIT =	59d77424ee268344e5e79dc198f7ca3963296dfc
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 

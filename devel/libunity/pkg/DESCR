@@ -1,0 +1,6 @@
+libunity is a library for instrumenting and integrating with all aspects
+of the Unity shell.
+
+Note: This is not a library used in the implementation of the Unity
+shell (unity does not link against it), but a library to be consumed by
+clients that wants to do deep integration with the Unity shell.

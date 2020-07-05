@@ -1,0 +1,55 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/libunity-tool
+@bin bin/unity-scope-loader
+include/unity/
+include/unity/unity/
+include/unity/unity/lttng-component-provider.h
+include/unity/unity/unity-extras.h
+include/unity/unity/unity-protocol.h
+include/unity/unity/unity-trace.h
+include/unity/unity/unity.h
+lib/girepository-1.0/
+lib/girepository-1.0/Unity-7.0.typelib
+lib/girepository-1.0/UnityExtras-7.0.typelib
+lib/libunity/
+@static-lib lib/libunity-extras.a
+lib/libunity-extras.la
+@lib lib/libunity-extras.so.${LIBunity-extras_VERSION}
+@static-lib lib/libunity.a
+lib/libunity.la
+@lib lib/libunity.so.${LIBunity_VERSION}
+@static-lib lib/libunity/libunity-protocol-private.a
+lib/libunity/libunity-protocol-private.la
+@lib lib/libunity/libunity-protocol-private.so.${LIBunity-protocol-private_VERSION}
+lib/pkgconfig/unity-extras.pc
+lib/pkgconfig/unity-protocol-private.pc
+lib/pkgconfig/unity.pc
+lib/python${MODPY_VERSION}/site-packages/gi/
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/Unity.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}Unity.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}Unity.${MODPY_PYC_MAGIC_TAG}pyc
+share/gir-1.0/
+share/gir-1.0/Unity-7.0.gir
+share/gir-1.0/UnityExtras-7.0.gir
+share/glib-2.0/
+share/glib-2.0/schemas/
+share/glib-2.0/schemas/com.canonical.Unity.Lenses.gschema.xml
+share/unity/
+share/unity-scopes/
+${MODPY_COMMENT}share/unity-scopes/${MODPY_PYCACHE}/
+share/unity-scopes/${MODPY_PYCACHE}scope-runner-dbus.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/unity-scopes/${MODPY_PYCACHE}scope-runner-dbus.${MODPY_PYC_MAGIC_TAG}pyc
+share/unity-scopes/scope-runner-dbus.py
+share/unity/client-scopes-phone.json
+share/unity/client-scopes.json
+share/vala/
+share/vala/vapi/
+share/vala/vapi/unity-extras.vapi
+share/vala/vapi/unity-protocol.vapi
+share/vala/vapi/unity-trace.deps
+share/vala/vapi/unity-trace.vapi
+share/vala/vapi/unity.deps
+share/vala/vapi/unity.vapi
+@tag glib-compile-schemas

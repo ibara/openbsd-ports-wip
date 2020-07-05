@@ -5,11 +5,13 @@ gnu/bin/
 @bin gnu/bin/ar
 @bin gnu/bin/as
 @bin gnu/bin/c++filt
+@bin gnu/bin/dwp
 @bin gnu/bin/elfedit
 @bin gnu/bin/gdb
 gnu/bin/gdb-add-index
 @bin gnu/bin/gprof
 @bin gnu/bin/ld
+@bin gnu/bin/ld.gold
 @bin gnu/bin/nm
 @bin gnu/bin/objcopy
 @bin gnu/bin/objdump
@@ -21,8 +23,6 @@ gnu/bin/gdb-add-index
 gnu/include/
 gnu/include/gdb/
 gnu/include/gdb/jit-reader.h
-gnu/lib/
-gnu/lib/charset.alias
 gnu/share/
 gnu/share/gdb/
 gnu/share/gdb/syscalls/
@@ -35,6 +35,7 @@ gnu/share/gdb/syscalls/i386-linux.xml
 gnu/share/gdb/syscalls/mips-n32-linux.xml
 gnu/share/gdb/syscalls/mips-n64-linux.xml
 gnu/share/gdb/syscalls/mips-o32-linux.xml
+gnu/share/gdb/syscalls/netbsd.xml
 gnu/share/gdb/syscalls/ppc-linux.xml
 gnu/share/gdb/syscalls/ppc64-linux.xml
 gnu/share/gdb/syscalls/s390-linux.xml
@@ -76,15 +77,16 @@ gnu/share/man/man1/
 @man gnu/share/man/man1/windres.1
 gnu/share/man/man5/
 @man gnu/share/man/man5/gdbinit.5
-gnu/x86_64-unknown-openbsd6.6/
-gnu/x86_64-unknown-openbsd6.6/bin/
-@bin gnu/x86_64-unknown-openbsd6.6/bin/ar
-@bin gnu/x86_64-unknown-openbsd6.6/bin/as
-@bin gnu/x86_64-unknown-openbsd6.6/bin/ld
-@bin gnu/x86_64-unknown-openbsd6.6/bin/nm
-@bin gnu/x86_64-unknown-openbsd6.6/bin/objcopy
-@bin gnu/x86_64-unknown-openbsd6.6/bin/objdump
-@bin gnu/x86_64-unknown-openbsd6.6/bin/ranlib
-@bin gnu/x86_64-unknown-openbsd6.6/bin/readelf
-@bin gnu/x86_64-unknown-openbsd6.6/bin/strip
+gnu/x86_64-unknown-openbsd6.7/
+gnu/x86_64-unknown-openbsd6.7/bin/
+@bin gnu/x86_64-unknown-openbsd6.7/bin/ar
+@bin gnu/x86_64-unknown-openbsd6.7/bin/as
+@bin gnu/x86_64-unknown-openbsd6.7/bin/ld
+@bin gnu/x86_64-unknown-openbsd6.7/bin/ld.gold
+@bin gnu/x86_64-unknown-openbsd6.7/bin/nm
+@bin gnu/x86_64-unknown-openbsd6.7/bin/objcopy
+@bin gnu/x86_64-unknown-openbsd6.7/bin/objdump
+@bin gnu/x86_64-unknown-openbsd6.7/bin/ranlib
+@bin gnu/x86_64-unknown-openbsd6.7/bin/readelf
+@bin gnu/x86_64-unknown-openbsd6.7/bin/strip
 share/doc/pkg-readmes/${PKGSTEM}

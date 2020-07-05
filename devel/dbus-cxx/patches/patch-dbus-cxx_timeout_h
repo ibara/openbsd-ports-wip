@@ -1,0 +1,16 @@
+$OpenBSD$
+
+No sigval_t
+
+Index: dbus-cxx/timeout.h
+--- dbus-cxx/timeout.h.orig
++++ dbus-cxx/timeout.h
+@@ -83,7 +83,7 @@ namespace DBus
+ 
+       std::mutex m_arming_mutex;
+ 
+-      static void timer_callback_proxy( sigval_t sv );
++      static void timer_callback_proxy( union sigval sv );
+ 
+   };
+ 

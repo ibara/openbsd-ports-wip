@@ -1,0 +1,22 @@
+$OpenBSD$
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -33,7 +33,6 @@ MKC_DIR = ./mkconfig
+ ###
+ # installation options
+ #
+-prefix = /usr/local
+ LOCALEDIR = $(prefix)/share/locale
+ PROG = di
+ MPROG = mi
+@@ -55,7 +54,7 @@ INSTPERM = 4111   # install suid if your system has a 
+ #
+ # simple man page installation
+ #
+-DI_MANINSTDIR = $(INSTALL_DIR)/share/man
++DI_MANINSTDIR = $(INSTALL_DIR)/man
+ DI_MANDIR = $(DI_MANINSTDIR)/man1
+ MAN_TARGET = $(PROG).1
+ MANPERM = 644

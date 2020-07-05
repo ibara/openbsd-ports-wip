@@ -1,0 +1,64 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/zeitgeist-daemon
+@bin bin/zeitgeist-datahub
+include/zeitgeist-2.0/
+include/zeitgeist-2.0/zeitgeist-datamodel.h
+include/zeitgeist-2.0/zeitgeist.h
+lib/girepository-1.0/
+lib/girepository-1.0/Zeitgeist-2.0.typelib
+@static-lib lib/libzeitgeist-2.0.a
+lib/libzeitgeist-2.0.la
+@lib lib/libzeitgeist-2.0.so.${LIBzeitgeist-2.0_VERSION}
+lib/pkgconfig/zeitgeist-2.0.pc
+lib/python${MODPY_VERSION}/site-packages/zeitgeist/
+lib/python${MODPY_VERSION}/site-packages/zeitgeist/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zeitgeist/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zeitgeist/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/zeitgeist/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/zeitgeist/${MODPY_PYCACHE}_ontology.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/zeitgeist/${MODPY_PYCACHE}_ontology.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/zeitgeist/${MODPY_PYCACHE}mimetypes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/zeitgeist/${MODPY_PYCACHE}mimetypes.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/zeitgeist/_ontology.py
+lib/python${MODPY_VERSION}/site-packages/zeitgeist/client.py
+lib/python${MODPY_VERSION}/site-packages/zeitgeist/datamodel.py
+lib/python${MODPY_VERSION}/site-packages/zeitgeist/mimetypes.py
+lib/systemd/
+lib/systemd/user/
+lib/systemd/user/zeitgeist.service
+@man man/man1/zeitgeist-daemon.1
+@man man/man1/zeitgeist-datahub.1
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/zeitgeist-daemon
+share/dbus-1/
+share/dbus-1/services/
+share/dbus-1/services/org.gnome.zeitgeist.Engine.service
+share/examples/zeitgeist/
+share/examples/zeitgeist/xdg/
+@sample ${SYSCONFDIR}/xdg/
+share/examples/zeitgeist/xdg/autostart/
+@sample ${SYSCONFDIR}/xdg/autostart/
+share/examples/zeitgeist/xdg/autostart/zeitgeist-datahub.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/zeitgeist-datahub.desktop
+share/gir-1.0/
+share/gir-1.0/Zeitgeist-2.0.gir
+share/vala/
+share/vala/vapi/
+share/vala/vapi/zeitgeist-2.0.deps
+share/vala/vapi/zeitgeist-2.0.vapi
+share/vala/vapi/zeitgeist-datamodel-2.0.vapi
+share/zeitgeist/
+share/zeitgeist/doc/
+share/zeitgeist/doc/AUTHORS
+share/zeitgeist/doc/NEWS
+share/zeitgeist/doc/README.md
+share/zeitgeist/ontology/
+share/zeitgeist/ontology/nao.trig
+share/zeitgeist/ontology/ncal.trig
+share/zeitgeist/ontology/nco.trig
+share/zeitgeist/ontology/nfo.trig
+share/zeitgeist/ontology/nie.trig
+share/zeitgeist/ontology/nmm.trig
+share/zeitgeist/ontology/nmo.trig
+share/zeitgeist/ontology/zg.trig

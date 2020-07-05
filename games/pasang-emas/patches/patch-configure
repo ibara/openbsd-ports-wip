@@ -1,0 +1,164 @@
+$OpenBSD$
+
+Write out version numbers; configure doesn't work with the variables.
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -687,7 +687,6 @@ ac_subst_vars='am__EXEEXT_FALSE
+ am__EXEEXT_TRUE
+ LTLIBOBJS
+ LIBOBJS
+-GLIB_REQUIRED
+ DEPS_LIBS
+ DEPS_CFLAGS
+ PKG_CONFIG_LIBDIR
+@@ -8001,8 +8000,6 @@ else
+ fi
+ 
+ 
+-GTK_REQUIRED=3.24.0
+-GLIB_REQUIRED=2.58
+ 
+ 
+ 
+@@ -8133,30 +8130,30 @@ if test -n "$DEPS_CFLAGS"; then
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"
+-        gtk+-3.0 >= GTK_REQUIRED
+-        glib-2.0 >= GLIB_REQUIRED
+-        gthread-2.0 >= GLIB_REQUIRED
+-        gio-2.0 >= GLIB_REQUIRED
+-        gobject-2.0 >= GLIB_REQUIRED
++        gtk+-3.0 >= 3.24.0
++        glib-2.0 >= 2.58
++        gthread-2.0 >= 2.58
++        gio-2.0 >= 2.58
++        gobject-2.0 >= 2.58
+         cairo >= 1.16
+ \""; } >&5
+   ($PKG_CONFIG --exists --print-errors "
+-        gtk+-3.0 >= GTK_REQUIRED
+-        glib-2.0 >= GLIB_REQUIRED
+-        gthread-2.0 >= GLIB_REQUIRED
+-        gio-2.0 >= GLIB_REQUIRED
+-        gobject-2.0 >= GLIB_REQUIRED
++        gtk+-3.0 >= 3.24.0
++        glib-2.0 >= 2.58
++        gthread-2.0 >= 2.58
++        gio-2.0 >= 2.58
++        gobject-2.0 >= 2.58
+         cairo >= 1.16
+ ") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+   pkg_cv_DEPS_CFLAGS=`$PKG_CONFIG --cflags "
+-        gtk+-3.0 >= GTK_REQUIRED
+-        glib-2.0 >= GLIB_REQUIRED
+-        gthread-2.0 >= GLIB_REQUIRED
+-        gio-2.0 >= GLIB_REQUIRED
+-        gobject-2.0 >= GLIB_REQUIRED
++        gtk+-3.0 >= 3.24.0
++        glib-2.0 >= 2.58
++        gthread-2.0 >= 2.58
++        gio-2.0 >= 2.58
++        gobject-2.0 >= 2.58
+         cairo >= 1.16
+ " 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+@@ -8171,30 +8168,30 @@ if test -n "$DEPS_LIBS"; then
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"
+-        gtk+-3.0 >= GTK_REQUIRED
+-        glib-2.0 >= GLIB_REQUIRED
+-        gthread-2.0 >= GLIB_REQUIRED
+-        gio-2.0 >= GLIB_REQUIRED
+-        gobject-2.0 >= GLIB_REQUIRED
++        gtk+-3.0 >= 3.24.0
++        glib-2.0 >= 2.58
++        gthread-2.0 >= 2.58
++        gio-2.0 >= 2.58
++        gobject-2.0 >= 2.58
+         cairo >= 1.16
+ \""; } >&5
+   ($PKG_CONFIG --exists --print-errors "
+-        gtk+-3.0 >= GTK_REQUIRED
+-        glib-2.0 >= GLIB_REQUIRED
+-        gthread-2.0 >= GLIB_REQUIRED
+-        gio-2.0 >= GLIB_REQUIRED
+-        gobject-2.0 >= GLIB_REQUIRED
++        gtk+-3.0 >= 3.24.0
++        glib-2.0 >= 2.58
++        gthread-2.0 >= 2.58
++        gio-2.0 >= 2.58
++        gobject-2.0 >= 2.58
+         cairo >= 1.16
+ ") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+   pkg_cv_DEPS_LIBS=`$PKG_CONFIG --libs "
+-        gtk+-3.0 >= GTK_REQUIRED
+-        glib-2.0 >= GLIB_REQUIRED
+-        gthread-2.0 >= GLIB_REQUIRED
+-        gio-2.0 >= GLIB_REQUIRED
+-        gobject-2.0 >= GLIB_REQUIRED
++        gtk+-3.0 >= 3.24.0
++        glib-2.0 >= 2.58
++        gthread-2.0 >= 2.58
++        gio-2.0 >= 2.58
++        gobject-2.0 >= 2.58
+         cairo >= 1.16
+ " 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+@@ -8218,20 +8215,20 @@ else
+ fi
+         if test $_pkg_short_errors_supported = yes; then
+ 	        DEPS_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "
+-        gtk+-3.0 >= GTK_REQUIRED
+-        glib-2.0 >= GLIB_REQUIRED
+-        gthread-2.0 >= GLIB_REQUIRED
+-        gio-2.0 >= GLIB_REQUIRED
+-        gobject-2.0 >= GLIB_REQUIRED
++        gtk+-3.0 >= 3.24.0
++        glib-2.0 >= 2.58
++        gthread-2.0 >= 2.58
++        gio-2.0 >= 2.58
++        gobject-2.0 >= 2.58
+         cairo >= 1.16
+ " 2>&1`
+         else
+ 	        DEPS_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "
+-        gtk+-3.0 >= GTK_REQUIRED
+-        glib-2.0 >= GLIB_REQUIRED
+-        gthread-2.0 >= GLIB_REQUIRED
+-        gio-2.0 >= GLIB_REQUIRED
+-        gobject-2.0 >= GLIB_REQUIRED
++        gtk+-3.0 >= 3.24.0
++        glib-2.0 >= 2.58
++        gthread-2.0 >= 2.58
++        gio-2.0 >= 2.58
++        gobject-2.0 >= 2.58
+         cairo >= 1.16
+ " 2>&1`
+         fi
+@@ -8239,11 +8236,11 @@ fi
+ 	echo "$DEPS_PKG_ERRORS" >&5
+ 
+ 	as_fn_error $? "Package requirements (
+-        gtk+-3.0 >= GTK_REQUIRED
+-        glib-2.0 >= GLIB_REQUIRED
+-        gthread-2.0 >= GLIB_REQUIRED
+-        gio-2.0 >= GLIB_REQUIRED
+-        gobject-2.0 >= GLIB_REQUIRED
++        gtk+-3.0 >= 3.24.0
++        glib-2.0 >= 2.58
++        gthread-2.0 >= 2.58
++        gio-2.0 >= 2.58
++        gobject-2.0 >= 2.58
+         cairo >= 1.16
+ ) were not met:
+ 

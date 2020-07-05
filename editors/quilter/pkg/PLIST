@@ -14,13 +14,19 @@ share/com.github.lainsce.quilter/highlight.js/styles/
 share/com.github.lainsce.quilter/highlight.js/styles/dark.min.css
 share/com.github.lainsce.quilter/highlight.js/styles/default.min.css
 share/com.github.lainsce.quilter/highlight.js/styles/sepia.min.css
+share/com.github.lainsce.quilter/katex/
+share/com.github.lainsce.quilter/katex/katex.css
+share/com.github.lainsce.quilter/katex/katex.js
+share/com.github.lainsce.quilter/katex/render.js
+share/com.github.lainsce.quilter/mermaid/
+share/com.github.lainsce.quilter/mermaid/mermaid.js
 share/fonts/
 share/fonts/truetype/
 @fontdir share/fonts/truetype/quilt/
 share/fonts/truetype/quilt/QuiltMono.ttf
+share/fonts/truetype/quilt/QuiltVier.ttf
 share/glib-2.0/schemas/com.github.lainsce.quilter.gschema.xml
 share/gtksourceview-3.0/styles/quilter-dark.xml
-share/gtksourceview-3.0/styles/quilter-moon.xml
 share/gtksourceview-3.0/styles/quilter-sepia.xml
 share/gtksourceview-3.0/styles/quilter.xml
 share/icons/hicolor/128x128/apps/com.github.lainsce.quilter.svg
@@ -48,7 +54,9 @@ share/icons/hicolor/64x64@2/
 share/icons/hicolor/64x64@2/apps/
 share/icons/hicolor/64x64@2/apps/com.github.lainsce.quilter.svg
 share/locale/ca/LC_MESSAGES/com.github.lainsce.quilter.mo
+share/locale/da/LC_MESSAGES/com.github.lainsce.quilter.mo
 share/locale/de/LC_MESSAGES/com.github.lainsce.quilter.mo
+share/locale/eo/LC_MESSAGES/com.github.lainsce.quilter.mo
 share/locale/es/LC_MESSAGES/com.github.lainsce.quilter.mo
 share/locale/fr/LC_MESSAGES/com.github.lainsce.quilter.mo
 share/locale/it/LC_MESSAGES/com.github.lainsce.quilter.mo
@@ -59,7 +67,7 @@ share/locale/nl_NL/LC_MESSAGES/
 share/locale/nl_NL/LC_MESSAGES/com.github.lainsce.quilter.mo
 share/locale/pl/LC_MESSAGES/com.github.lainsce.quilter.mo
 share/locale/pt_BR/LC_MESSAGES/com.github.lainsce.quilter.mo
-share/metainfo/
+share/locale/ru/LC_MESSAGES/com.github.lainsce.quilter.mo
 share/metainfo/com.github.lainsce.quilter.appdata.xml
 @tag glib-compile-schemas
 @tag gtk-update-icon-cache %D/share/icons/hicolor

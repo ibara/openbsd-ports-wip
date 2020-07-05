@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/dotlockfile
+include/lockfile.h
+include/maillock.h
+@static-lib lib/liblockfile.a
+@man man/man1/dotlockfile.1
+@man man/man3/lockfile_create.3
+@man man/man3/maillock.3

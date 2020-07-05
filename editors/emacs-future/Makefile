@@ -2,7 +2,7 @@
 
 COMMENT =	GNU Emacs, tip of tree
 DISTFILES =	# empty
-PKGNAME =	emacs-future-27.0.50pl20191117
+PKGNAME =	emacs-future-pl20200501
 #REVISION =	0
 CATEGORIES =	editors
 

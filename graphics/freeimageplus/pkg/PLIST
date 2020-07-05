@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:46 naddy Exp $
+include/FreeImagePlus.h
+@static-lib lib/libfreeimageplus.a
+@lib lib/libfreeimageplus.so.${LIBfreeimageplus_VERSION}

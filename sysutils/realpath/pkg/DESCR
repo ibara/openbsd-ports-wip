@@ -1,0 +1,5 @@
+The realpath utility resolves all symbolic links, extra `/' characters
+and references to /./ and /../ in the path. If path is absent, the
+current working directory (`.') is assumed.
+
+It is a port of the realpath utility from DragonFly BSD.

@@ -1,0 +1,14 @@
+Yaegi is Another Elegant Go Interpreter. It powers executable Go scripts and
+plugins, in embedded interpreters or interactive shells, on top of the Go
+runtime.
+
+Yeagi's Features:
+
+  - Complete support of Go specification
+  - Written in pure Go, using only the standard library
+  - Simple interpreter API: New(), Eval(), Use()
+  - Works everywhere Go works
+  - All Go & runtime resources accessible from script (with control)
+  - Security: unsafe and syscall packages neither used nor exported by default
+  - Support Go 1.13 and Go 1.14 (the latest 2 major releases)
+

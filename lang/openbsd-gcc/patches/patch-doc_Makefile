@@ -1,0 +1,21 @@
+$OpenBSD$
+
+Index: doc/Makefile
+--- doc/Makefile.orig
++++ doc/Makefile
+@@ -63,11 +63,13 @@ clean: _SUBDIRUSE
+ 	rm -f ${CLEANFILES}
+ 
+ install: ${INFOF}
++	${INSTALL} -d -o ${DOCOWN} -g ${DOCGRP} -m ${BINMODE} \
++		${DESTDIR}${LOCALBASE}/share/info
+ .for x in ${INFOS}
+ 	install-info --quiet --section=${INFOSECTION} --entry=${INFOENTRY_${x}} \
+-		${x}.info ${DESTDIR}/usr/share/info/dir
++		${x}.info ${DESTDIR}${LOCALBASE}/share/info/dir
+ .endfor
+ 	${INSTALL} -o ${DOCOWN} -g ${DOCGRP} -m ${DOCMODE} ${.ALLSRC} \
+-		${DESTDIR}/usr/share/info
++		${DESTDIR}${LOCALBASE}/share/info
+ 
+ .include <bsd.prog.mk>

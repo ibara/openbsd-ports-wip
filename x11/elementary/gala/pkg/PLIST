@@ -1,0 +1,147 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/gala
+@bin bin/gala-daemon
+include/gala/
+include/gala/gala.h
+lib/gala/
+lib/gala/plugins/
+@so lib/gala/plugins/libgala-maskcorners.so
+@so lib/gala/plugins/libgala-notify.so
+@so lib/gala/plugins/libgala-pip.so
+@so lib/gala/plugins/libgala-zoom.so
+@lib lib/libgala.so.${LIBgala_VERSION}
+lib/pkgconfig/gala.pc
+share/applications/gala-multitaskingview.desktop
+share/applications/gala-other.desktop
+share/applications/gala-wayland.desktop
+share/applications/gala.desktop
+share/examples/gala/
+@sample ${SYSCONFDIR}/xdg/
+@sample ${SYSCONFDIR}/xdg/autostart/
+share/examples/gala/gala-daemon.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/gala-daemon.desktop
+share/gala/
+share/gala/image-mask.svg
+share/glib-2.0/schemas/20_elementary.pantheon.wm.gschema.override
+share/glib-2.0/schemas/org.pantheon.desktop.gala.gschema.xml
+share/icons/hicolor/32x32/apps/multitasking-view.svg
+share/icons/hicolor/48x48/apps/multitasking-view.svg
+share/icons/hicolor/64x64/apps/multitasking-view.svg
+share/locale/af/LC_MESSAGES/gala.mo
+share/locale/ak/
+share/locale/ak/LC_MESSAGES/
+share/locale/ak/LC_MESSAGES/gala.mo
+share/locale/ar/LC_MESSAGES/gala.mo
+share/locale/az/LC_MESSAGES/gala.mo
+share/locale/be/LC_MESSAGES/gala.mo
+share/locale/bg/LC_MESSAGES/gala.mo
+share/locale/bn/LC_MESSAGES/gala.mo
+share/locale/bs/LC_MESSAGES/gala.mo
+share/locale/ca/LC_MESSAGES/gala.mo
+share/locale/ckb/
+share/locale/ckb/LC_MESSAGES/
+share/locale/ckb/LC_MESSAGES/gala.mo
+share/locale/cs/LC_MESSAGES/gala.mo
+share/locale/cv/
+share/locale/cv/LC_MESSAGES/
+share/locale/cv/LC_MESSAGES/gala.mo
+share/locale/da/LC_MESSAGES/gala.mo
+share/locale/de/LC_MESSAGES/gala.mo
+share/locale/el/LC_MESSAGES/gala.mo
+share/locale/en_AU/
+share/locale/en_AU/LC_MESSAGES/
+share/locale/en_AU/LC_MESSAGES/gala.mo
+share/locale/en_CA/LC_MESSAGES/gala.mo
+share/locale/en_GB/LC_MESSAGES/gala.mo
+share/locale/eo/LC_MESSAGES/gala.mo
+share/locale/es/LC_MESSAGES/gala.mo
+share/locale/et/LC_MESSAGES/gala.mo
+share/locale/eu/LC_MESSAGES/gala.mo
+share/locale/fa/LC_MESSAGES/gala.mo
+share/locale/fi/LC_MESSAGES/gala.mo
+share/locale/fr/LC_MESSAGES/gala.mo
+share/locale/fr_CA/
+share/locale/fr_CA/LC_MESSAGES/
+share/locale/fr_CA/LC_MESSAGES/gala.mo
+share/locale/ga/LC_MESSAGES/gala.mo
+share/locale/gl/LC_MESSAGES/gala.mo
+share/locale/he/LC_MESSAGES/gala.mo
+share/locale/hi/LC_MESSAGES/gala.mo
+share/locale/hr/LC_MESSAGES/gala.mo
+share/locale/hu/LC_MESSAGES/gala.mo
+share/locale/hy/LC_MESSAGES/gala.mo
+share/locale/id/LC_MESSAGES/gala.mo
+share/locale/is/LC_MESSAGES/gala.mo
+share/locale/it/LC_MESSAGES/gala.mo
+share/locale/ja/LC_MESSAGES/gala.mo
+share/locale/jv/
+share/locale/jv/LC_MESSAGES/
+share/locale/jv/LC_MESSAGES/gala.mo
+share/locale/ka/LC_MESSAGES/gala.mo
+share/locale/kn/LC_MESSAGES/gala.mo
+share/locale/ko/LC_MESSAGES/gala.mo
+share/locale/ku/LC_MESSAGES/gala.mo
+share/locale/lb/
+share/locale/lb/LC_MESSAGES/
+share/locale/lb/LC_MESSAGES/gala.mo
+share/locale/lg/
+share/locale/lg/LC_MESSAGES/
+share/locale/lg/LC_MESSAGES/gala.mo
+share/locale/lt/LC_MESSAGES/gala.mo
+share/locale/lv/LC_MESSAGES/gala.mo
+share/locale/mg/LC_MESSAGES/gala.mo
+share/locale/mk/LC_MESSAGES/gala.mo
+share/locale/mn/LC_MESSAGES/gala.mo
+share/locale/mo/
+share/locale/mo/LC_MESSAGES/
+share/locale/mo/LC_MESSAGES/gala.mo
+share/locale/mr/LC_MESSAGES/gala.mo
+share/locale/ms/LC_MESSAGES/gala.mo
+share/locale/my/LC_MESSAGES/gala.mo
+share/locale/nb/LC_MESSAGES/gala.mo
+share/locale/nl/LC_MESSAGES/gala.mo
+share/locale/nn/LC_MESSAGES/gala.mo
+share/locale/pl/LC_MESSAGES/gala.mo
+share/locale/pt/LC_MESSAGES/gala.mo
+share/locale/pt_BR/LC_MESSAGES/gala.mo
+share/locale/ro/LC_MESSAGES/gala.mo
+share/locale/ru/LC_MESSAGES/gala.mo
+share/locale/sa/
+share/locale/sa/LC_MESSAGES/
+share/locale/sa/LC_MESSAGES/gala.mo
+share/locale/si/LC_MESSAGES/gala.mo
+share/locale/sk/LC_MESSAGES/gala.mo
+share/locale/sl/LC_MESSAGES/gala.mo
+share/locale/sma/
+share/locale/sma/LC_MESSAGES/
+share/locale/sma/LC_MESSAGES/gala.mo
+share/locale/sq/LC_MESSAGES/gala.mo
+share/locale/sr/LC_MESSAGES/gala.mo
+share/locale/sv/LC_MESSAGES/gala.mo
+share/locale/szl/
+share/locale/szl/LC_MESSAGES/
+share/locale/szl/LC_MESSAGES/gala.mo
+share/locale/ta/LC_MESSAGES/gala.mo
+share/locale/te/LC_MESSAGES/gala.mo
+share/locale/th/LC_MESSAGES/gala.mo
+share/locale/tl/LC_MESSAGES/gala.mo
+share/locale/tr/LC_MESSAGES/gala.mo
+share/locale/ug/LC_MESSAGES/gala.mo
+share/locale/uk/LC_MESSAGES/gala.mo
+share/locale/ur/
+share/locale/ur/LC_MESSAGES/
+share/locale/ur/LC_MESSAGES/gala.mo
+share/locale/uz/LC_MESSAGES/gala.mo
+share/locale/vi/LC_MESSAGES/gala.mo
+share/locale/zh/
+share/locale/zh/LC_MESSAGES/
+share/locale/zh/LC_MESSAGES/gala.mo
+share/locale/zh_CN/LC_MESSAGES/gala.mo
+share/locale/zh_TW/LC_MESSAGES/gala.mo
+share/metainfo/
+share/metainfo/gala.appdata.xml
+share/vala/vapi/gala.deps
+share/vala/vapi/gala.vapi
+@tag glib-compile-schemas
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database

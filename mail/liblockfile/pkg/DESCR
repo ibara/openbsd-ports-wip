@@ -1,0 +1,6 @@
+This library implements a number of functions found in -lmail on SysV
+systems. These functions are designed to lock the standard mailboxes in
+/var/mail (or wherever the system puts them).
+
+In additions, this library adds a number of functions to create, manage
+and remove generic lockfiles.

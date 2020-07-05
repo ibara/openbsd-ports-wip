@@ -1,0 +1,13 @@
+$OpenBSD$
+
+No libcloudproviders.
+
+Index: plugins/meson.build
+--- plugins/meson.build.orig
++++ plugins/meson.build
+@@ -1,5 +1,4 @@
+ subdir('contractor')
+ subdir('pantheon-files-trash')
+ subdir('pantheon-files-ctags')
+-subdir('pantheon-files-cloud')
+ subdir('git')

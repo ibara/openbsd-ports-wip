@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/gpp
+@man man/man1/gpp.1
+share/doc/gpp/
+share/doc/gpp/gpp.1
+share/doc/gpp/gpp.html
+share/doc/gpp/gpp.pp

@@ -1,0 +1,28 @@
+$OpenBSD$
+
+XXX: No backlight support (for now).
+
+Index: src/Services/Backlight/Backlight.vala
+--- src/Services/Backlight/Backlight.vala.orig
++++ src/Services/Backlight/Backlight.vala
+@@ -29,20 +29,6 @@ public class Power.Services.Backlight : GLib.Object {
+     }
+ 
+     private static bool get_backlight_present () {
+-        var context = new UDev.Context ();
+-        var e = context.create_enumerate ();
+-        e.add_match_subsystem (BACKLIGHT_NAME);
+-        e.scan_devices ();
+-
+-        for (unowned UDev.List d = e.entries; d != null; d = d.next) {
+-            var path = d.name;
+-            var dev = context.open_syspath (path);
+-
+-            if (dev != null) {
+-                return true;
+-            }
+-        }
+-
+         return false;
+     }
+ }

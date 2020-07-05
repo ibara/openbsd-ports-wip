@@ -1,6 +1,6 @@
 $OpenBSD$
 
-Remove flags that lld doesn't understand.
+Remove flags that aren't understood.
 
 Index: src/Makefile.in
 --- src/Makefile.in.orig

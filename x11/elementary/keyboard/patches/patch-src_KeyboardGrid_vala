@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Point to the correct location.
+
+Index: src/KeyboardGrid.vala
+--- src/KeyboardGrid.vala.orig
++++ src/KeyboardGrid.vala
+@@ -30,7 +30,7 @@ public class Keyboard.KeyboardGrid : Gtk.Grid {
+         stack = new Gtk.Stack ();
+         add (stack);
+         scanner = new Caribou.Scanner ();
+-        var model = new TouchModel ("/usr/share/caribou/layouts/touch/fr.xml");
++        var model = new TouchModel ("LOCALBASE/share/caribou/layouts/touch/fr.xml");
+         scanner.set_keyboard (model);
+         foreach (var group_name in model.get_groups ()) {
+             var group = model.get_group (group_name);

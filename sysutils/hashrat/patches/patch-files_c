@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: files.c
+--- files.c.orig
++++ files.c
+@@ -93,7 +93,6 @@ switch (FType)
+ 
+ Tempstr=QuoteCharsInStr(Tempstr, Path, "[]*?");
+ Tempstr=CatStr(Tempstr,"/*");
+-if (Ctx->Flags & CTX_HIDDEN) flags |= GLOB_PERIOD;
+ glob(Tempstr,flags,0,&Glob);
+ for (i=0; i < Glob.gl_pathc; i++)
+ {

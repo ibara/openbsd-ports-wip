@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v$
-@bin bin/smake
-@man man/man1/smake.1

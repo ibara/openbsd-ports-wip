@@ -1,0 +1,20 @@
+$OpenBSD$
+
+Index: c++filt/Makefile
+--- c++filt/Makefile.orig
++++ c++filt/Makefile
+@@ -8,11 +8,13 @@
+ 
+ .PATH: ${BSDSRCDIR}/gnu/lib/libiberty/src
+ 
++BINDIR=	${LOCALBASE}/bin
++
+ PROG=	c++filt
+ SRCS=	cp-demangle.c
+ NOMAN=	Yes
+ 
+-CFLAGS+= -DSTANDALONE_DEMANGLER -DVERSION=\"$(GCC_VERSION)\"
++CFLAGS+= -DSTANDALONE_DEMANGLER -DVERSION=\"$(GCC_VERSION)\" -I${.CURDIR}/../cc_tools/obj
+ 
+ DPADD=	${LIBIBERTY}
+ LDADD=	${LIBIBERTY}

@@ -1,10 +1,11 @@
 # $OpenBSD$
 
 COMMENT =	integer set library
-DISTNAME =	isl-0.21
+DISTNAME =	isl-0.22.1
+EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	devel
 
-SHARED_LIBS +=	isl                       0.0 # 21.0
+SHARED_LIBS +=	isl                       0.0 # 22.0
 
 HOMEPAGE =	http://isl.gforge.inria.fr/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

@@ -1,0 +1,25 @@
+$OpenBSD$
+
+Adapt to local obj dirs.
+
+Index: cc_int/Makefile
+--- cc_int/Makefile.orig
++++ cc_int/Makefile
+@@ -6,7 +6,7 @@
+ .include "${.CURDIR}/../Makefile.inc"
+ .include "${.CURDIR}/../Makefile.ver"
+ 
+-.PATH: ../cc_tools ${GCCDIR} ${GCCDIR}/config ${GCCDIR}/config/${GCC_CPU}
++.PATH: ../cc_tools ${GCCDIR} ${GCCDIR}/config ${GCCDIR}/config/${GCC_CPU} ${.CURDIR}/../cc_tools/obj
+ 
+ LIB=	backend
+ NOPROFILE=	Yes
+@@ -15,6 +15,8 @@ NOPIC=		Yes
+ EXTRA_OBJS=
+ GGC=		ggc-page.o
+ host_hook_obj=	host-openbsd.o
++
++CFLAGS+=	-I${.CURDIR}/../cc_tools/obj
+ 
+ #
+ # Most lists copied verbatim from GCC Makefiles.

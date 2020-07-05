@@ -1,0 +1,45 @@
+$OpenBSD$
+
+No -p in our install.
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -56,11 +56,11 @@ xlockfile.o:	lockfile.c
+ 			-c lockfile.c -o xlockfile.o
+ 
+ install_static:	static install_common
+-		install -d -m 755 -g root -p $(libdir)
++		install -d -m 755 -g root $(libdir)
+ 		install -m 644 liblockfile.a $(libdir)
+ 
+ install_shared:	shared install_static install_common
+-		install -d -m 755 -g root -p $(libdir)
++		install -d -m 755 -g root $(libdir)
+ 		install -m 755 liblockfile.so \
+ 			$(libdir)/liblockfile.so.$(SOVER)
+ 		ln -s liblockfile.so.$(SOVER) $(libdir)/liblockfile.so.$(MAJOR)
+@@ -68,10 +68,10 @@ install_shared:	shared install_static install_common
+ 		if test "$(DESTDIR)" = ""; then @LDCONFIG@; fi
+ 
+ install_common:
+-		install -d -m 755 -g root -p $(includedir)
+-		install -d -m 755 -g root -p $(bindir)
+-		install -d -m 755 -g root -p $(mandir)/man1
+-		install -d -m 755 -g root -p $(mandir)/man3
++		install -d -m 755 -g root $(includedir)
++		install -d -m 755 -g root $(bindir)
++		install -d -m 755 -g root $(mandir)/man1
++		install -d -m 755 -g root $(mandir)/man3
+ 		install -m 644 lockfile.h maillock.h $(includedir)
+ 		if [ "$(MAILGROUP)" != "" ]; then\
+ 		  install -g $(MAILGROUP) -m 2755 dotlockfile $(bindir);\
+@@ -82,7 +82,7 @@ install_common:
+ 		install -m 644 *.3 $(mandir)/man3
+ 
+ install_nfslib:	nfslib
+-		install -d -m 755 -g root -p $(nfslockdir)
++		install -d -m 755 -g root $(nfslockdir)
+ 		install -m 755 nfslock.so.$(NFSVER) $(nfslockdir)
+ 		if test "$(DESTDIR)" = ""; then @LDCONFIG@; fi
+ 

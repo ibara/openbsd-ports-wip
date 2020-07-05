@@ -1,0 +1,15 @@
+$OpenBSD$
+
+No libudev.
+
+Index: src/meson.build
+--- src/meson.build.orig
++++ src/meson.build
+@@ -37,7 +37,6 @@ dependencies = [
+     dependency('gtk+-3.0'),
+     dependency('libbamf3'),
+     dependency('libgtop-2.0'),
+-    dependency('libudev'),
+     meson.get_compiler('vala').find_library('posix'),
+     wingpanel_dep
+ ]

@@ -1,0 +1,15 @@
+Chafa allows you to view reasonable approximations of pictures and
+animations in the comfort of your favorite terminal emulator.
+
+Features:
+* Supports most popular image formats, including animated GIFs.
+* Combines Unicode symbols from multiple selectable ranges for optimal
+  output.
+* Multiple color modes, including Truecolor, 256-color, 16-color and
+  simple FG/BG.
+* RGB and DIN99d color spaces for improved color picking.
+* Alpha transparency support in any color mode, including in animations.
+* Suitable for terminal graphics, ANSI art composition and even black &
+  white print.
+* Works with most modern and classic terminals and terminal emulators.
+* Documented, stable C API.

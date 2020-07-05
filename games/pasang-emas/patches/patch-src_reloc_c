@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: src/reloc.c
+--- src/reloc.c.orig
++++ src/reloc.c
+@@ -203,7 +203,7 @@ pasang_reloc_find_self (void)
+ 	GError* _inner_error0_ = NULL;
+ 	GFile* result = NULL;
+ #line 57 "reloc.vala"
+-	_tmp0_ = g_file_new_for_path ("/proc/self/exe");
++	_tmp0_ = g_file_new_for_path ("${LOCALBASE}/bin/pasang-emas");
+ #line 57 "reloc.vala"
+ 	_tmp1_ = _tmp0_;
+ #line 57 "reloc.vala"

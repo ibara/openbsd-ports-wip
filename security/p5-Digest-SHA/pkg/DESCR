@@ -1,0 +1,3 @@
+Running shasum is often the quickest way to compute SHA message digests.
+The user simply feeds data to the script through files or standard
+input, and then collects the results from standard output.

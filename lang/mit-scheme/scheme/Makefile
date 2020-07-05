@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	open source implementation of Scheme programming langauge
+COMMENT =	open source implementation of Scheme programming language
 PKGNAME =	mit-scheme-${V}
 
 WANTLIB += X11 c curses m xcb

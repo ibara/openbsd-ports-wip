@@ -1,0 +1,23 @@
+$OpenBSD$
+
+Adapt to local obj dirs.
+
+Index: cpp/Makefile
+--- cpp/Makefile.orig
++++ cpp/Makefile
+@@ -6,9 +6,14 @@
+ .include "${.CURDIR}/../Makefile.inc"
+ .include "${.CURDIR}/../Makefile.fe"
+ 
+-BINDIR=        /usr/libexec
++.PATH:	${.CURDIR}/../cc_tools/obj
+ 
++BINDIR=        ${LOCALBASE}/libexec
++MANDIR=        ${LOCALBASE}/man/man
++
+ PROG=	cpp
+ SRCS+=	cppspec.c
++
++CFLAGS+=	-I${.CURDIR}/../cc_tools/obj
+ 
+ .include <bsd.prog.mk>

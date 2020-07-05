@@ -1,0 +1,17 @@
+$OpenBSD$
+
+Fix build, from:
+https://launchpadlibrarian.net/443817430/0001-Fix-FTB-with-recent-vala-requiring-non-public-abstra.patch
+
+Index: src/unity-aggregator-scope.vala
+--- src/unity-aggregator-scope.vala.orig
++++ src/unity-aggregator-scope.vala
+@@ -51,7 +51,7 @@ public abstract class AggregatorScope : DeprecatedScop
+    */
+   public abstract int category_index_for_scope_id (string scope_id);
+ 
+-  public AggregatorScope (string dbus_path_, string id_, MergeMode merge_mode = AggregatorScope.MergeMode.OWNER_SCOPE, bool proxy_filter_hints = false)
++  protected AggregatorScope (string dbus_path_, string id_, MergeMode merge_mode = AggregatorScope.MergeMode.OWNER_SCOPE, bool proxy_filter_hints = false)
+   {
+     Object (dbus_path: dbus_path_, id: id_, is_master: true,
+             merge_mode: merge_mode, proxy_filter_hints: proxy_filter_hints);

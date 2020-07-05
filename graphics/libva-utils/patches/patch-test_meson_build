@@ -1,0 +1,24 @@
+$OpenBSD$
+Flags required to compile gtest test suite.
+Increase test timeout so it doesn't fail.
+
+Index: test/meson.build
+--- test/meson.build.orig
++++ test/meson.build
+@@ -5,8 +5,9 @@ gtest_src = [
+ gtest_inc = include_directories('gtest', 'gtest/include')
+ 
+ test_flags = [
++  '-DGTEST_HAS_COMBINE=1',
+   '-DGTEST_HAS_PTHREAD=1',
+-  '-DGTEST_USE_OWN_TR1_TUPLE=0',
++  '-DGTEST_USE_OWN_TR1_TUPLE=1',
+   '-DGTEST_LANG_CXX11=1',
+   '-DGTEST_HAS_TR1_TUPLE=1',
+   '-DPTHREADS',
+@@ -40,4 +41,4 @@ tests = executable('test_va_api', test_src,
+                    dependencies: [ gtest_dep, drm_deps, dependency('threads'), ],
+                    install: true)
+ 
+-test('test_va', tests)
++test('test_va', tests, timeout : 600 )

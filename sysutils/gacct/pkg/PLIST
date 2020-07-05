@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/gac
+@bin bin/glast
+@bin bin/glastcomm
+@info info/accounting.info
+@man man/man1/gac.1
+@man man/man1/glast.1
+@man man/man1/glastcomm.1
+@man man/man8/gaccton.8
+@man man/man8/gdump-acct.8
+@man man/man8/gdump-utmp.8
+@man man/man8/gsa.8
+@bin sbin/gaccton
+@bin sbin/gdump-acct
+@bin sbin/gdump-utmp
+@bin sbin/gsa

@@ -5,7 +5,7 @@ CATEGORIES =	games
 
 GH_ACCOUNT =	skypjack
 GH_PROJECT =	entt
-GH_TAGNAME =	v3.2.0
+GH_TAGNAME =	v3.3.0
 
 HOMEPAGE =	https://github.com/skypjack/entt/wiki
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

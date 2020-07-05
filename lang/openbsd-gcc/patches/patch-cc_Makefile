@@ -1,0 +1,53 @@
+$OpenBSD$
+
+Rename to ogcc.
+Adapt to local obj dirs.
+Install to correct location.
+
+Index: cc/Makefile
+--- cc/Makefile.orig
++++ cc/Makefile
+@@ -6,28 +6,35 @@
+ .include "${.CURDIR}/../Makefile.inc"
+ .include "${.CURDIR}/../Makefile.fe"
+ 
+-PROG=	cc
++PROG=	ogcc
+ MAN=	gcc.1
+ SRCS+=  gccspec.c
+ 
+-SPECDIR= /usr/lib/gcc-lib/${GCC_TARGET}/${BASEVER}
++BINDIR=	${LOCALBASE}/bin
++MANDIR=	${LOCALBASE}/man/man
+ 
+-.if ${COMPILER_VERSION:L} == "gcc4"
+-LINKS=	${BINDIR}/gcc ${BINDIR}/cc
+-.endif
++SPECDIR= ${LOCALBASE}/lib/gcc-lib/${GCC_TARGET}/${BASEVER}
+ 
++CFLAGS+=	-I${.CURDIR}/../cc_tools/obj
++
++.PATH:	${.CURDIR}/../cc_tools/obj
++
++#.if ${COMPILER_VERSION:L} == "gcc4"
++#LINKS=	${BINDIR}/gcc ${BINDIR}/cc
++#.endif
++
+ beforeinstall:
+-.for dir in /usr/lib/gcc-lib /usr/lib/gcc-lib/${GCC_TARGET} ${SPECDIR}
++.for dir in ${LOCALBASE}/lib/gcc-lib ${LOCALBASE}/lib/gcc-lib/${GCC_TARGET} ${SPECDIR}
+ 	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${DIRMODE} ${DESTDIR}${dir}
+ .endfor
+ 
+ realinstall:
+ 	${INSTALL} ${INSTALL_COPY} ${INSTALL_STRIP} \
+ 	    -o ${BINOWN} -g ${BINGRP} \
+-	    -m ${BINMODE} ${PROG} ${DESTDIR}${BINDIR}/g${PROG}
++	    -m ${BINMODE} ${PROG} ${DESTDIR}${BINDIR}/${PROG}
+ 
+ afterinstall:
+-	${.OBJDIR}/cc -dumpspecs > ${DESTDIR}${SPECDIR}/specs
++	${.OBJDIR}/ogcc -dumpspecs > ${DESTDIR}${SPECDIR}/specs
+ 	chown ${BINOWN}:${BINGRP} ${DESTDIR}${SPECDIR}/specs
+ 	chmod ${NONBINMODE} ${DESTDIR}${SPECDIR}/specs
+ 

@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Base sed doesn't do this correctly?
+
+Index: src/Makefile.am
+--- src/Makefile.am.orig
++++ src/Makefile.am
+@@ -26,7 +26,7 @@ dist_unityvapi_DATA = \
+   $(NULL)
+ 
+ unity.deps:
+-	$(AM_V_GEN)echo "$(LIBUNITY_DEPS_PACKAGES)" | sed 's/ /\n/g' | sed '/^$$/d' > $@
++	$(AM_V_GEN)echo "$(LIBUNITY_DEPS_PACKAGES)" | gsed 's/ /\n/g' | gsed '/^$$/d' > $@
+ 
+ unitygirdir = $(datadir)/gir-1.0
+ unitygir_DATA = Unity-@GIR_VERSION@.gir

@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v$
+share/fonts/
+@fontdir share/fonts/Consolas/
+share/fonts/Consolas/consola.ttf

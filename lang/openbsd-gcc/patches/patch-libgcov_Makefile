@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: libgcov/Makefile
+--- libgcov/Makefile.orig
++++ libgcov/Makefile
+@@ -24,7 +24,7 @@ CC=${.CURDIR}/../cc/cc -B ${.CURDIR}/../cc1
+ .include "${.CURDIR}/../Makefile.ver"
+ 
+ LIB=		gcov
+-LIBDIR=		/usr/lib/gcc-lib/${GCC_TARGET}/${BASEVER}
++LIBDIR=		${LOCALBASE}/lib/gcc-lib/${GCC_TARGET}/${BASEVER}
+ NOPROFILE=	Yes
+ NOPIC=		Yes
+ 

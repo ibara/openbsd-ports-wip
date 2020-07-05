@@ -1,0 +1,32 @@
+$OpenBSD$
+
+Rename to og++.
+Adapt to local obj dirs.
+
+Index: c++/Makefile
+--- c++/Makefile.orig
++++ c++/Makefile
+@@ -6,14 +6,18 @@
+ .include "${.CURDIR}/../Makefile.inc"
+ .include "${.CURDIR}/../Makefile.fe"
+ 
+-.PATH: ${GCCDIR}/cp
++.PATH: ${GCCDIR}/cp ${.CURDIR}/../cc_tools/obj
+ 
+-PROG=	c++
++BINDIR=	${LOCALBASE}/bin
++
++PROG=	og++
+ SRCS+=	g++spec.c
+ 
+-.if ${COMPILER_VERSION:L} == "gcc4"
+-LINKS=	${BINDIR}/g++ ${BINDIR}/c++
+-.endif
++CFLAGS+=	-I${.CURDIR}/../cc_tools/obj
++
++#.if ${COMPILER_VERSION:L} == "gcc4"
++#LINKS=	${BINDIR}/g++ ${BINDIR}/c++
++#.endif
+ 
+ NOMAN=	Yes
+ 

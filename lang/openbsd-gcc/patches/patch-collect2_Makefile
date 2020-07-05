@@ -1,0 +1,18 @@
+$OpenBSD$
+
+Adapt to local obj dirs.
+
+Index: collect2/Makefile
+--- collect2/Makefile.orig
++++ collect2/Makefile
+@@ -11,7 +11,9 @@
+ PROG=	collect2
+ SRCS=	collect2.c tlink.c version.c
+ NOMAN=	Yes
+-BINDIR= /usr/lib/gcc-lib/${GCC_TARGET}/${BASEVER}
++BINDIR= ${LOCALBASE}/lib/gcc-lib/${GCC_TARGET}/${BASEVER}
++
++CFLAGS+=	-I${.CURDIR}/../cc_tools/obj
+ 
+ LDADD= ${LIBIBERTY}
+ 

@@ -1,0 +1,17 @@
+$OpenBSD$
+
+Index: include/Makefile
+--- include/Makefile.orig
++++ include/Makefile
+@@ -49,8 +49,10 @@ prereq: unwind.h
+ 
+ .if !empty(INCS)
+ install includes: ${INCS}
++	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
++		${DESTDIR}${LOCALBASE}/lib/gcc/${GCC_TARGET}/${BASEVER}/include
+ 	${INSTALL} -C -o ${BINOWN} -g ${BINGRP} -m ${NONBINMODE} ${.ALLSRC} \
+-		${DESTDIR}/usr/include
++		${DESTDIR}${LOCALBASE}/lib/gcc/${GCC_TARGET}/${BASEVER}/include
+ .else
+ install includes:
+ 	# Nothing here so far...

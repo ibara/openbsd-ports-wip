@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-V =		2.9
+V =		3.0
 COMMENT =	utility that outputs a random permutation of its input lines
 DISTNAME =	shuf-${V}
 CATEGORIES =	sysutils textproc

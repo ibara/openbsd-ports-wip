@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: src/lib/setkey.c
+--- src/lib/setkey.c.orig
++++ src/lib/setkey.c
+@@ -30,6 +30,7 @@
+ #define TCGETA  TIOCGETA
+ #define TCSETA  TIOCSETA
+ #define termio  termios
++#define HAVE_TERMIO_H
+ #else
+ #include <termio.h>
+ #endif

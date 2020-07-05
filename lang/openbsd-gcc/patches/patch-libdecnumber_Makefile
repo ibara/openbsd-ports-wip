@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Adapt to localized obj dirs.
+
+Index: libdecnumber/Makefile
+--- libdecnumber/Makefile.orig
++++ libdecnumber/Makefile
+@@ -3,6 +3,6 @@
+ 
+ # Use our headers in preference to ones from ../cc_tools.
+-CFLAGS+=	-I${.CURDIR} -I.
++CFLAGS+=	-I${.CURDIR} -I. -I${.CURDIR}/../cc_tools/obj
+ 
+ .include <bsd.own.mk>
+ 

@@ -1,0 +1,22 @@
+$OpenBSD$
+
+Always require cpp.
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -8,12 +8,10 @@
+ 
+ SUBDIR=	cc_tools libcpp libdecnumber cc_int cc cc1 include doc
+ 
+-.if ${COMPILER_VERSION:L} == "gcc4"
+ SUBDIR+= cpp
+-.endif
+ 
+-SUBDIR+= cc1plus c++ c++filt
+-SUBDIR+= cc1obj
++#SUBDIR+= cc1plus c++ c++filt
++#SUBDIR+= cc1obj
+ SUBDIR+= gcov
+ SUBDIR+= libgcc
+ SUBDIR+= libgcov

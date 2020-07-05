@@ -1,0 +1,45 @@
+$OpenBSD$
+
+Prefix needs to be /usr/local for this to work.
+
+Index: Makefile.inc
+--- Makefile.inc.orig
++++ Makefile.inc
+@@ -28,7 +28,7 @@ GCC_TARGET=	${TARGET_ARCH}-unknown-openbsd${OSREV}
+ NOPIE=		Yes
+ 
+ CFLAGS+=	-DIN_GCC -DHAVE_CONFIG_H
+-CFLAGS+=	-DPREFIX=\"${TOOLS_PREFIX}/usr\"
++CFLAGS+=	-DPREFIX=\"${TOOLS_PREFIX}${LOCALBASE}\"
+ #CFLAGS+=	-DWANT_COMPILER_INVARIANTS
+ CFLAGS+=	${PIE_DEFAULT}
+ 
+@@ -58,24 +58,12 @@ CFLAGS+=	-I${GCCLIB}/include
+ CFLAGS+=	-I${GCCLIB}/libcpp/include
+ CFLAGS+=	-I${GCCLIB}/libdecnumber
+ 
+-.if exists(${.OBJDIR}/../cc_int)
+-LIBBACKEND=	${.OBJDIR}/../cc_int/libbackend.a
+-.else
+-LIBBACKEND=	${.CURDIR}/../cc_int/libbackend.a
+-.endif
++LIBBACKEND=	${.CURDIR}/../cc_int/obj/libbackend.a
+ 
+-LIBIBERTY=	/usr/lib/libiberty.a
++LIBIBERTY=	${.OBJDIR}/../../../../lib/libiberty/obj/libiberty.a
+ 
+-.if exists(${.OBJDIR}/../libcpp)
+-LIBCPP=		${.OBJDIR}/../libcpp/libcpp.a
+-.else
+-LIBCPP=		${.CURDIR}/../libcpp/libcpp.a
+-.endif
++LIBCPP=		${.CURDIR}/../libcpp/obj/libcpp.a
+ 
+-.if exists(${.OBJDIR}/../libdecnumber)
+-LIBDECNUMBER=	${.OBJDIR}/../libdecnumber/libdecnumber.a
+-.else
+-LIBDECNUMBER=	${.CURDIR}/../libdecnumber/libdecnumber.a
+-.endif
++LIBDECNUMBER=	${.CURDIR}/../libdecnumber/obj/libdecnumber.a
+ 
+ .endif # !__CC_MAKEFILE_INC__

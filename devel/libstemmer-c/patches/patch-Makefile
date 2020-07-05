@@ -1,0 +1,23 @@
+$OpenBSD$
+
+Add shared library.
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -1,10 +1,11 @@
+ include mkinc.mak
+ CFLAGS?=-O2
+ CPPFLAGS=-Iinclude
+-all: libstemmer.a
+-libstemmer.a: $(snowball_sources:.c=.o)
+-	$(AR) -cru $@ $^
+-	$(RANLIB) $@
++all: libstemmer
++libstemmer: $(snowball_sources:.c=.o)
++	$(AR) -cru $@.a $^
++	$(RANLIB) $@.a
++	$(CC) $(LDFLAGS) -shared -Wl,-soname,libstemmer.so.${LIBstemmer_VERSION} -fPIC -o libstemmer.so.${LIBstemmer_VERSION}
+ stemwords: examples/stemwords.o libstemmer.o
+ 	$(CC) $(CFLAGS) -o $@ $^
+ clean:

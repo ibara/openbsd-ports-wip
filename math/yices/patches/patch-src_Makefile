@@ -1,0 +1,23 @@
+$OpenBSD$
+
+Index: src/Makefile
+--- src/Makefile.orig
++++ src/Makefile
+@@ -711,7 +711,7 @@ ifeq ($(POSIXOS),unix)
+   PIC=-fPIC
+   STATIC=-static
+   CPPFLAGS := $(CPPFLAGS) -DLINUX
+-  CFLAGS += -fvisibility=hidden $(PTHREAD)
++  CFLAGS += $(PTHREAD)
+   BIN_LDFLAGS=
+   libyices_dynamic=$(libdir)/$(libyices_so)
+   static_libyices_dynamic=$(static_libdir)/$(libyices_so)
+@@ -777,7 +777,7 @@ endif
+ #
+ #
+ ifeq ($(YICES_MODE),release)
+-CFLAGS := $(CFLAGS) -O3 -fomit-frame-pointer $(NO_STACK_PROTECTOR)
++CFLAGS := $(CFLAGS)
+ CPPFLAGS := $(CPPFLAGS) -DNDEBUG
+ else
+ ifeq ($(YICES_MODE),devel)

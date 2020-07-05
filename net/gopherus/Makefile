@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	multi-platform, console-mode gopher client
-DISTNAME =	gopherus-1.1
+DISTNAME =	gopherus-1.2.1
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	net
 
@@ -17,6 +17,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gopherus/}
 
 LIB_DEPENDS =	devel/sdl2
 
+USE_GMAKE =	Yes
 MAKE_FILE =	Makefile.lin
 MAKE_FLAGS =	CC="${CC}" \
 		CFLAGS="${CFLAGS} -std=gnu89 -I${LOCALBASE}/include" \

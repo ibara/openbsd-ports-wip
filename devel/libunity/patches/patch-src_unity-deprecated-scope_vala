@@ -1,0 +1,17 @@
+$OpenBSD$
+
+Fix build, from:
+https://launchpadlibrarian.net/443817430/0001-Fix-FTB-with-recent-vala-requiring-non-public-abstra.patch
+
+Index: src/unity-deprecated-scope.vala
+--- src/unity-deprecated-scope.vala.orig
++++ src/unity-deprecated-scope.vala
+@@ -61,7 +61,7 @@ public abstract class DeprecatedScopeBase : GLib.Objec
+   internal CategorySet _categories;
+   internal FilterSet _filters;
+    
+-  public DeprecatedScopeBase (string dbus_path_, string id_)
++  protected DeprecatedScopeBase (string dbus_path_, string id_)
+   {
+     Object (dbus_path: dbus_path_, id: id_);
+   }

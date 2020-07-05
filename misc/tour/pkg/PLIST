@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/tour
+share/tour/
+share/tour/page01.txt
+share/tour/page02.txt
+share/tour/page03.txt
+share/tour/page04.txt
+share/tour/page05.txt
+share/tour/page06.txt
+share/tour/page07.txt
+share/tour/page08.txt
+share/tour/page09.txt
+share/tour/page10.txt
+share/tour/page11.txt
+share/tour/page12.txt
+share/tour/page13.txt
+share/tour/page14.txt
+share/tour/page15.txt
+share/tour/page16.txt
+share/tour/page17.txt
+share/tour/page18.txt
+share/tour/page19.txt
+share/tour/page20.txt

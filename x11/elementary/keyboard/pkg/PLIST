@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/io.elementary.keyboard
+share/dbus-1/services/io.elementary.Keyboard.service

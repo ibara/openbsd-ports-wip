@@ -1,0 +1,32 @@
+$OpenBSD$
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -122,7 +122,7 @@ AC_PROG_INSTALL
+ AC_PROG_YACC
+ AC_PROG_CC
+ AC_PROG_LEX
+-LT_INIT
++dnl LT_INIT
+ AC_PATH_PROG(mailer, mail)
+ AC_PATH_PROG(shell, sh)
+ AC_PATH_PROG(perlbin, perl)
+@@ -217,7 +217,7 @@ case "$target" in
+ 	LEXLIB=-ll
+ 	export CC CFLAGS LEX LEXLIB
+ 	;;
+-*freebsd*)
++*freebsd*|*openbsd*)
+ 	AC_DEFINE(SOCKLEN_T, int)
+ 	AC_DEFINE(OS_FREEBSD)
+ 	AC_DEFINE(BUGGY_DELCURTERM)
+@@ -639,7 +639,7 @@ fi
+ AC_SUBST(CRYPTLIB)
+ AC_CHECK_FUNC(crypt,
+   [CRYPTLIB=],
+-  AC_CHECK_LIB(crypt, crypt, [CRYPTLIB=-lcrypt], AC_MSG_WARN(Problems with crypt)))
++  AC_CHECK_LIB(c, crypt, [CRYPTLIB=-lc], AC_MSG_WARN(Problems with crypt)))
+ AC_SUBST(LIBSHAD)
+ AC_CHECK_FUNC(getspent, AC_DEFINE(SHADOW_PW),
+ AC_CHECK_LIB(sec,getspent, AC_DEFINE(SHADOW_PW) [LIBSHAD=-lsec]))

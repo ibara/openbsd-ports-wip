@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v$
+include/libstemmer.h
+@static-lib lib/libstemmer.a
+@lib lib/libstemmer.so.${LIBstemmer_VERSION}

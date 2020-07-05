@@ -55,16 +55,12 @@ Index: Makefile
  
  test-c89: $(TARGET)
  	for file in $$(find test/ -maxdepth 1 -type f -iname '*.c') ; do \
-@@ -124,9 +126,9 @@ test-sqlite: $(TARGET)
+@@ -124,7 +126,7 @@ test-sqlite: $(TARGET)
  test: test-c89 test-c99 test-c11
  test-all: test test-gnu test-asm test-linker test-sqlite
  
 -install: bin/release/lacc
--	mkdir -p $(LIBDIR_TARGET)
--	cp $(LIBDIR_SOURCE)/*.h $(LIBDIR_TARGET)/
 +install: bin/selfhost/lacc
-+	mkdir -p $(LIBDIR_TARGET)/include
-+	cp $(LIBDIR_SOURCE)/include/*.h $(LIBDIR_TARGET)/include
+ 	mkdir -p $(LIBDIR_TARGET)/include/
+ 	cp $(LIBDIR_SOURCE)/include/*.h $(LIBDIR_TARGET)/include/
  	cp $? $(BINDIR)/lacc
- 
- uninstall:

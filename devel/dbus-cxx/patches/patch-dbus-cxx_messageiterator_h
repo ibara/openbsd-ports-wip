@@ -1,0 +1,16 @@
+$OpenBSD$
+
+https://github.com/dbus-cxx/dbus-cxx/commit/b5603e30eb239b22c73c73a74b9deb5e64d58d0c
+
+Index: dbus-cxx/messageiterator.h
+--- dbus-cxx/messageiterator.h.orig
++++ dbus-cxx/messageiterator.h
+@@ -547,7 +547,7 @@ DBUS_CXX_DEBUG( "ERR: " << __FILE__ << __LINE__ );
+           s += type_string( temp );
+           s += " into C++ RTTI type ";
+           s += typeid( T ).name();
+-          throw ErrorInvalidTypecast( s.c_str() );
++          throw ErrorInvalidTypecast::create( s.c_str() );
+         }
+         dbus_message_iter_get_basic( &m_cobj, &temp );
+       }

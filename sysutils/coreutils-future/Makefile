@@ -2,7 +2,7 @@
 
 COMMENT =	GNU core utilities, tip of tree
 DISTFILES =	# empty
-PKGNAME =	coreutils-future-8.31.63pl20191116
+PKGNAME =	coreutils-future-8.32.9pl20200501
 #REVISION =	0
 CATEGORIES =	sysutils
 
@@ -19,7 +19,7 @@ LIB_DEPENDS =	converters/libiconv \
 
 USE_GMAKE =	Yes
 
-FAKE_TARGET =	install-strip
+#FAKE_TARGET =	install-strip
 
 NO_BUILD =	Yes
 

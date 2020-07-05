@@ -1,0 +1,18 @@
+$OpenBSD$
+Exclude demo applications.
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -78,11 +78,7 @@ add_project_arguments(libva_utils_flags,
+                       language: ['c', 'cpp'])
+ 
+ subdir('common')
+-subdir('decode')
+-subdir('encode')
+-subdir('putsurface')
+ subdir('vainfo')
+-subdir('videoprocess')
+ 
+ if get_option('tests')
+   subdir('test')

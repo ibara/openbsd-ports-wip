@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/gcov
+@bin bin/ogcc
+lib/gcc/
+lib/gcc-lib/
+lib/gcc-lib/amd64-unknown-openbsd6.7/
+lib/gcc-lib/amd64-unknown-openbsd6.7/4.2.1/
+@bin lib/gcc-lib/amd64-unknown-openbsd6.7/4.2.1/cc1
+@bin lib/gcc-lib/amd64-unknown-openbsd6.7/4.2.1/collect2
+@static-lib lib/gcc-lib/amd64-unknown-openbsd6.7/4.2.1/libgcc.a
+@static-lib lib/gcc-lib/amd64-unknown-openbsd6.7/4.2.1/libgcov.a
+lib/gcc-lib/amd64-unknown-openbsd6.7/4.2.1/specs
+lib/gcc/amd64-unknown-openbsd6.7/
+lib/gcc/amd64-unknown-openbsd6.7/4.2.1/
+lib/gcc/amd64-unknown-openbsd6.7/4.2.1/include/
+lib/gcc/amd64-unknown-openbsd6.7/4.2.1/include/cpuid.h
+lib/gcc/amd64-unknown-openbsd6.7/4.2.1/include/emmintrin.h
+lib/gcc/amd64-unknown-openbsd6.7/4.2.1/include/mm_malloc.h
+lib/gcc/amd64-unknown-openbsd6.7/4.2.1/include/mmintrin.h
+lib/gcc/amd64-unknown-openbsd6.7/4.2.1/include/pmmintrin.h
+lib/gcc/amd64-unknown-openbsd6.7/4.2.1/include/unwind.h
+lib/gcc/amd64-unknown-openbsd6.7/4.2.1/include/xmmintrin.h
+@bin libexec/cpp
+@comment man/man1/cpp.1
+@comment man/man1/gcc.1
+@comment man/man1/gcov.1
+@info share/info/
+@info share/info/cpp.info
+@info share/info/cppinternals.info
+@info share/info/gcc.info
+@info share/info/gccint.info

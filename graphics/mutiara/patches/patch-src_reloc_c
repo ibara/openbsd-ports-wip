@@ -1,0 +1,16 @@
+$OpenBSD$
+
+No /proc
+
+Index: src/reloc.c
+--- src/reloc.c.orig
++++ src/reloc.c
+@@ -152,7 +152,7 @@ reloc_find_self (void)
+ 	GFile* _tmp13_;
+ 	GError* _inner_error0_ = NULL;
+ 	GFile* result = NULL;
+-	_tmp0_ = g_file_new_for_path ("/proc/self/exe");
++	_tmp0_ = g_file_new_for_path ("${LOCALBASE}/bin/mutiara");
+ 	_tmp1_ = _tmp0_;
+ 	_tmp2_ = g_file_get_path (_tmp1_);
+ 	_tmp3_ = _tmp2_;

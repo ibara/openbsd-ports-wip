@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/bemenu
+@bin bin/bemenu-run
+include/bemenu.h
+lib/bemenu/
+@so lib/bemenu/bemenu-renderer-curses.so
+@so lib/bemenu/bemenu-renderer-x11.so
+@lib lib/libbemenu.so.${LIBbemenu_VERSION}
+lib/pkgconfig/bemenu.pc
+@man man/man1/bemenu-run.1
+@man man/man1/bemenu.1

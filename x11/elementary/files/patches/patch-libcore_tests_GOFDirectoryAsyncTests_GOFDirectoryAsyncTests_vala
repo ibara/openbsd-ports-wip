@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Requires GNU cp.
+
+Index: libcore/tests/GOFDirectoryAsyncTests/GOFDirectoryAsyncTests.vala
+--- libcore/tests/GOFDirectoryAsyncTests/GOFDirectoryAsyncTests.vala.orig
++++ libcore/tests/GOFDirectoryAsyncTests/GOFDirectoryAsyncTests.vala
+@@ -198,7 +198,7 @@ Async setup_temp_async (string path, uint n_files, str
+             /* create empty files */
+             Posix.system ("touch " + pth);
+         } else {
+-            Posix.system ("cp --no-dereference --no-clobber " + path_to_template + " " + pth);
++            Posix.system ("gcp --no-dereference --no-clobber " + path_to_template + " " + pth);
+         }
+     }
+ 

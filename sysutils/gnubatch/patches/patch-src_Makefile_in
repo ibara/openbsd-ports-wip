@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: src/Makefile.in
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -23,7 +23,7 @@ prefix		=	@prefix@
+ exec_prefix	=	@exec_prefix@
+ datarootdir	=	@datarootdir@
+ CC		=	@CC@
+-CCFLAGS		=	-O @gcc_useful_options@ @funny_compiler_options@
++CCFLAGS		=	$(PORT_CFLAGS) @gcc_useful_options@ @funny_compiler_options@
+ SHLIBCC		=	libtool --mode=link $(CC) $(CCFLAGS)
+ LIBS		=	@LIBS@
+ LIBCURSES	=	@LIBCURSES@

@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -1847,6 +1847,7 @@ else
+ #line 1838 "configure"
+ #include "confdefs.h"
+ #include <sys/types.h>
++#include <sys/select.h>
+ #if STDC_HEADERS
+ #include <stdlib.h>
+ #include <stddef.h>

@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/edx
+share/doc/edx/
+share/doc/edx/MANUAL.ws
+share/examples/edx/
+share/examples/edx/edxrc.example

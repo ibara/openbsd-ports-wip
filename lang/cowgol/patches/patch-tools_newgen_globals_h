@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Fix warnings.
+
+Index: tools/newgen/globals.h
+--- tools/newgen/globals.h.orig
++++ tools/newgen/globals.h
+@@ -119,7 +119,7 @@ struct rule
+ extern int errcnt;
+ extern FILE* outfp;
+ 
+-extern void fatal(const char* msg, ...);
++extern void fatal(const char* msg, ...) __dead;
+ extern void warning(const char* msg, ...);
+ extern void yyerror(const char* msg, ...);
+ extern int yydebug;

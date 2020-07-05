@@ -1,2 +1,2 @@
 @comment $OpenBSD: PLIST,v$
-@bin bin/wordtsar
+@bin bin/WordTsar

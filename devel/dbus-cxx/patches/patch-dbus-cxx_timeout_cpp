@@ -1,0 +1,60 @@
+$OpenBSD$
+
+No sigval_t
+We don't have these realtime functions.
+
+Index: dbus-cxx/timeout.cpp
+--- dbus-cxx/timeout.cpp.orig
++++ dbus-cxx/timeout.cpp
+@@ -39,7 +39,6 @@ namespace DBus
+   Timeout::~Timeout()
+   {
+     std::unique_lock<std::mutex> lock( m_arming_mutex );
+-    if ( m_is_armed ) timer_delete( m_timer_id );
+   }
+ 
+   bool Timeout::is_valid() const
+@@ -85,26 +84,6 @@ namespace DBus
+     std::unique_lock<std::mutex> lock( m_arming_mutex );
+     if ( should_arm )
+     {
+-      if ( not m_is_armed )
+-      {
+-        struct sigevent sigevent = {{0},0};
+-
+-        sigevent.sigev_notify = SIGEV_THREAD;
+-        sigevent.sigev_value.sival_ptr = this;
+-        sigevent.sigev_notify_function = Timeout::timer_callback_proxy;
+-
+-        timer_create( CLOCK_REALTIME, &sigevent, &m_timer_id);
+-      }
+-      
+-      int intv = this->interval();
+-      time_t sec;
+-      long int nsec;
+-      sec = intv / 1000;
+-      nsec = (intv % 1000) * 1000000;
+-      struct itimerspec its = { {sec, nsec}, {sec, nsec} };
+-
+-      timer_settime( m_timer_id, 0, &its, NULL );
+-
+       m_is_armed = true;
+     }
+     else
+@@ -112,7 +91,6 @@ namespace DBus
+       if ( m_is_armed )
+       {
+           m_is_armed = false;
+-          timer_delete( m_timer_id );
+       }
+     }
+   }
+@@ -132,7 +110,7 @@ namespace DBus
+     return m_cobj;
+   }
+ 
+-  void Timeout::timer_callback_proxy( sigval_t sv ) {
++  void Timeout::timer_callback_proxy( union sigval sv ) {
+     SIMPLELOGGER_DEBUG( "dbus.Timeout","Timeout::timer_callback_proxy" );
+     Timeout* t;
+     t = ( Timeout* ) sv.sival_ptr;

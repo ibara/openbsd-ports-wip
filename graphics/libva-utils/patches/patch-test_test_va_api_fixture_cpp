@@ -1,0 +1,36 @@
+$OpenBSD$
+Include OpenBSD DRM paths.
+
+Index: test/test_va_api_fixture.cpp
+--- test/test_va_api_fixture.cpp.orig
++++ test/test_va_api_fixture.cpp
+@@ -39,7 +39,6 @@ VAAPIFixture::VAAPIFixture()
+     , m_vaDisplay(NULL)
+     , m_restoreDriverName(getenv("LIBVA_DRIVER_NAME"))
+     , m_drmHandle(-1)
+-    , drmDevicePaths({ "/dev/dri/renderD128", "/dev/dri/card0" })
+     , m_configID(VA_INVALID_ID)
+     , m_contextID(VA_INVALID_ID)
+     , m_bufferID(VA_INVALID_ID)
+@@ -73,6 +72,13 @@ VAAPIFixture::~VAAPIFixture()
+ 
+ VADisplay VAAPIFixture::getDisplay()
+ {
++  std::string drmDevicePaths[]{
++                      "/dev/drmR128",
++                      "/dev/drmR129",
++                      "/dev/drmR130",
++                      "/dev/drmR131",
++                      "/dev/dri/renderD128",
++                      "/dev/dri/card0"};
+     uint32_t i;
+ 
+     for (i = 0; i < sizeof(drmDevicePaths) / sizeof(*drmDevicePaths); i++) {
+@@ -84,7 +90,6 @@ VADisplay VAAPIFixture::getDisplay()
+         if (m_vaDisplay)
+             return m_vaDisplay;
+     }
+-
+     return NULL;
+ }
+ 

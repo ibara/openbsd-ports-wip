@@ -1,0 +1,17 @@
+$OpenBSD$
+
+Fix build, from:
+https://launchpadlibrarian.net/443817430/0001-Fix-FTB-with-recent-vala-requiring-non-public-abstra.patch
+
+Index: tools/preview-renderer.vala
+--- tools/preview-renderer.vala.orig
++++ tools/preview-renderer.vala
+@@ -63,7 +63,7 @@ namespace Unity.Tester {
+      */
+     public abstract class GridRenderer: PreviewRenderer
+     {
+-        public GridRenderer()
++        protected GridRenderer()
+         {
+             Object();
+         }

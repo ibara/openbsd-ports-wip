@@ -1,0 +1,20 @@
+$OpenBSD$
+
+Index: src/Makefile
+--- src/Makefile.orig
++++ src/Makefile
+@@ -13,11 +13,11 @@ OBJECTS=$(SOURCES:.cpp=.o)
+ # hooks for future makefiles being able to make multiple SOs, or older SOs
+ libnoise: libnoise.so libnoise.a libnoise.la
+ libnoise.so: libnoise.so.0
+-libnoise.so.0: libnoise.so.0.3
++libnoise.so.0: libnoise.so.${LIBnoise_VERSION}
+ 
+ # Real build targets
+-libnoise.so.0.3: $(OBJECTS)
+-	$(LIBTOOL) --mode=link $(CXX) $(LDFLAGS) -shared -Wl,-soname=libnoise.so.0 -o $@ $(OBJECTS:.o=.lo)
++libnoise.so.${LIBnoise_VERSION}: $(OBJECTS)
++	$(LIBTOOL) --mode=link $(CXX) $(LDFLAGS) -shared -Wl,-soname=libnoise.so.${LIBnoise_VERSION} -o $@ $(OBJECTS:.o=.lo)
+ 
+ libnoise.a: $(OBJECTS)
+ 	$(LIBTOOL) --mode=link $(CXX) $(LDFLAGS) -o $@ $(OBJECTS)

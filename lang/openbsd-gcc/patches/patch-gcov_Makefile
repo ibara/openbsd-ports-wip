@@ -1,0 +1,22 @@
+$OpenBSD$
+
+Adapt to local obj dirs.
+
+Index: gcov/Makefile
+--- gcov/Makefile.orig
++++ gcov/Makefile
+@@ -8,9 +8,14 @@
+ 
+ .PATH: ${GCCDIR} ${GCCDIR}/doc
+ 
++BINDIR=	${LOCALBASE}/bin
++MANDIR=	${LOCALBASE}/man/man
++
+ PROG=	gcov
+ SRCS=	gcov.c version.c errors.c
+ MAN=	gcov.1
++
++CFLAGS+=	-I${.CURDIR}/../cc_tools/obj
+ 
+ DPADD=	${LIBIBERTY}
+ LDADD=	${LIBIBERTY}

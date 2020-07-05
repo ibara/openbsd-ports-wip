@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: src/lib/Makefile.in
+--- src/lib/Makefile.in.orig
++++ src/lib/Makefile.in
+@@ -27,7 +27,7 @@ CC		=	libtool	--mode=compile @CC@
+ PARENT		=	..
+ BASE		=	../..
+ HDRS		=	$(PARENT)/hdrs
+-CCFLAGS		=	-O @gcc_useful_options@	@funny_compiler_options@
++CCFLAGS		=	$(PORT_CFLAGS) @gcc_useful_options@	@funny_compiler_options@
+ CFLAGS		=	$(CCFLAGS) -I$(HDRS) -I$(BASE)  @xmlinclude@
+ LIBDIR		=	$(DESTDIR)@libdir@
+ RPATH		=	@libdir@

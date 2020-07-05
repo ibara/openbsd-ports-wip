@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Don't build the Linux 80386 backend.
+Would require a BDEP on an i686-linux-gnu-gas package.
+
+Index: src/cowlink/build.lua
+--- src/cowlink/build.lua.orig
++++ src/cowlink/build.lua
+@@ -1,4 +1,4 @@
+-local ARCHS = { "bbct", "bbcti", "bbctn", "lx386", "8080", "cgen" }
++local ARCHS = { "bbct", "bbcti", "bbctn", "8080", "cgen" }
+ 
+ for _, arch in ipairs(ARCHS) do
+ 	rule {
