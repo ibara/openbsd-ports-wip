@@ -9,7 +9,7 @@ GH_PROJECT =	creduce
 GH_TAGNAME =	${GH_PROJECT}-2.10.0
 
 HOMEPAGE =	https://embed.cs.utah.edu/creduce/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # BSD
 PERMIT_PACKAGE =	Yes

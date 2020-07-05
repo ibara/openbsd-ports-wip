@@ -7,7 +7,7 @@ CATEGORIES =	audio
 SHARED_LIBS +=	WildMidi                  0.0 # 2.0
 
 HOMEPAGE =	https://www.mindwerks.net/projects/wildmidi/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # Player: GPLv3+
 # Library: LGPLv3+

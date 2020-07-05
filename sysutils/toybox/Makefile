@@ -5,7 +5,7 @@ DISTNAME =	toybox-0.8.2
 CATEGORIES =	sysutils
 
 HOMEPAGE =	https://landley.net/toybox/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # BSD
 PERMIT_PACKAGE =	Yes

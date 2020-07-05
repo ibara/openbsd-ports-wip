@@ -11,7 +11,7 @@ GH_PROJECT =	orion
 GH_COMMIT =	c2390ade0354af56c563266d4892a3e2f1d9eaee
 
 HOMEPAGE =	https://alamminsalo.github.io/orion/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

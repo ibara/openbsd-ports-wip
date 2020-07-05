@@ -9,7 +9,7 @@ GH_PROJECT =	dfshow
 GH_TAGNAME =	v0.8.2-beta
 
 HOMEPAGE =	https://dfshow.op-ezy.co.uk/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

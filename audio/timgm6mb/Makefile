@@ -5,7 +5,7 @@ DISTNAME =	timgm6mb-20190515
 CATEGORIES =	audio
 
 HOMEPAGE =	https://musescore.org/en/handbook/soundfonts
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # TimGM6mb: https://musescore.org/en/handbook/soundfonts#list
 # "License: GNU GPL, version 2; Courtesy of Tim Brechbill"

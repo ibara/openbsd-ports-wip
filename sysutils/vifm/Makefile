@@ -7,7 +7,7 @@ EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	sysutils
 
 HOMEPAGE =	https://vifm.info/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

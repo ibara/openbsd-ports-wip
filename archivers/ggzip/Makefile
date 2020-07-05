@@ -6,7 +6,11 @@ PKGNAME =	g${DISTNAME}
 CATEGORIES =	archivers sysutils
 
 HOMEPAGE =	https://www.gnu.org/software/gzip/
+<<<<<<< HEAD
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+=======
+MAINTAINER =	Your Name <you@example.com>
+>>>>>>> 73ef6b9d18ef1fcb0571ca577f40f67fade4cc1d
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

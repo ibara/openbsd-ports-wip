@@ -5,7 +5,7 @@ DISTNAME =	fetch-12.0
 CATEGORIES =	net
 
 HOMEPAGE =	https://www.freebsd.org/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # BSD
 PERMIT_PACKAGE =	Yes

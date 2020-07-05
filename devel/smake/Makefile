@@ -8,7 +8,7 @@ EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	devel
 
 HOMEPAGE =	http://schilytools.sourceforge.net/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # CDDL
 PERMIT_PACKAGE =	Yes

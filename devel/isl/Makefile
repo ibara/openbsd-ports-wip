@@ -8,7 +8,7 @@ CATEGORIES =	devel
 SHARED_LIBS +=	isl                       0.0 # 22.0
 
 HOMEPAGE =	http://isl.gforge.inria.fr/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # MIT
 PERMIT_PACKAGE =	Yes

@@ -5,7 +5,7 @@ DISTNAME =	seq-12.0pl20180501
 CATEGORIES =	sysutils textproc
 
 HOMEPAGE =	https://www.freebsd.org/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # BSD
 PERMIT_PACKAGE =	Yes

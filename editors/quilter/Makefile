@@ -7,7 +7,7 @@ GH_ACCOUNT =	lainsce
 GH_PROJECT =	quilter
 GH_TAGNAME =	2.2.4
 
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # GPLv3+
 # Fonts: SIL OFL 1.1

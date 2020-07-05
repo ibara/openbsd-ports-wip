@@ -10,7 +10,7 @@ GH_ACCOUNT =	larmel
 GH_PROJECT =	lacc
 GH_COMMIT =	59d77424ee268344e5e79dc198f7ca3963296dfc
 
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # MIT
 PERMIT_PACKAGE =	Yes

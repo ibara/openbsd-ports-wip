@@ -4,7 +4,7 @@ COMMENT =	graphical easy editor for X11
 DISTNAME =	aee-2.2.21
 CATEGORIES =	editors x11
 
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # Artistic 2.0
 PERMIT_PACKAGE =	Yes

@@ -7,7 +7,7 @@ GH_ACCOUNT =	gabime
 GH_PROJECT =	spdlog
 GH_TAGNAME =	v1.4.1
 
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # MIT
 PERMIT_PACKAGE =	Yes

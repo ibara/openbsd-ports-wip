@@ -7,7 +7,7 @@ GH_ACCOUNT =	jarro2783
 GH_PROJECT =	cxxopts
 GH_TAGNAME =	v2.2.0
 
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # MIT
 PERMIT_PACKAGE =	Yes

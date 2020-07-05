@@ -7,7 +7,7 @@ EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	sysutils
 
 HOMEPAGE =	https://github.com/google/bloaty
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes

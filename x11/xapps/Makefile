@@ -9,7 +9,7 @@ GH_ACCOUNT =	linuxmint
 GH_PROJECT =	xapps
 GH_TAGNAME =	1.4.9
 
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes

@@ -9,7 +9,7 @@ GH_ACCOUNT =	linuxmint
 GH_PROJECT =	cjs
 GH_TAGNAME =	4.2.0
 
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

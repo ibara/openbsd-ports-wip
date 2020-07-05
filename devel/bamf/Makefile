@@ -9,7 +9,7 @@ CATEGORIES =	devel
 SHARED_LIBS +=	bamf3                     0.0 # 2.0
 
 HOMEPAGE =	https://launchpad.net/bamf
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes

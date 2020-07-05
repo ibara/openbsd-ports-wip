@@ -9,7 +9,7 @@ GH_PROJECT =	neatvi
 GH_COMMIT =	cfb5f5f6170fa3c66566a81ce2a4d17c60c563aa
 
 HOMEPAGE =	https://litcave.rudi.ir/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # ISC
 PERMIT_PACKAGE =	Yes

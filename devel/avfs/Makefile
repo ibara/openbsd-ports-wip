@@ -8,7 +8,7 @@ CATEGORIES =	devel
 SHARED_LIBS +=	avfs                      0.0 # 0.2
 
 HOMEPAGE =	http://www.boomerangsworld.de/cms/tools/mmu2html.html
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # GPLv2+/LGPLv2+
 PERMIT_PACKAGE =	Yes

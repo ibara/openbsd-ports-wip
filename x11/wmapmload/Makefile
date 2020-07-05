@@ -7,7 +7,7 @@ DISTNAME =	wmapmload-0.3.4
 CATEGORIES =	x11 x11/windowmaker
 
 HOMEPAGE =	http://tnemeth.free.fr/projets/dockapps.html
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

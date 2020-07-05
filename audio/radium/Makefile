@@ -8,7 +8,7 @@ GH_PROJECT =	radium
 GH_TAGNAME =	5.9.72
 
 HOMEPAGE =	https://users.notam02.no/~kjetism/radium/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

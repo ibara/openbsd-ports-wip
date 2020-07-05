@@ -11,7 +11,7 @@ GH_PROJECT =	qbe
 GH_COMMIT =	74ed7dfd09b30a03e9e0063e6efbe5c8d408b707
 
 HOMEPAGE =	https://c9x.me/compile/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Your Name <you@example.com>
 
 # MIT
 PERMIT_PACKAGE =	Yes
