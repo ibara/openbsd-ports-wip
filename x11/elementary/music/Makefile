@@ -19,7 +19,6 @@ WANTLIB += tag_c zeitgeist-2.0
 MODULES =	devel/dconf
 
 BUILD_DEPENDS =	devel/gettext,-tools \
-		devel/gobject-introspection \
 		lang/vala
 
 LIB_DEPENDS =	audio/libgpod \

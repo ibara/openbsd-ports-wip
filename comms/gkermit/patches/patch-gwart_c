@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: gwart.c
+--- gwart.c.orig
++++ gwart.c
+@@ -39,6 +39,8 @@
+  */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
+ #include <ctype.h>
+ #include "gkermit.h"
+ 

@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -40,7 +40,7 @@ gtk_dep = dependency('gtk+-3.0')
+ granite_dep = dependency('granite')
+ gobject_dep = dependency('gobject-2.0')
+ libsoup_dep = dependency('libsoup-2.4')
+-appstream_dep = dependency('appstream')
++appstream_dep = dependency('appstream-glib')
+ gio_unix_dep = dependency('gio-unix-2.0')
+ json_glib_dep = dependency('json-glib-1.0')
+ zeitgeist_dep = dependency('zeitgeist-2.0')

@@ -22,10 +22,9 @@ LIB_DEPENDS =	devel/libgee \
 		devel/vte3 \
 		x11/elementary/granite
 
-RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+RUN_DEPENDS =	devel/desktop-file-utils
 
-CONFIGURE_ENV =	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+#CONFIGURE_ENV =	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+#		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

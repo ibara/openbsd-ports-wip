@@ -1,10 +1,10 @@
 # $OpenBSD$
 
-COMMENT =	mail application from elementary OS
-DISTNAME =	${GH_PROJECT}-1.0.9pl20200623
-PKGNAME =	${DISTNAME:S/^/elementary-/}
+# XXX: Bus error on startup!
 
-#SHARED_LIBS +=	io.elementary.music-core  0.0 # 0.1
+COMMENT =	mail application from elementary OS
+DISTNAME =	${GH_PROJECT}-1.0.8pl20200623
+PKGNAME =	${DISTNAME:S/^/elementary-/}
 
 # Previous release is too old...
 GH_PROJECT =	mail
@@ -20,7 +20,6 @@ WANTLIB += gtk-3 intl javascriptcoregtk-4.0 soup-2.4 webkit2gtk-4.0
 MODULES =	devel/dconf
 
 BUILD_DEPENDS =	devel/gettext,-tools \
-		devel/gobject-introspection \
 		lang/vala
 
 LIB_DEPENDS =	databases/evolution-data-server \

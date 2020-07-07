@@ -1,0 +1,36 @@
+#!/bin/ksh
+#
+# $OpenBSD: gdm.rc,v 1.44 2019/05/12 21:28:50 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/sbin/lightdm"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_pre() {
+	# XXX OpenBSD needs an implementation of XDG_RUNTIME_DIR
+	rm -rf /var/db/lightdm/.cache/gnome-shell/runtime-state-*
+}
+
+rc_stop() {
+	pkill -9 -xf "${pexp}"
+	pkill -u _x11 -f "^/usr/X11R6/bin/X.*/var/run/lightdm"
+	# _lightdm owned processed may already be gone... or not
+	pkill -u _lightdm || return 0
+}
+
+# /etc/X11/xenodm/TakeConsole, fbtab(5)
+rc_post() {
+	if [[ -c /dev/drm0 ]]; then
+		chown root /dev/drm0
+	fi
+	if [[ -c /dev/drmR128 ]]; then
+		chown root /dev/drmR128
+	fi
+	# XXX OpenBSD needs an implementation of XDG_RUNTIME_DIR
+	rm -rf /var/db/lightdm/.cache/gnome-shell/runtime-state-*
+}
+
+rc_cmd $1

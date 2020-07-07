@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: src/process.c
+--- src/process.c.orig
++++ src/process.c
+@@ -22,6 +22,8 @@
+ #include "log-file.h"
+ #include "process.h"
+ 
++extern char **environ;
++
+ enum {
+     GOT_DATA,
+     GOT_SIGNAL,

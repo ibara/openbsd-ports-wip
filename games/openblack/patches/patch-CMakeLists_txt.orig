@@ -1,0 +1,18 @@
+$OpenBSD$
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -83,12 +83,6 @@ Or set the variable OPENBLACK_BUILD_BGFX to build it w
+ else()
+   message(AUTHOR_WARNING "Using OPENBLACK_BUILD_BGFX, if you are not developing use an install target instead.")
+ 
+-  FetchContent_Declare(
+-    bgfx
+-    GIT_REPOSITORY https://github.com/openblack/bgfx.cmake.git
+-    GIT_TAG master
+-  )
+-
+   # don't build anymore targets then what we need
+   set(BGFX_BUILD_EXAMPLES
+       OFF

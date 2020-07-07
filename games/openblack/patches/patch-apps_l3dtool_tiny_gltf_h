@@ -1,0 +1,25 @@
+$OpenBSD$
+
+No wordexp.
+
+Index: apps/l3dtool/tiny_gltf.h
+--- apps/l3dtool/tiny_gltf.h.orig
++++ apps/l3dtool/tiny_gltf.h
+@@ -1556,7 +1556,7 @@ class TinyGLTF {
+ 
+ #endif
+ 
+-#elif !defined(__ANDROID__)
++#elif !defined(__ANDROID__) && !defined(__OpenBSD__)
+ #include <wordexp.h>
+ #endif
+ 
+@@ -2449,7 +2449,7 @@ std::string ExpandFilePath(const std::string &filepath
+ #else
+ 
+ #if defined(TARGET_OS_IPHONE) || defined(TARGET_IPHONE_SIMULATOR) || \
+-    defined(__ANDROID__) || defined(__EMSCRIPTEN__)
++    defined(__ANDROID__) || defined(__EMSCRIPTEN__) || defined(__OpenBSD__)
+   // no expansion
+   std::string s = filepath;
+ #else

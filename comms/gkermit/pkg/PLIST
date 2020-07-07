@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/gkermit
+@man man/man1/gkermit.1
+share/doc/gkermit/
+share/doc/gkermit/gkermit.txt

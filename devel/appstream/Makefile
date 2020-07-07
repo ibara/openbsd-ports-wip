@@ -1,6 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	tools and libraries for appstream metadata
+REVISION =	0
 CATEGORIES =	devel
 
 SHARED_LIBS +=	appstream                 0.0 # 0.12.11
@@ -32,6 +33,13 @@ LIB_DEPENDS =	databases/lmdb \
 CONFIGURE_ARGS =	-Dvapi=true
 CONFIGURE_ENV =		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+
+do-gen:
+	cd ${WRKSRC} && sed -i "s,/usr/share,${LOCALBASE}/share,g" \
+		src/as-pool.c \
+		src/as-validator-issue-tag.h \
+		tools/ascli-actions-mdata.c \
+		tools/ascli-actions-misc.c
 
 # XXX: FAKE_FLAGS does not work with meson?
 post-install:
