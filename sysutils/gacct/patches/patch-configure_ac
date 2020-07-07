@@ -32,11 +32,7 @@ Index: configure.ac
  #        else
 -#          define ACCT_FILE "/usr/adm/acct"
 +#          if defined(__OpenBSD__)
-<<<<<<< HEAD
 +#            define ACCT_FILE "/var/account/gnu/acct"
-=======
-+#            define ACCT_FILE "/var/account/acct"
->>>>>>> 73ef6b9d18ef1fcb0571ca577f40f67fade4cc1d
 +#          else
 +#            define ACCT_FILE "/usr/adm/acct"
 +#          endif
@@ -49,11 +45,7 @@ Index: configure.ac
  #      else
 -#        define SAVACCT_FILE "/usr/adm/savacct"
 +#        if defined(__OpenBSD__)
-<<<<<<< HEAD
 +#          define SAVACCT_FILE "/var/account/gnu/savacct"
-=======
-+#          define SAVACCT_FILE "/var/account/savacct"
->>>>>>> 73ef6b9d18ef1fcb0571ca577f40f67fade4cc1d
 +#        else
 +#          define SAVACCT_FILE "/usr/adm/savacct"
 +#        endif
@@ -66,11 +58,7 @@ Index: configure.ac
  #      else
 -#        define USRACCT_FILE "/usr/adm/usracct"
 +#        if defined(__OpenBSD__)
-<<<<<<< HEAD
 +#          define USRACCT_FILE "/var/account/gnu/usracct"
-=======
-+#          define USRACCT_FILE "/var/account/usracct"
->>>>>>> 73ef6b9d18ef1fcb0571ca577f40f67fade4cc1d
 +#        else
 +#          define USRACCT_FILE "/usr/adm/usracct"
 +#        endif
