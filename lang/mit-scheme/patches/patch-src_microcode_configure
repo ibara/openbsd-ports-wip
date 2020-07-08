@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Remove hardcoded optimization flags.
+
+Index: src/microcode/configure
+--- src/microcode/configure.orig
++++ src/microcode/configure
+@@ -5341,7 +5341,7 @@ if test ${GCC} = yes; then
+     LDFLAGS=${SAVED_LDFLAGS}
+ 
+     if test ${enable_debugging} = no; then
+-	CFLAGS="-O3 ${CFLAGS}"
++	CFLAGS="${CFLAGS}"
+     else
+ 	CFLAGS="-O0 -g -DENABLE_DEBUGGING_TOOLS ${CFLAGS}"
+ 	LDFLAGS="${LDFLAGS} -g"

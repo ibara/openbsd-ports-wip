@@ -5,7 +5,7 @@ Fix warnings.
 Index: third_party/lemon/lemon-cowgol.c
 --- third_party/lemon/lemon-cowgol.c.orig
 +++ third_party/lemon/lemon-cowgol.c
-@@ -4301,7 +4301,7 @@ void ReportTable(
+@@ -4300,7 +4300,7 @@ void ReportTable(
    /* Output the yy_lookahead table */
    lemp->nlookaheadtab = n = acttab_lookahead_size(pActtab);
    lemp->tablesize += n*szCodeType;
@@ -14,7 +14,7 @@ Index: third_party/lemon/lemon-cowgol.c
    for(i=j=0; i<n; i++){
      int la = acttab_yylookahead(pActtab, i);
      if( la<0 ) la = lemp->nsymbol;
-@@ -4441,7 +4441,7 @@ void ReportTable(
+@@ -4440,7 +4440,7 @@ void ReportTable(
      struct symbol *sp = lemp->symbols[i];
      if( sp==0 || sp->type==TERMINAL || sp->destructor==0 ) continue;
      if( sp->destLineno<0 ) continue;  /* Already emitted */
@@ -23,7 +23,7 @@ Index: third_party/lemon/lemon-cowgol.c
      emit_destructor_code(out,lemp->symbols[i],lemp,&lineno);
  	fprintf(out, "end sub;\n"); lineno++;
    }
-@@ -4519,8 +4519,9 @@ void ReportTable(
+@@ -4518,8 +4518,9 @@ void ReportTable(
  
  	fprintf(out, "  then destructor_%d();\n", sp->index); lineno++;
    }
@@ -35,7 +35,7 @@ Index: third_party/lemon/lemon-cowgol.c
  
    tplt_xfer(lemp->name,in,out,&lineno);
  
-@@ -4575,7 +4576,7 @@ void ReportTable(
+@@ -4574,7 +4575,7 @@ void ReportTable(
      assert( rp->noCode );
      fprintf(out,"  # (%d) ", rp->iRule);
      writeRuleText(out, rp);

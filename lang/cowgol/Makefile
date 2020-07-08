@@ -5,13 +5,13 @@
 ONLY_FOR_ARCHS =	${LE_ARCHS}
 
 COMMENT =	self-hosted Ada-inspired language for small systems
-DISTNAME =	${GH_PROJECT}-0.6.1pl20200702
+DISTNAME =	${GH_PROJECT}-0.6.1pl20200707
 CATEGORIES =	lang
 
 # No recent releases... or relases with proper tarballs...
 GH_ACCOUNT =	davidgiven
 GH_PROJECT =	cowgol
-GH_COMMIT =	96f8949f23bef5f0aef3585ec27baa0a61d545f2
+GH_COMMIT =	1ad7d8c54fb91dd35fcdafa73305b3d5864dca2b
 
 HOMEPAGE =	https://cowlark.com/cowgol/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

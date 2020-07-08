@@ -6,7 +6,7 @@ Would require a BDEP on an i686-linux-gnu-gas package.
 Index: mkninja.lua
 --- mkninja.lua.orig
 +++ mkninja.lua
-@@ -114,7 +114,6 @@ include "src/cowasm/build.lua"
+@@ -116,7 +116,6 @@ include "src/misc/build.lua"
  include "rt/cpm/build.lua"
  include "rt/cpmz/build.lua"
  include "rt/cgen/build.lua"

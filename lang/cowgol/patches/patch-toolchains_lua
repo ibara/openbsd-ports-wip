@@ -6,7 +6,7 @@ Would require a BDEP on an i686-linux-gnu-gas package.
 Index: toolchains.lua
 --- toolchains.lua.orig
 +++ toolchains.lua
-@@ -115,7 +115,6 @@ ALL_TOOLCHAINS = {
+@@ -113,7 +113,6 @@ ALL_TOOLCHAINS = {
  	toolchain_ncgen,
  	toolchain_ncpm,
  	toolchain_ncpmz,

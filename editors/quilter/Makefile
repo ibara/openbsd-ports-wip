@@ -25,7 +25,7 @@ BUILD_DEPENDS =	devel/gettext,-tools \
 LIB_DEPENDS =	textproc/discount \
 		textproc/gtkspell3 \
 		www/webkitgtk4 \
-		x11/granite \
+		x11/elementary/granite \
 		x11/gtksourceview3
 
 RUN_DEPENDS =	devel/desktop-file-utils \

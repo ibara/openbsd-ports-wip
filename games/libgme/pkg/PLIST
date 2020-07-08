@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v$
+include/gme/
+include/gme/gme.h
+@lib lib/libgme.so.${LIBgme_VERSION}
+lib/pkgconfig/libgme.pc

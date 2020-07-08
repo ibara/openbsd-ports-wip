@@ -29,7 +29,7 @@ Index: third_party/zmac/build.lua
  function zmac(e)
  	local f = e.ins[1]
  	local _, _, ext = f:find("%.(%w+)$")
-@@ -29,12 +9,9 @@ function zmac(e)
+@@ -30,15 +10,12 @@ function zmac(e)
  	end
  
  	rule {
@@ -38,9 +38,12 @@ Index: third_party/zmac/build.lua
 -			e.ins
 -		),
 +		ins = e.ins,
- 		outs = e.outs,
--		cmd = "@1 -j -m "..archflag.." -o &1 "..table.concat(hdrpaths, " ").." @2"
-+		cmd = "zmac -j -m "..archflag.." -o &1 "..table.concat(hdrpaths, " ").." @1"
+ 		outs = {
+ 			e.outs[1],
+ 			lstfile
+ 		},
+-		cmd = "@1 -j -m "..archflag.." -o &1 -o &2 "..table.concat(hdrpaths, " ").." @2"
++		cmd = "zmac -j -m "..archflag.." -o &1 -o &2 "..table.concat(hdrpaths, " ").." @1"
  	}
  end
  

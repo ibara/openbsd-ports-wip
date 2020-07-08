@@ -5,7 +5,7 @@ It's gtimeout, from GNU coreutils.
 Index: src/build.lua
 --- src/build.lua.orig
 +++ src/build.lua
-@@ -143,7 +143,7 @@ function simpletest(interpreter, e)
+@@ -142,7 +142,7 @@ function simpletest(interpreter, e)
  	rule {
  		ins = e.ins,
  		outs = { badfile },
