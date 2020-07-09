@@ -1,0 +1,137 @@
+$OpenBSD$
+
+Fix compilation, from:
+https://git.archlinux.org/svntogit/community.git/commit/trunk?h=packages/dee&id=ea70275efb988b1c2e7ac9999696fc5b03b3d435
+
+Index: src/dee-glist-result-set.c
+--- src/dee-glist-result-set.c.orig
++++ src/dee-glist-result-set.c
+@@ -32,15 +32,7 @@
+ #include "dee-glist-result-set.h"
+ 
+ static void dee_glist_result_set_result_set_iface_init (DeeResultSetIface *iface);
+-G_DEFINE_TYPE_WITH_CODE (DeeGListResultSet,
+-                         dee_glist_result_set,
+-                         G_TYPE_OBJECT,
+-                         G_IMPLEMENT_INTERFACE (DEE_TYPE_RESULT_SET,
+-                                                dee_glist_result_set_result_set_iface_init))
+ 
+-#define DEE_GLIST_RESULT_SET_GET_PRIVATE(obj) \
+-  (G_TYPE_INSTANCE_GET_PRIVATE(obj, DEE_TYPE_GLIST_RESULT_SET, DeeGListResultSetPrivate))
+-
+ typedef struct
+ {
+   GList    *rows;
+@@ -52,13 +44,20 @@ typedef struct
+   gboolean  n_rows_calculated;
+ } DeeGListResultSetPrivate;
+ 
++G_DEFINE_TYPE_WITH_CODE (DeeGListResultSet,
++                         dee_glist_result_set,
++                         G_TYPE_OBJECT,
++                         G_ADD_PRIVATE(DeeGListResultSet)
++                         G_IMPLEMENT_INTERFACE (DEE_TYPE_RESULT_SET,
++                                                dee_glist_result_set_result_set_iface_init))
++
+ /* GObject Init */
+ static void
+ dee_glist_result_set_finalize (GObject *object)
+ {
+   DeeGListResultSetPrivate *priv;
+   
+-  priv = DEE_GLIST_RESULT_SET_GET_PRIVATE (object);
++  priv = dee_glist_result_set_get_instance_private ((DeeGListResultSet *) object);
+   
+   if (priv->model)
+     g_object_unref (priv->model);
+@@ -74,9 +73,6 @@ dee_glist_result_set_class_init (DeeGListResultSetClas
+   GObjectClass  *obj_class = G_OBJECT_CLASS (klass);
+ 
+   obj_class->finalize     = dee_glist_result_set_finalize;
+-
+-  /* Add private data */
+-  g_type_class_add_private (obj_class, sizeof (DeeGListResultSetPrivate));
+ }
+ 
+ static void
+@@ -84,7 +80,7 @@ dee_glist_result_set_init (DeeGListResultSet *self)
+ {
+   DeeGListResultSetPrivate *priv;
+ 
+-  priv = DEE_GLIST_RESULT_SET_GET_PRIVATE (self);
++  priv = dee_glist_result_set_get_instance_private (self);
+   priv->pos = 0;
+   priv->n_rows_calculated = FALSE;
+ }
+@@ -96,7 +92,7 @@ dee_glist_result_set_get_n_rows (DeeResultSet *self)
+   
+   g_return_val_if_fail (DEE_IS_GLIST_RESULT_SET (self), 0);
+   
+-  priv = DEE_GLIST_RESULT_SET_GET_PRIVATE (self);
++  priv = dee_glist_result_set_get_instance_private ((DeeGListResultSet *) self);
+   
+   if (!priv->n_rows_calculated)
+     {
+@@ -116,7 +112,7 @@ dee_glist_result_set_next (DeeResultSet *self)
+   g_return_val_if_fail (DEE_IS_GLIST_RESULT_SET (self), NULL);
+   g_return_val_if_fail (dee_result_set_has_next (self), NULL);
+   
+-  priv = DEE_GLIST_RESULT_SET_GET_PRIVATE (self);
++  priv = dee_glist_result_set_get_instance_private ((DeeGListResultSet *) self);
+   next = dee_result_set_peek (self);
+   priv->cursor = priv->cursor->next;
+   priv->pos++;
+@@ -130,7 +126,7 @@ dee_glist_result_set_has_next (DeeResultSet *self)
+   
+   g_return_val_if_fail (DEE_IS_GLIST_RESULT_SET (self), FALSE);
+   
+-  priv = DEE_GLIST_RESULT_SET_GET_PRIVATE (self);
++  priv = dee_glist_result_set_get_instance_private ((DeeGListResultSet *) self);
+ 
+   return priv->cursor != NULL;
+ }
+@@ -142,7 +138,7 @@ dee_glist_result_set_peek (DeeResultSet *self)
+   
+   g_return_val_if_fail (DEE_IS_GLIST_RESULT_SET (self), NULL);
+   
+-  priv = DEE_GLIST_RESULT_SET_GET_PRIVATE (self);
++  priv = dee_glist_result_set_get_instance_private ((DeeGListResultSet *) self);
+ 
+   if (priv->cursor == NULL)
+     return NULL;
+@@ -158,7 +154,7 @@ dee_glist_result_set_seek (DeeResultSet *self,
+   
+   g_return_if_fail (DEE_IS_GLIST_RESULT_SET (self));
+   
+-  priv = DEE_GLIST_RESULT_SET_GET_PRIVATE (self);
++  priv = dee_glist_result_set_get_instance_private ((DeeGListResultSet *) self);
+   priv->cursor = g_list_nth (priv->rows, pos);
+   priv->pos = pos;
+ 
+@@ -177,7 +173,7 @@ dee_glist_result_set_tell (DeeResultSet *self)
+   
+   g_return_val_if_fail (DEE_IS_GLIST_RESULT_SET (self), 0);
+   
+-  priv = DEE_GLIST_RESULT_SET_GET_PRIVATE (self);
++  priv = dee_glist_result_set_get_instance_private ((DeeGListResultSet *) self);
+   return priv->pos;
+ }
+ 
+@@ -188,7 +184,7 @@ dee_glist_result_set_get_model (DeeResultSet *self)
+ 
+   g_return_val_if_fail (DEE_IS_GLIST_RESULT_SET (self), NULL);
+ 
+-  priv = DEE_GLIST_RESULT_SET_GET_PRIVATE (self);
++  priv = dee_glist_result_set_get_instance_private ((DeeGListResultSet *) self);
+   return priv->model;
+ }
+ 
+@@ -216,7 +212,7 @@ dee_glist_result_set_new (GList    *rows,
+   DeeGListResultSetPrivate *priv;
+ 
+   self = g_object_new (DEE_TYPE_GLIST_RESULT_SET, NULL);
+-  priv = DEE_GLIST_RESULT_SET_GET_PRIVATE (self);
++  priv = dee_glist_result_set_get_instance_private ((DeeGListResultSet *) self);
+   priv->rows = rows;
+   priv->cursor = rows;
+   priv->model = g_object_ref (model);

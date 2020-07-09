@@ -1,0 +1,57 @@
+$OpenBSD$
+
+Fix compilation, from:
+https://git.archlinux.org/svntogit/community.git/commit/trunk?h=packages/dee&id=ea70275efb988b1c2e7ac9999696fc5b03b3d435
+
+Index: src/dee-proxy-model.c
+--- src/dee-proxy-model.c.orig
++++ src/dee-proxy-model.c
+@@ -43,15 +43,6 @@
+ 
+ static void dee_proxy_model_model_iface_init (DeeModelIface *iface);
+ 
+-G_DEFINE_TYPE_WITH_CODE (DeeProxyModel,
+-                         dee_proxy_model,
+-                         DEE_TYPE_SERIALIZABLE_MODEL,
+-                         G_IMPLEMENT_INTERFACE (DEE_TYPE_MODEL,
+-                                                dee_proxy_model_model_iface_init));
+-
+-#define DEE_PROXY_MODEL_GET_PRIVATE(obj) \
+-  (G_TYPE_INSTANCE_GET_PRIVATE(obj, DEE_TYPE_PROXY_MODEL, DeeProxyModelPrivate))
+-
+ enum
+ {
+   PROP_0,
+@@ -85,6 +76,13 @@ struct _DeeProxyModelPrivate
+   gulong     changeset_finished_handler;
+ };
+ 
++G_DEFINE_TYPE_WITH_CODE (DeeProxyModel,
++                         dee_proxy_model,
++                         DEE_TYPE_SERIALIZABLE_MODEL,
++                         G_ADD_PRIVATE(DeeProxyModel)
++                         G_IMPLEMENT_INTERFACE (DEE_TYPE_MODEL,
++                                                dee_proxy_model_model_iface_init));
++
+ #define DEE_PROXY_MODEL_BACK_END(model) (DEE_PROXY_MODEL(model)->priv->back_end)
+ #define SUPER_CLASS DEE_SERIALIZABLE_MODEL_CLASS (dee_proxy_model_parent_class)
+ 
+@@ -441,9 +439,6 @@ dee_proxy_model_class_init (DeeProxyModelClass *klass)
+                                 G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY
+                                 | G_PARAM_STATIC_STRINGS);
+   g_object_class_install_property (obj_class, PROP_INHERIT_SEQNUMS, pspec);
+-  
+-  /* Add private data */
+-  g_type_class_add_private (obj_class, sizeof (DeeProxyModelPrivate));
+ }
+ 
+ static void
+@@ -500,7 +495,7 @@ dee_proxy_model_init (DeeProxyModel *model)
+ {
+   DeeProxyModelPrivate *priv;
+ 
+-  priv = model->priv = DEE_PROXY_MODEL_GET_PRIVATE (model);
++  priv = model->priv = dee_proxy_model_get_instance_private (model);
+   priv->back_end = NULL;
+   priv->inherit_seqnums = TRUE;
+   

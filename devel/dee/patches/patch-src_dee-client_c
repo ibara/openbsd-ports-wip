@@ -1,0 +1,47 @@
+$OpenBSD$
+
+Fix compilation, from:
+https://git.archlinux.org/svntogit/community.git/commit/trunk?h=packages/dee&id=ea70275efb988b1c2e7ac9999696fc5b03b3d435
+
+Index: src/dee-client.c
+--- src/dee-client.c.orig
++++ src/dee-client.c
+@@ -37,11 +37,6 @@
+ #include "dee-marshal.h"
+ #include "trace-log.h"
+ 
+-G_DEFINE_TYPE (DeeClient, dee_client, DEE_TYPE_PEER)
+-
+-#define GET_PRIVATE(o) \
+-      (G_TYPE_INSTANCE_GET_PRIVATE ((o), DEE_TYPE_CLIENT, DeeClientPrivate))
+-
+ /**
+  * DeeClientPrivate:
+  *
+@@ -69,6 +64,8 @@ enum
+   LAST_SIGNAL
+ };
+ 
++G_DEFINE_TYPE_WITH_PRIVATE (DeeClient, dee_client, DEE_TYPE_PEER)
++
+ //static guint32 _server_signals[LAST_SIGNAL] = { 0 };
+ 
+ /* Forwards */
+@@ -208,8 +205,6 @@ dee_client_class_init (DeeClientClass *klass)
+   GObjectClass *object_class = G_OBJECT_CLASS (klass);
+   DeePeerClass *peer_class = DEE_PEER_CLASS (klass);
+ 
+-  g_type_class_add_private (klass, sizeof (DeeClientPrivate));
+-
+   object_class->constructed    = dee_client_constructed;
+   object_class->get_property   = dee_client_get_property;
+   object_class->set_property   = dee_client_set_property;
+@@ -238,7 +233,7 @@ dee_client_class_init (DeeClientClass *klass)
+ static void
+ dee_client_init (DeeClient *self)
+ {
+-  self->priv = GET_PRIVATE (self);
++  self->priv = dee_client_get_instance_private (self);
+ }
+ 
+ /**

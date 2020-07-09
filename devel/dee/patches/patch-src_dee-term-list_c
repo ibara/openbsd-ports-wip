@@ -1,0 +1,48 @@
+$OpenBSD$
+
+Fix compilation, from:
+https://git.archlinux.org/svntogit/community.git/commit/trunk?h=packages/dee&id=ea70275efb988b1c2e7ac9999696fc5b03b3d435
+
+Index: src/dee-term-list.c
+--- src/dee-term-list.c.orig
++++ src/dee-term-list.c
+@@ -43,11 +43,6 @@
+ #include "dee-term-list.h"
+ #include "trace-log.h"
+ 
+-G_DEFINE_TYPE (DeeTermList, dee_term_list, G_TYPE_OBJECT);
+-
+-#define DEE_TERM_LIST_GET_PRIVATE(obj) \
+-  (G_TYPE_INSTANCE_GET_PRIVATE(obj, DEE_TYPE_TERM_LIST, DeeTermListPrivate))
+-
+ /*
+  * FORWARDS
+  */
+@@ -93,6 +88,8 @@ enum
+   PROP_0,
+ };
+ 
++G_DEFINE_TYPE_WITH_PRIVATE (DeeTermList, dee_term_list, G_TYPE_OBJECT);
++
+ #define CHECK_LAZY_SETUP(term_list) \
+   if (G_UNLIKELY(term_list->priv->chunk == NULL)) \
+     { \
+@@ -154,9 +151,6 @@ dee_term_list_class_init (DeeTermListClass *klass)
+                                 | G_PARAM_STATIC_STRINGS);
+   g_object_class_install_property (obj_class, PROP_FILTER, pspec);
+   */
+-
+-  /* Add private data */
+-  g_type_class_add_private (obj_class, sizeof (DeeTermListPrivate));
+ }
+ 
+ static void
+@@ -164,7 +158,7 @@ dee_term_list_init (DeeTermList *self)
+ {
+   DeeTermListPrivate *priv;
+ 
+-  priv = self->priv = DEE_TERM_LIST_GET_PRIVATE (self);
++  priv = self->priv = dee_term_list_get_instance_private (self);
+ 
+   /* The chunk and terms are allocated lazily, to make clone() work more
+    * eficiently */

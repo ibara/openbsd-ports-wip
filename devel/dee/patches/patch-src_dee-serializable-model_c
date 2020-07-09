@@ -1,0 +1,61 @@
+$OpenBSD$
+
+Fix compilation, from:
+https://git.archlinux.org/svntogit/community.git/commit/trunk?h=packages/dee&id=ea70275efb988b1c2e7ac9999696fc5b03b3d435
+
+Index: src/dee-serializable-model.c
+--- src/dee-serializable-model.c.orig
++++ src/dee-serializable-model.c
+@@ -47,17 +47,7 @@
+ static void     dee_serializable_model_model_iface_init (DeeModelIface *iface);
+ static void     dee_serializable_model_serializable_iface_init (DeeSerializableIface *iface);
+ static GObject* dee_serializable_model_parse_serialized (GVariant *data);
+-G_DEFINE_ABSTRACT_TYPE_WITH_CODE (DeeSerializableModel,
+-                                  dee_serializable_model,
+-                                  G_TYPE_OBJECT,
+-                                  G_IMPLEMENT_INTERFACE (DEE_TYPE_MODEL,
+-                                                         dee_serializable_model_model_iface_init)
+-                                  G_IMPLEMENT_INTERFACE (DEE_TYPE_SERIALIZABLE,
+-                                                         dee_serializable_model_serializable_iface_init));
+ 
+-#define DEE_SERIALIZABLE_MODEL_GET_PRIVATE(obj) \
+-  (G_TYPE_INSTANCE_GET_PRIVATE(obj, DEE_TYPE_SERIALIZABLE_MODEL, DeeSerializableModelPrivate))
+-
+ #define MODEL_VARIANT_TYPE_1_0 G_VARIANT_TYPE ("(asaav(tt))")
+ #define MODEL_VARIANT_TYPE     G_VARIANT_TYPE ("(asaav(tt)a{sv})")
+ 
+@@ -80,6 +70,15 @@ struct _DeeSerializableModelPrivate
+   gboolean    inside_changeset;
+ };
+ 
++G_DEFINE_ABSTRACT_TYPE_WITH_CODE (DeeSerializableModel,
++                                  dee_serializable_model,
++                                  G_TYPE_OBJECT,
++                                  G_ADD_PRIVATE(DeeSerializableModel)
++                                  G_IMPLEMENT_INTERFACE (DEE_TYPE_MODEL,
++                                                         dee_serializable_model_model_iface_init)
++                                  G_IMPLEMENT_INTERFACE (DEE_TYPE_SERIALIZABLE,
++                                                         dee_serializable_model_serializable_iface_init));
++
+ typedef struct _FieldSchemaInfo FieldSchemaInfo;
+ 
+ struct _FieldSchemaInfo
+@@ -362,9 +361,6 @@ dee_serializable_model_class_init (DeeSerializableMode
+ 
+   sigid_changeset_started = g_signal_lookup ("changeset-started", DEE_TYPE_MODEL);
+   sigid_changeset_finished = g_signal_lookup ("changeset-finished", DEE_TYPE_MODEL);
+-
+-  /* Add private data */
+-  g_type_class_add_private (obj_class, sizeof (DeeSerializableModelPrivate));
+ }
+ 
+ static void
+@@ -372,7 +368,7 @@ dee_serializable_model_init (DeeSerializableModel *mod
+ {
+   DeeSerializableModelPrivate *priv;
+ 
+-  priv = model->priv = DEE_SERIALIZABLE_MODEL_GET_PRIVATE (model);
++  priv = model->priv = dee_serializable_model_get_instance_private (model);
+ 
+   priv->seqnum = 0;
+ 

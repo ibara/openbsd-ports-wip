@@ -1,0 +1,46 @@
+$OpenBSD$
+
+Fix compilation, from:
+https://git.archlinux.org/svntogit/community.git/commit/trunk?h=packages/dee&id=ea70275efb988b1c2e7ac9999696fc5b03b3d435
+
+Index: src/dee-hash-index.c
+--- src/dee-hash-index.c.orig
++++ src/dee-hash-index.c
+@@ -37,11 +37,6 @@
+ #include "dee-glist-result-set.h"
+ #include "trace-log.h"
+ 
+-G_DEFINE_TYPE (DeeHashIndex, dee_hash_index, DEE_TYPE_INDEX);
+-
+-#define DEE_HASH_INDEX_GET_PRIVATE(obj) \
+-  (G_TYPE_INSTANCE_GET_PRIVATE(obj, DEE_TYPE_HASH_INDEX, DeeHashIndexPrivate))
+-
+ /*
+  * FORWARDS
+  */
+@@ -102,6 +97,8 @@ enum
+   PROP_0,
+ };
+ 
++G_DEFINE_TYPE_WITH_PRIVATE (DeeHashIndex, dee_hash_index, DEE_TYPE_INDEX);
++
+ /* GObject stuff */
+ static void
+ dee_hash_index_finalize (GObject *object)
+@@ -180,15 +177,12 @@ dee_hash_index_class_init (DeeHashIndexClass *klass)
+   idx_class->get_n_rows  = dee_hash_index_get_n_rows;
+   idx_class->get_n_rows_for_term = dee_hash_index_get_n_rows_for_term;
+   idx_class->get_supported_term_match_flags  = dee_hash_index_get_supported_term_match_flags;
+-
+-  /* Add private data */
+-  g_type_class_add_private (obj_class, sizeof (DeeHashIndexPrivate));
+ }
+ 
+ static void
+ dee_hash_index_init (DeeHashIndex *self)
+ {
+-  self->priv = DEE_HASH_INDEX_GET_PRIVATE (self);
++  self->priv = dee_hash_index_get_instance_private (self);
+ 
+   self->priv->terms = g_hash_table_new (g_str_hash, g_str_equal);
+   self->priv->row_terms = g_hash_table_new_full(g_direct_hash, g_direct_equal,

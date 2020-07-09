@@ -1,0 +1,57 @@
+$OpenBSD$
+
+Fix compilation, from:
+https://git.archlinux.org/svntogit/community.git/commit/trunk?h=packages/dee&id=ea70275efb988b1c2e7ac9999696fc5b03b3d435
+
+Index: src/dee-sequence-model.c
+--- src/dee-sequence-model.c.orig
++++ src/dee-sequence-model.c
+@@ -49,15 +49,6 @@
+ 
+ static void dee_sequence_model_model_iface_init (DeeModelIface *iface);
+ 
+-G_DEFINE_TYPE_WITH_CODE (DeeSequenceModel,
+-                         dee_sequence_model,
+-                         DEE_TYPE_SERIALIZABLE_MODEL,
+-                         G_IMPLEMENT_INTERFACE (DEE_TYPE_MODEL,
+-                                                dee_sequence_model_model_iface_init));
+-
+-#define DEE_SEQUENCE_MODEL_GET_PRIVATE(obj) \
+-  (G_TYPE_INSTANCE_GET_PRIVATE(obj, DEE_TYPE_SEQUENCE_MODEL, DeeSequenceModelPrivate))
+-
+ /* Signal ids for emitting row update signals a just a smidgeon faster */
+ static guint sigid_row_added;
+ static guint sigid_row_removed;
+@@ -85,6 +76,13 @@ struct _DeeSequenceModelPrivate
+   gboolean   setting_many;
+ };
+ 
++G_DEFINE_TYPE_WITH_CODE (DeeSequenceModel,
++                         dee_sequence_model,
++                         DEE_TYPE_SERIALIZABLE_MODEL,
++                         G_ADD_PRIVATE(DeeSequenceModel)
++                         G_IMPLEMENT_INTERFACE (DEE_TYPE_MODEL,
++                                                dee_sequence_model_model_iface_init));
++
+ /*
+  * DeeModel forward declarations
+  */
+@@ -283,9 +281,6 @@ dee_sequence_model_class_init (DeeSequenceModelClass *
+   sigid_row_added = g_signal_lookup ("row-added", DEE_TYPE_MODEL);
+   sigid_row_removed = g_signal_lookup ("row-removed", DEE_TYPE_MODEL);
+   sigid_row_changed = g_signal_lookup ("row-changed", DEE_TYPE_MODEL);
+-
+-  /* Add private data */
+-  g_type_class_add_private (obj_class, sizeof (DeeSequenceModelPrivate));
+ }
+ 
+ static void
+@@ -327,7 +322,7 @@ dee_sequence_model_init (DeeSequenceModel *model)
+ {
+   DeeSequenceModelPrivate *priv;
+ 
+-  priv = model->priv = DEE_SEQUENCE_MODEL_GET_PRIVATE (model);
++  priv = model->priv = dee_sequence_model_get_instance_private (model);
+   priv->sequence = g_sequence_new (NULL);
+   priv->tags = NULL;
+   priv->setting_many = FALSE;

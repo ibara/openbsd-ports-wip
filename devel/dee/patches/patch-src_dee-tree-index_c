@@ -1,0 +1,46 @@
+$OpenBSD$
+
+Fix compilation, from:
+https://git.archlinux.org/svntogit/community.git/commit/trunk?h=packages/dee&id=ea70275efb988b1c2e7ac9999696fc5b03b3d435
+
+Index: src/dee-tree-index.c
+--- src/dee-tree-index.c.orig
++++ src/dee-tree-index.c
+@@ -40,11 +40,6 @@
+ #include "dee-glist-result-set.h"
+ #include "trace-log.h"
+ 
+-G_DEFINE_TYPE (DeeTreeIndex, dee_tree_index, DEE_TYPE_INDEX);
+-
+-#define DEE_TREE_INDEX_GET_PRIVATE(obj) \
+-  (G_TYPE_INSTANCE_GET_PRIVATE(obj, DEE_TYPE_TREE_INDEX, DeeTreeIndexPrivate))
+-
+ /*
+  * FORWARDS
+  */
+@@ -310,6 +305,8 @@ enum
+   PROP_0,
+ };
+ 
++G_DEFINE_TYPE_WITH_PRIVATE (DeeTreeIndex, dee_tree_index, DEE_TYPE_INDEX);
++
+ /* GObject stuff */
+ static void
+ dee_tree_index_finalize (GObject *object)
+@@ -388,15 +385,12 @@ dee_tree_index_class_init (DeeTreeIndexClass *klass)
+   idx_class->get_n_rows  = dee_tree_index_get_n_rows;
+   idx_class->get_n_rows_for_term = dee_tree_index_get_n_rows_for_term;
+   idx_class->get_supported_term_match_flags  = dee_tree_index_get_supported_term_match_flags;
+-
+-  /* Add private data */
+-  g_type_class_add_private (obj_class, sizeof (DeeTreeIndexPrivate));
+ }
+ 
+ static void
+ dee_tree_index_init (DeeTreeIndex *self)
+ {
+-  self->priv = DEE_TREE_INDEX_GET_PRIVATE (self);
++  self->priv = dee_tree_index_get_instance_private (self);
+ 
+   self->priv->terms = g_sequence_new ((GDestroyNotify) term_destroy);
+   self->priv->row_terms = g_hash_table_new_full(g_direct_hash, g_direct_equal,

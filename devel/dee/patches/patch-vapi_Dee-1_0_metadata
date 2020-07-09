@@ -1,0 +1,19 @@
+$OpenBSD$
+
+Fix compilation, from:
+https://git.archlinux.org/svntogit/community.git/commit/trunk?h=packages/dee&id=ea70275efb988b1c2e7ac9999696fc5b03b3d435
+
+Index: vapi/Dee-1.0.metadata
+--- vapi/Dee-1.0.metadata.orig
++++ vapi/Dee-1.0.metadata
+@@ -2,7 +2,9 @@ GListResultSet skip
+ GListResultSetClass skip
+ 
+ FilterModel
+-	.filter unowned
++	.filter skip // unsupported type for construct property
++Index
++	.reader skip // unsupported type for construct property
+ Model
+ 	.append skip=false
+ 	.build_named_row skip

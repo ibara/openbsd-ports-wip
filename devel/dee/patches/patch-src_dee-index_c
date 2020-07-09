@@ -1,0 +1,46 @@
+$OpenBSD$
+
+Fix compilation, from:
+https://git.archlinux.org/svntogit/community.git/commit/trunk?h=packages/dee&id=ea70275efb988b1c2e7ac9999696fc5b03b3d435
+
+Index: src/dee-index.c
+--- src/dee-index.c.orig
++++ src/dee-index.c
+@@ -43,11 +43,6 @@
+ #include "dee-marshal.h"
+ #include "trace-log.h"
+ 
+-G_DEFINE_ABSTRACT_TYPE (DeeIndex, dee_index, G_TYPE_OBJECT);
+-
+-#define DEE_INDEX_GET_PRIVATE(obj) \
+-  (G_TYPE_INSTANCE_GET_PRIVATE(obj, DEE_TYPE_INDEX, DeeIndexPrivate))
+-
+ /**
+  * DeeIndexPrivate:
+  *
+@@ -68,6 +63,8 @@ enum
+   PROP_READER
+ };
+ 
++G_DEFINE_ABSTRACT_TYPE_WITH_PRIVATE (DeeIndex, dee_index, G_TYPE_OBJECT);
++
+ /* GObject stuff */
+ static void
+ dee_index_finalize (GObject *object)
+@@ -195,15 +192,12 @@ dee_index_class_init (DeeIndexClass *klass)
+                                  G_PARAM_WRITABLE | G_PARAM_CONSTRUCT_ONLY
+                                  | G_PARAM_STATIC_STRINGS);
+     g_object_class_install_property (obj_class, PROP_READER, pspec);
+-
+-  /* Add private data */
+-  g_type_class_add_private (obj_class, sizeof (DeeIndexPrivate));
+ }
+ 
+ static void
+ dee_index_init (DeeIndex *self)
+ {
+-  self->priv = DEE_INDEX_GET_PRIVATE (self);
++  self->priv = dee_index_get_instance_private (self);
+ }
+ 
+ /**

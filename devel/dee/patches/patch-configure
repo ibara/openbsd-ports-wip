@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Remove -Werror.
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -12687,7 +12687,7 @@ fi
+ MAINTAINER_CFLAGS=""
+ if test "x$enable_maintainer_flags" = "xyes" && test "x$GCC" = "xyes"; then :
+ 
+-        MAINTAINER_CFLAGS="-Werror -Wall -Wcast-align -Wno-uninitialized -Wempty-body -Wformat-security -Winit-self -Wno-error=deprecated-declarations"
++        MAINTAINER_CFLAGS="-Wall -Wcast-align -Wno-uninitialized -Wempty-body -Wformat-security -Winit-self -Wno-error=deprecated-declarations"
+ 
+ 
+ fi

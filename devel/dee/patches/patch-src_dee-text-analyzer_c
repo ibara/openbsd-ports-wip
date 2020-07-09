@@ -1,0 +1,51 @@
+$OpenBSD$
+
+Fix compilation, from:
+https://git.archlinux.org/svntogit/community.git/commit/trunk?h=packages/dee&id=ea70275efb988b1c2e7ac9999696fc5b03b3d435
+
+Index: src/dee-text-analyzer.c
+--- src/dee-text-analyzer.c.orig
++++ src/dee-text-analyzer.c
+@@ -36,14 +36,6 @@
+ 
+ #include "dee-text-analyzer.h"
+ 
+-G_DEFINE_TYPE (DeeTextAnalyzer,
+-               dee_text_analyzer,
+-               DEE_TYPE_ANALYZER);
+-
+-#define DEE_TEXT_ANALYZER_GET_PRIVATE(obj) \
+-  (G_TYPE_INSTANCE_GET_PRIVATE(obj, DEE_TYPE_TEXT_ANALYZER, DeeTextAnalyzerPrivate))
+-
+-
+ /**
+  * DeeAnalyzerPrivate:
+  *
+@@ -59,6 +51,10 @@ enum
+   PROP_0,
+ };
+ 
++G_DEFINE_TYPE_WITH_PRIVATE (DeeTextAnalyzer,
++               dee_text_analyzer,
++               DEE_TYPE_ANALYZER);
++
+ /*
+  * DeeAnalyzer forward declarations
+  */
+@@ -88,15 +84,12 @@ dee_text_analyzer_class_init (DeeTextAnalyzerClass *kl
+ 
+   a_class->tokenize = dee_text_analyzer_tokenize_real;
+   a_class->collate_key = dee_text_analyzer_collate_key_real;
+-
+-  /* Add private data */
+-  g_type_class_add_private (obj_class, sizeof (DeeTextAnalyzerPrivate));
+ }
+ 
+ static void
+ dee_text_analyzer_init (DeeTextAnalyzer *self)
+ {
+-  self->priv = DEE_TEXT_ANALYZER_GET_PRIVATE (self);
++  self->priv = dee_text_analyzer_get_instance_private (self);
+ }
+ 
+ /*

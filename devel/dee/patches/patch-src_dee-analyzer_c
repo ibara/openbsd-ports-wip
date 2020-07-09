@@ -1,0 +1,52 @@
+$OpenBSD$
+
+Fix compilation, from:
+https://git.archlinux.org/svntogit/community.git/commit/trunk?h=packages/dee&id=ea70275efb988b1c2e7ac9999696fc5b03b3d435
+
+Index: src/dee-analyzer.c
+--- src/dee-analyzer.c.orig
++++ src/dee-analyzer.c
+@@ -45,13 +45,6 @@
+ #include <string.h>
+ #include "dee-analyzer.h"
+ 
+-G_DEFINE_TYPE (DeeAnalyzer,
+-               dee_analyzer,
+-               G_TYPE_OBJECT);
+-
+-#define DEE_ANALYZER_GET_PRIVATE(obj) \
+-  (G_TYPE_INSTANCE_GET_PRIVATE(obj, DEE_TYPE_ANALYZER, DeeAnalyzerPrivate))
+-
+ typedef struct {
+   DeeTermFilterFunc filter_func;
+   gpointer          data;
+@@ -76,6 +69,10 @@ enum
+   PROP_0,
+ };
+ 
++G_DEFINE_TYPE_WITH_PRIVATE (DeeAnalyzer,
++               dee_analyzer,
++               G_TYPE_OBJECT);
++
+ /*
+  * DeeAnalyzer forward declarations
+  */
+@@ -195,9 +192,6 @@ dee_analyzer_class_init (DeeAnalyzerClass *klass)
+   klass->add_term_filter = dee_analyzer_add_term_filter_real;
+   klass->collate_key = dee_analyzer_collate_key_real;
+   klass->collate_cmp = dee_analyzer_collate_cmp_real;
+-
+-  /* Add private data */
+-  g_type_class_add_private (obj_class, sizeof (DeeAnalyzerPrivate));
+ }
+ 
+ static void
+@@ -205,7 +199,7 @@ dee_analyzer_init (DeeAnalyzer *self)
+ {
+   DeeAnalyzerPrivate *priv;
+ 
+-  priv = self->priv = DEE_ANALYZER_GET_PRIVATE (self);
++  priv = self->priv = dee_analyzer_get_instance_private (self);
+   
+   priv->term_filters = NULL;
+   priv->term_pool = (DeeTermList*) g_object_new (DEE_TYPE_TERM_LIST, NULL);

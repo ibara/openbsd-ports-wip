@@ -1,0 +1,61 @@
+$OpenBSD$
+
+Fix compilation, from:
+https://git.archlinux.org/svntogit/community.git/commit/trunk?h=packages/dee&id=ea70275efb988b1c2e7ac9999696fc5b03b3d435
+
+Index: src/dee-shared-model.c
+--- src/dee-shared-model.c.orig
++++ src/dee-shared-model.c
+@@ -61,17 +61,6 @@ static void dee_shared_model_serializable_iface_init (
+ 
+ static void dee_shared_model_model_iface_init        (DeeModelIface *iface);
+ 
+-G_DEFINE_TYPE_WITH_CODE (DeeSharedModel,
+-                         dee_shared_model,
+-                         DEE_TYPE_PROXY_MODEL,
+-                         G_IMPLEMENT_INTERFACE (DEE_TYPE_SERIALIZABLE,
+-                                                dee_shared_model_serializable_iface_init)
+-                         G_IMPLEMENT_INTERFACE (DEE_TYPE_MODEL,
+-                                                dee_shared_model_model_iface_init));
+-
+-#define DEE_SHARED_MODEL_GET_PRIVATE(obj) \
+-  (G_TYPE_INSTANCE_GET_PRIVATE(obj, DEE_TYPE_SHARED_MODEL, DeeSharedModelPrivate))
+-
+ #define COMMIT_VARIANT_TYPE   G_VARIANT_TYPE("(sasaavauay(tt))")
+ #define COMMIT_TUPLE_ITEMS    6
+ #define CLONE_VARIANT_TYPE    G_VARIANT_TYPE("(sasaavauay(tt)a{sv})")
+@@ -109,6 +98,15 @@ struct _DeeSharedModelPrivate
+   DeeSharedModelFlushMode flush_mode;
+ };
+ 
++G_DEFINE_TYPE_WITH_CODE (DeeSharedModel,
++                         dee_shared_model,
++                         DEE_TYPE_PROXY_MODEL,
++                         G_ADD_PRIVATE(DeeSharedModel)
++                         G_IMPLEMENT_INTERFACE (DEE_TYPE_SERIALIZABLE,
++                                                dee_shared_model_serializable_iface_init)
++                         G_IMPLEMENT_INTERFACE (DEE_TYPE_MODEL,
++                                                dee_shared_model_model_iface_init));
++
+ typedef struct
+ {
+   /* The revision type is: ROWS_ADDED, ROWS_REMOVED, or ROWS_CHANGED */
+@@ -806,9 +804,6 @@ dee_shared_model_class_init (DeeSharedModelClass *klas
+                   G_TYPE_NONE, 2,
+                   G_TYPE_UINT64, G_TYPE_UINT64);
+ 
+-  /* Add private data */
+-  g_type_class_add_private (obj_class, sizeof (DeeSharedModelPrivate));
+-
+   /* Runtime-check that our defines are correct */
+   g_assert (g_variant_type_n_items (CLONE_VARIANT_TYPE) == CLONE_TUPLE_ITEMS);
+   g_assert (g_variant_type_n_items (COMMIT_VARIANT_TYPE) == COMMIT_TUPLE_ITEMS);
+@@ -819,7 +814,7 @@ dee_shared_model_init (DeeSharedModel *self)
+ {
+   DeeSharedModelPrivate *priv;
+ 
+-  priv = self->priv = DEE_SHARED_MODEL_GET_PRIVATE (self);
++  priv = self->priv = dee_shared_model_get_instance_private (self);
+ 
+   priv->swarm = NULL;
+   priv->model_path = NULL;

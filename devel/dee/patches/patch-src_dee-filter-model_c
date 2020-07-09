@@ -1,0 +1,57 @@
+$OpenBSD$
+
+Fix compilation, from:
+https://git.archlinux.org/svntogit/community.git/commit/trunk?h=packages/dee&id=ea70275efb988b1c2e7ac9999696fc5b03b3d435
+
+Index: src/dee-filter-model.c
+--- src/dee-filter-model.c.orig
++++ src/dee-filter-model.c
+@@ -65,15 +65,6 @@
+ 
+ static void dee_filter_model_model_iface_init (DeeModelIface *iface);
+ 
+-G_DEFINE_TYPE_WITH_CODE (DeeFilterModel,
+-                         dee_filter_model,
+-                         DEE_TYPE_PROXY_MODEL,
+-                         G_IMPLEMENT_INTERFACE (DEE_TYPE_MODEL,
+-                                                dee_filter_model_model_iface_init));
+-
+-#define DEE_FILTER_MODEL_GET_PRIVATE(obj) \
+-  (G_TYPE_INSTANCE_GET_PRIVATE(obj, DEE_TYPE_FILTER_MODEL, DeeFilterModelPrivate))
+-
+ /**
+  * DeeFilterModelPrivate:
+  *
+@@ -107,6 +98,13 @@ enum
+   PROP_FILTER,
+ };
+ 
++G_DEFINE_TYPE_WITH_CODE (DeeFilterModel,
++                         dee_filter_model,
++                         DEE_TYPE_PROXY_MODEL,
++                         G_ADD_PRIVATE(DeeFilterModel)
++                         G_IMPLEMENT_INTERFACE (DEE_TYPE_MODEL,
++                                                dee_filter_model_model_iface_init));
++
+ /*
+  * DeeModel forward declarations
+  */
+@@ -332,9 +330,6 @@ dee_filter_model_class_init (DeeFilterModelClass *klas
+                                 G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY
+                                 | G_PARAM_STATIC_STRINGS);
+   g_object_class_install_property (obj_class, PROP_FILTER, pspec);
+-
+-  /* Add private data */
+-  g_type_class_add_private (obj_class, sizeof (DeeFilterModelPrivate));
+ }
+ 
+ static void
+@@ -342,7 +337,7 @@ dee_filter_model_init (DeeFilterModel *self)
+ {
+   DeeFilterModelPrivate *priv;
+ 
+-  priv = self->priv = DEE_FILTER_MODEL_GET_PRIVATE (self);
++  priv = self->priv = dee_filter_model_get_instance_private (self);
+   
+   priv->iter_map = g_hash_table_new (g_direct_hash, g_direct_equal);
+   priv->iter_list = g_sequence_new (NULL);

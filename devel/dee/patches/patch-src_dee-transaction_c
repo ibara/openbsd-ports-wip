@@ -1,0 +1,41 @@
+$OpenBSD$
+
+Fix compilation, from:
+https://git.archlinux.org/svntogit/community.git/commit/trunk?h=packages/dee&id=ea70275efb988b1c2e7ac9999696fc5b03b3d435
+
+Index: src/dee-transaction.c
+--- src/dee-transaction.c.orig
++++ src/dee-transaction.c
+@@ -403,12 +403,10 @@ static void dee_transaction_model_iface_init (DeeModel
+ G_DEFINE_TYPE_WITH_CODE (DeeTransaction,
+                          dee_transaction,
+                          DEE_TYPE_SERIALIZABLE_MODEL,
++                         G_ADD_PRIVATE(DeeTransaction)
+                          G_IMPLEMENT_INTERFACE (DEE_TYPE_MODEL,
+                                                 dee_transaction_model_iface_init));
+ 
+-#define DEE_TRANSACTION_GET_PRIVATE(obj) \
+-  (G_TYPE_INSTANCE_GET_PRIVATE(obj, DEE_TYPE_TRANSACTION, DeeTransactionPrivate))
+-
+ enum
+ {
+   PROP_0,
+@@ -644,9 +642,6 @@ dee_transaction_class_init (DeeTransactionClass *klass
+                                G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY
+                                | G_PARAM_STATIC_STRINGS);
+   g_object_class_install_property (obj_class, PROP_TARGET, pspec);
+-  
+-  /* Add private data */
+-  g_type_class_add_private (obj_class, sizeof (DeeTransactionPrivate));
+ }
+ 
+ static void
+@@ -695,7 +690,7 @@ dee_transaction_init (DeeTransaction *model)
+ {
+   DeeTransactionPrivate *priv;
+ 
+-  priv = model->priv = DEE_TRANSACTION_GET_PRIVATE (model);
++  priv = model->priv = dee_transaction_get_instance_private (model);
+   priv->target = NULL;
+   
+   priv->journal = g_hash_table_new (g_direct_hash, g_direct_equal);
