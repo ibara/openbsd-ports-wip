@@ -17,7 +17,7 @@ WANTLIB += ${COMPILER_LIBCXX} c ffi gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 iconv icudata icui18n icuuc
 WANTLIB += intl m pcre z
 
-MASTER_SITES=	https://launchpad.net/dee/1.0/1.0.14/+download/
+MASTER_SITES=	https://launchpad.net/dee/1.0/1.2.7/+download/
 
 MODULES=	lang/python \
 		x11/gnome
