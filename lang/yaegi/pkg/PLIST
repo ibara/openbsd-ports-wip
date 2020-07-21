@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v$
-@bin bin/goexports
-@bin bin/yaegi

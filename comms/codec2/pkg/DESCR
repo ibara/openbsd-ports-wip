@@ -1,0 +1,3 @@
+Codec 2 is an open source (LGPL 2.1) low bit rate speech codec, designed
+for communications quality speech between 450 and 3200 bit/s. The main
+application is low bandwidth HF/VHF digital radio.

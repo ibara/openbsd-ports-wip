@@ -1,0 +1,79 @@
+$OpenBSD$
+
+Index: src/svxlink/trx/SquelchEvDev.cpp
+--- src/svxlink/trx/SquelchEvDev.cpp.orig
++++ src/svxlink/trx/SquelchEvDev.cpp
+@@ -37,7 +37,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
+ #include <cassert>
+ #include <unistd.h>
+ #include <fcntl.h>
+-#include <linux/input.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <sys/ioctl.h>
+@@ -197,21 +196,7 @@ bool SquelchEvDev::initialize(Async::Config& cfg, cons
+   
+   watch = new FdWatch(fd, FdWatch::FD_WATCH_RD);
+   assert(watch != 0);
+-  watch->activity.connect(mem_fun(*this, &SquelchEvDev::readEvDevData));
+   
+-    // Print Device Name
+-  char name[256] = "Unknown";
+-  if (ioctl(fd, EVIOCGNAME (sizeof (name)), name) != -1)
+-  {
+-    cout << rx_name << ": EvDev Squelch: " << devname << "(" << name << ")\n";
+-  }
+-  else
+-  {
+-    cerr << "*** WARNING: Could not read EvDev squelch device name from "
+-         << "event device " << devname << " specified in " << rx_name
+-         << "/EVDEV_DEVNAME: " << strerror(errno) << endl;
+-  }
+- 
+   return true;
+ }
+ 
+@@ -231,43 +216,6 @@ bool SquelchEvDev::initialize(Async::Config& cfg, cons
+  *
+  ****************************************************************************/
+ 
+-void SquelchEvDev::readEvDevData(FdWatch *w)
+-{
+-  struct input_event ev[64];
+-  int rd = read(fd, ev, sizeof(ev));
+-  if (rd < 0)
+-  {
+-    cerr << "*** WARNING: SquelchEvDev::readEvDevData read for receiver "
+-         << rxName() << ": " << strerror(errno) << endl;
+-    return;
+-  }
+-
+-  for (int i=0; rd > 0; ++i, rd -= sizeof(ev[0]))
+-  {
+-    if (rd < (int)sizeof(ev[0]))
+-    {
+-      cerr << "*** WARNING: SquelchEvDev::readEvDevData for receiver "
+-           << rxName() << ": Short read\n";
+-      return;
+-    }
+-    
+-    /*
+-    cout << "type=" << ev[i].type << " code=" << ev[i].code
+-	<< " value=" << ev[i].value << endl;
+-    */
+-    
+-    int ev_arr_tmp[3] = {ev[i].type, ev[i].code, ev[i].value};
+-    vector<int> ev_arr(ev_arr_tmp, ev_arr_tmp+3);
+-    if (!signalDetected() && (open_ev == ev_arr))
+-    {
+-      setSignalDetected(true);
+-    }
+-    else if (signalDetected() && (close_ev == ev_arr))
+-    {
+-      setSignalDetected(false);
+-    }
+-  }
+-} /* SquelchEvDev::readEvDevData */
+ 
+ 
+ /*

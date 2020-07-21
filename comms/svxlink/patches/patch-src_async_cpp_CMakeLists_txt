@@ -1,0 +1,18 @@
+$OpenBSD$
+
+No -lrt.
+
+Index: src/async/cpp/CMakeLists.txt
+--- src/async/cpp/CMakeLists.txt.orig
++++ src/async/cpp/CMakeLists.txt
+@@ -19,10 +19,6 @@ set(LIBS ${LIBS} ${CMAKE_THREAD_LIBS_INIT})
+ # FIXME: Do we need this?
+ add_definitions(-D_REENTRANT)
+ 
+-# Find librt
+-find_package(RT REQUIRED)
+-set(LIBS ${LIBS} ${RT_LIBRARIES})
+-
+ # Build a shared library and a static library if configured
+ add_library(${LIBNAME} SHARED ${LIBSRC})
+ set_target_properties(${LIBNAME} PROPERTIES VERSION ${VER_LIBASYNC}

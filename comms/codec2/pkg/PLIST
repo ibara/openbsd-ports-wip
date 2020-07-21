@@ -1,0 +1,37 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/c2dec
+@bin bin/c2enc
+@bin bin/drs232
+@bin bin/drs232_ldpc
+@bin bin/fdmdv_demod
+@bin bin/fdmdv_get_test_bits
+@bin bin/fdmdv_mod
+@bin bin/fdmdv_put_test_bits
+@bin bin/fm_demod
+@bin bin/fsk_mod
+@bin bin/insert_errors
+include/codec2/
+include/codec2/codec2.h
+include/codec2/codec2_cohpsk.h
+include/codec2/codec2_fdmdv.h
+include/codec2/codec2_fifo.h
+include/codec2/codec2_fm.h
+include/codec2/codec2_ofdm.h
+include/codec2/comp.h
+include/codec2/comp_prim.h
+include/codec2/filter.h
+include/codec2/freedv_api.h
+include/codec2/freedv_api_internal.h
+include/codec2/fsk.h
+include/codec2/golay23.h
+include/codec2/horus_api.h
+include/codec2/kiss_fft.h
+include/codec2/modem_stats.h
+include/codec2/varicode.h
+include/codec2/version.h
+lib/cmake/
+lib/cmake/codec2/
+lib/cmake/codec2/codec2-config${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/codec2/codec2-config.cmake
+@lib lib/libcodec2.so.${LIBcodec2_VERSION}
+lib/pkgconfig/codec2.pc

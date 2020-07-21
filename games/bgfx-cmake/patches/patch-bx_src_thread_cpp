@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Add __OpenBSD__
+
+Index: bx/src/thread.cpp
+--- bx/src/thread.cpp.orig
++++ bx/src/thread.cpp
+@@ -23,7 +23,7 @@
+ 	|| BX_PLATFORM_PS4     \
+ 	|| BX_PLATFORM_RPI
+ #	include <pthread.h>
+-#	if defined(__FreeBSD__)
++#	if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #		include <pthread_np.h>
+ #	endif
+ #	if BX_PLATFORM_LINUX && (BX_CRT_GLIBC < 21200)

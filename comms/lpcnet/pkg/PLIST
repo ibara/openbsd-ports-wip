@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/lpcnet_dec
+@bin bin/lpcnet_enc
+include/lpcnet/
+include/lpcnet/lpcnet_freedv.h
+lib/cmake/
+lib/cmake/lpcnetfreedv/
+lib/cmake/lpcnetfreedv/lpcnetfreedv-config${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/lpcnetfreedv/lpcnetfreedv-config.cmake
+@lib lib/liblpcnetfreedv.so.${LIBlpcnetfreedv_VERSION}

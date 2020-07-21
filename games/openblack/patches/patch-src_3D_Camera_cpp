@@ -1,0 +1,16 @@
+$OpenBSD$
+
+eulerAngeZXY is really eulerAngleYXZ...
+
+Index: src/3D/Camera.cpp
+--- src/3D/Camera.cpp.orig
++++ src/3D/Camera.cpp
+@@ -17,7 +17,7 @@ using namespace openblack;
+ 
+ glm::mat4 Camera::getRotationMatrix() const
+ {
+-	return glm::eulerAngleZXY(_rotation.z, _rotation.x, _rotation.y);
++	return glm::eulerAngleYXZ(_rotation.y, _rotation.x, _rotation.z);
+ }
+ 
+ glm::mat4 Camera::GetViewMatrix() const

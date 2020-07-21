@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Fix -Wformat warning.
+
+Index: src/fsk_demod.c
+--- src/fsk_demod.c.orig
++++ src/fsk_demod.c
+@@ -351,7 +351,7 @@ int main(int argc,char *argv[]){
+                 fprintf(stderr,"{");
+                 time_t seconds  = time(NULL);
+ 
+-                fprintf(stderr,"\"secs\": %ld, \"EbNodB\": %5.1f, \"ppm\": %4d,",seconds, stats.snr_est, (int)fsk->ppm);
++                fprintf(stderr,"\"secs\": %lld, \"EbNodB\": %5.1f, \"ppm\": %4d,",seconds, stats.snr_est, (int)fsk->ppm);
+                 fprintf(stderr," \"f1_est\":%.1f, \"f2_est\":%.1f",fsk->f_est[0],fsk->f_est[1]);
+ 
+                 /* Print 4FSK stats if in 4FSK mode */

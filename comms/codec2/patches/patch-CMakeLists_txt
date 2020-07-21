@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Remove hardcoded optimization flags.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -81,7 +81,6 @@ if(NOT WIN32)
+ endif()
+ 
+ set(CMAKE_C_FLAGS_DEBUG "-g -O2 -DDUMP")
+-set(CMAKE_C_FLAGS_RELEASE "-O3")
+ 
+ #
+ # Setup Windows/MinGW specifics here.

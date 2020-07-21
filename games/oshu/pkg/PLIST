@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/oshu
+@bin bin/oshu-library
+@man man/man1/oshu-library.1
+@man man/man1/oshu.1
+share/applications/oshu.desktop
+share/doc/pkg-readmes/${PKGSTEM}
+share/mime/packages/oshu.xml
+share/oshu/
+share/oshu/skins/
+share/oshu/skins/default
+share/oshu/skins/minimal/
+share/oshu/skins/minimal/drum-hitnormal.wav
+share/oshu/skins/minimal/normal-hitnormal.wav
+share/oshu/skins/minimal/soft-hitnormal.wav
+share/oshu/web/
+share/oshu/web/style.css
+@tag update-desktop-database
+@tag update-mime-database

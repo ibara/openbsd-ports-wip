@@ -1,13 +1,16 @@
 $OpenBSD$
 
-Index: bgfx.cmake/bgfx/tools/shaderc/shaderc.h
---- bgfx.cmake/bgfx/tools/shaderc/shaderc.h.orig
-+++ bgfx.cmake/bgfx/tools/shaderc/shaderc.h
-@@ -44,7 +44,6 @@ namespace bgfx
+Fix include.
+
+Index: bgfx/tools/shaderc/shaderc.h
+--- bgfx/tools/shaderc/shaderc.h.orig
++++ bgfx/tools/shaderc/shaderc.h
+@@ -44,7 +44,7 @@ namespace bgfx
  #	define SHADERC_CONFIG_HLSL BX_PLATFORM_WINDOWS
  #endif // SHADERC_CONFIG_HLSL
  
 -#include <alloca.h>
++#include <stdlib.h>
  #include <stdint.h>
  #include <string.h>
  #include <algorithm>

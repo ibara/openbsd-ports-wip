@@ -1,0 +1,27 @@
+$OpenBSD$
+
+No -ldl or -lrt.
+
+Index: cmake/bx.cmake
+--- cmake/bx.cmake.orig
++++ cmake/bx.cmake
+@@ -76,10 +76,10 @@ endif()
+ if( UNIX AND NOT APPLE AND NOT ANDROID )
+ 	# Threads
+ 	find_package( Threads )
+-	target_link_libraries( bx ${CMAKE_THREAD_LIBS_INIT} dl )
++	target_link_libraries( bx ${CMAKE_THREAD_LIBS_INIT} )
+ 
+ 	# Real time (for clock_gettime)
+-	target_link_libraries( bx rt )
++	target_link_libraries( bx )
+ elseif(APPLE)
+ 	find_library( FOUNDATION_LIBRARY Foundation)
+ 	mark_as_advanced( FOUNDATION_LIBRARY )
+@@ -87,4 +87,4 @@ elseif(APPLE)
+ endif()
+ 
+ # Put in a "bgfx" folder in Visual Studio
+-set_target_properties( bx PROPERTIES FOLDER "bgfx" )
+\ No newline at end of file
++set_target_properties( bx PROPERTIES FOLDER "bgfx" )

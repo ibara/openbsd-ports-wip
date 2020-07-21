@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: src/async/audio/AsyncAudioDeviceOSS.cpp
+--- src/async/audio/AsyncAudioDeviceOSS.cpp.orig
++++ src/async/audio/AsyncAudioDeviceOSS.cpp
+@@ -38,7 +38,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>
+-#include <sys/soundcard.h>
++#include <soundcard.h>
+ #include <sys/ioctl.h>
+ #include <unistd.h>
+ #include <stdlib.h>

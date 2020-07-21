@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v$
+include/osmosdr/
+include/osmosdr/api.h
+include/osmosdr/device.h
+include/osmosdr/pimpl.h
+include/osmosdr/ranges.h
+include/osmosdr/sink.h
+include/osmosdr/source.h
+include/osmosdr/time_spec.h
+@lib lib/libgnuradio-osmosdr.so.${LIBgnuradio-osmosdr_VERSION}
+lib/pkgconfig/gnuradio-osmosdr.pc

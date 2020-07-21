@@ -1,0 +1,32 @@
+$OpenBSD$
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+oshu
+====
+To play with oshu you need osu! beatmaps. oshu can only work with
+Standard beatmaps.
+
+You can download them from the official site
+https://osu.ppy.sh/beatmapsets
+if you already have an osu! account otherwise download them from
+https://bloodcat.com/osu
+and select "Standard" in the Mode section of the search filter.
+
+The file downloaded has an osz extension but it's a ZIP file in disguise
+so you can extract it with unzip (it's recommended to put each osz file
+in its own directory):
+$ mkdir song-name && cd song-name
+$ mv $HOME/Downloads/file.osz .
+$ unzip file.osz
+
+After that you can play an osu! beatmap with:
+$ oshu /path/to/your/beatmap.osu
+
+To change the resolution you can set OSHU_WINDOW_SIZE to your monitor
+resolution or resize the window manually:
+$ export OSHU_WINDOW_SIZE=1920x1080
+
+For more information about the parameters, controls, etc., read oshu(1).

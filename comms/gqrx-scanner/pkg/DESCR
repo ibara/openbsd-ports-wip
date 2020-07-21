@@ -1,0 +1,6 @@
+gqrx-scanner is a frequency scanner written in C that uses gqrx remote
+protocol to perform a fast scan of the band. It can be used in
+conjunction with the gqrx bookmarks (--mode bookmark) to look for the
+already stored frequencies or, in a free sweep scan mode (--mode sweep),
+to explore the band within a specified frequency range (--min, --max
+options).
