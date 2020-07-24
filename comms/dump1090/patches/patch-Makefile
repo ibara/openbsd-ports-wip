@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Remove hardcoded optimizations.
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -1,4 +1,4 @@
+-CFLAGS?=-O2 -g -Wall -W $(shell pkg-config --cflags librtlsdr)
++CFLAGS+=-Wall -W $(shell pkg-config --cflags librtlsdr)
+ LDLIBS+=$(shell pkg-config --libs librtlsdr) -lpthread -lm
+ CC?=gcc
+ PROGNAME=dump1090

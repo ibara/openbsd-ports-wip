@@ -1,0 +1,5 @@
+#!/bin/sh
+
+${TRUEPREFIX}/bin/dump1090 --quiet --net --net-http-port 8081 &
+cd ${TRUEPREFIX}/share/virtualradar && ${TRUEPREFIX}/bin/mono VirtualRadar.exe "$@"
+pkill dump1090

@@ -1,0 +1,3 @@
+Virtual Radar Server is an open-source .NET application that runs a
+local web server which plots aircraft on a map. You will need a radio
+that is capable of receiving Mode-S transmissions.

@@ -1,0 +1,195 @@
+$OpenBSD$
+
+Namespace pollution
+
+Index: include/liquid.h
+--- include/liquid.h.orig
++++ include/liquid.h
+@@ -1395,7 +1395,7 @@ void SPGRAM(_write)(SPGRAM()     _q,                  
+ /*  _q      :   spgram object                               */  \
+ /*  _X      :   output spectrum (dB) [size: _nfft x 1]      */  \
+ void SPGRAM(_get_psd)(SPGRAM() _q,                              \
+-                      T *      _X);                             \
++                      T *      _EX);                             \
+                                                                 \
+ /* export gnuplot file                                      */  \
+ /*  _q        : spgram object                               */  \
+@@ -1640,13 +1640,13 @@ unsigned int estimate_req_filter_len(float _df,
+ //  _df     :   transition bandwidth (0 < _b < 0.5)
+ //  _N      :   filter length
+ float estimate_req_filter_As(float        _df,
+-                             unsigned int _N);
++                             unsigned int _EN);
+ 
+ // estimate filter transition bandwidth given
+ //  _As     :   stop-band attenuation [dB], _As > 0
+ //  _N      :   filter length
+ float estimate_req_filter_df(float        _As,
+-                             unsigned int _N);
++                             unsigned int _EN);
+ 
+ 
+ // returns the Kaiser window beta factor give the filter's target
+@@ -1940,7 +1940,7 @@ void liquid_iirdes(liquid_iirdes_filtertype _ftype,
+                    float _f0,
+                    float _Ap,
+                    float _As,
+-                   float * _B,
++                   float * _EB,
+                    float * _A);
+ 
+ // compute analog zeros, poles, gain for specific filter types
+@@ -2045,7 +2045,7 @@ void iirdes_dzpk2sosf(liquid_float_complex * _zd,
+                       liquid_float_complex * _pd,
+                       unsigned int _n,
+                       liquid_float_complex _kd,
+-                      float * _B,
++                      float * _EB,
+                       float * _A);
+ 
+ // additional IIR filter design templates
+@@ -2485,7 +2485,7 @@ IIRFILT() IIRFILT(_create)(TC *         _b,           
+ /* create IIR filter using 2nd-order secitons               */  \
+ /*  _B      : feed-forward coefficients [size: _nsos x 3]   */  \
+ /*  _A      : feed-back coefficients    [size: _nsos x 3]   */  \
+-IIRFILT() IIRFILT(_create_sos)(TC *         _B,                 \
++IIRFILT() IIRFILT(_create_sos)(TC *         _EB,                 \
+                                TC *         _A,                 \
+                                unsigned int _nsos);             \
+                                                                 \
+@@ -4699,7 +4699,7 @@ liquid_window_type liquid_getopt_str2window(const char
+ //  _n      :   index (0 <= _n < _N)
+ //  _N      :   length of filter (must be even)
+ //  _beta   :   Kaiser window parameter (_beta > 0)
+-float liquid_kbd(unsigned int _n, unsigned int _N, float _beta);
++float liquid_kbd(unsigned int _n, unsigned int _EN, float _beta);
+ 
+ // Kaiser-Bessel derived window (full window)
+ //  _n      :   length of filter (must be even)
+@@ -4713,7 +4713,7 @@ void liquid_kbd_window(unsigned int _n, float _beta, f
+ //  _beta   :   Kaiser-Bessel window shape parameter
+ //  _dt     :   fractional sample offset
+ float kaiser(unsigned int _n,
+-             unsigned int _N,
++             unsigned int _EN,
+              float        _beta,
+              float        _dt);
+ 
+@@ -4721,39 +4721,39 @@ float kaiser(unsigned int _n,
+ //  _n      :   window index
+ //  _N      :   full window length
+ float hamming(unsigned int _n,
+-              unsigned int _N);
++              unsigned int _EN);
+ 
+ // Hann window
+ //  _n      :   window index
+ //  _N      :   full window length
+ float hann(unsigned int _n,
+-           unsigned int _N);
++           unsigned int _EN);
+ 
+ // Blackman-harris window
+ //  _n      :   window index
+ //  _N      :   full window length
+ float blackmanharris(unsigned int _n,
+-                     unsigned int _N);
++                     unsigned int _EN);
+ 
+ // 7th order Blackman-harris window
+ // _n			:	window index
+ // _N			:	full window length
+ float blackmanharris7(unsigned int _n,
+-                      unsigned int _N);
++                      unsigned int _EN);
+ 
+ // Flat-top window
+ // _n			:	window index
+ // _N			:	full window length
+ float flattop(unsigned int _n,
+-              unsigned int _N);
++              unsigned int _EN);
+ 
+ // Triangular window
+ // _n			:	window index
+ // _N			:	full window length
+ // _L			:	triangle length, _L in {_N, _N+1, _N-1}
+ float triangular(unsigned int _n,
+-                 unsigned int _N,
+-                 unsigned int _L);
++                 unsigned int _EN,
++                 unsigned int _EL);
+ 
+ // raised-cosine tapering window
+ //  _n      :   window index
+@@ -4761,7 +4761,7 @@ float triangular(unsigned int _n,
+ //  _N      :   full window length
+ float liquid_rcostaper_windowf(unsigned int _n,
+                                unsigned int _t,
+-                               unsigned int _N);
++                               unsigned int _EN);
+ 
+ 
+ // polynomials
+@@ -5210,9 +5210,9 @@ void MATRIX(_cgsolve)(T *          _A,                
+ void MATRIX(_ludecomp_crout)(T *          _x,                   \
+                              unsigned int _rx,                  \
+                              unsigned int _cx,                  \
+-                             T *          _L,                   \
+-                             T *          _U,                   \
+-                             T *          _P);                  \
++                             T *          _EL,                   \
++                             T *          _EU,                   \
++                             T *          _EP);                  \
+                                                                 \
+ /* L/U/P decomposition, Doolittle's method                  */  \
+ /*  _x      : input/output matrix [size: _rx x _cx]         */  \
+@@ -5224,9 +5224,9 @@ void MATRIX(_ludecomp_crout)(T *          _x,         
+ void MATRIX(_ludecomp_doolittle)(T *          _x,               \
+                                  unsigned int _rx,              \
+                                  unsigned int _cx,              \
+-                                 T *          _L,               \
+-                                 T *          _U,               \
+-                                 T *          _P);              \
++                                 T *          _EL,               \
++                                 T *          _EU,               \
++                                 T *          _EP);              \
+                                                                 \
+ /* Orthnormalization using the Gram-Schmidt algorithm       */  \
+ /*  _A      : input matrix [size: _r x _c]                  */  \
+@@ -5260,7 +5260,7 @@ void MATRIX(_qrdecomp_gramschmidt)(T *          _A,   
+ /*  _L      :   output lower-triangular matrix              */  \
+ void MATRIX(_chol)(T *          _A,                             \
+                    unsigned int _n,                             \
+-                   T *          _L);                            \
++                   T *          _EL);                            \
+ 
+ #define matrix_access(X,R,C,r,c) ((X)[(r)*(C)+(c)])
+ 
+@@ -5288,7 +5288,7 @@ typedef struct SMATRIX(_s) * SMATRIX();               
+                                                                 \
+ /* create _M x _N matrix, initialized with zeros */             \
+ SMATRIX() SMATRIX(_create)(unsigned int _M,                     \
+-                           unsigned int _N);                    \
++                           unsigned int _EN);                    \
+                                                                 \
+ /* create _M x _N matrix, initialized on array */               \
+ SMATRIX() SMATRIX(_create_array)(T *          _x,               \
+@@ -6282,7 +6282,7 @@ void NCO(_mix_down)(NCO() _q, TC _x, TC *_y);         
+ void NCO(_mix_block_up)(NCO() _q,                               \
+                         TC *_x,                                 \
+                         TC *_y,                                 \
+-                        unsigned int _N);                       \
++                        unsigned int _EN);                       \
+                                                                 \
+ /* Rotate input vector down by NCO angle (stepping)     */      \
+ /*  _q      :   nco object                              */      \
+@@ -6292,7 +6292,7 @@ void NCO(_mix_block_up)(NCO() _q,                     
+ void NCO(_mix_block_down)(NCO() _q,                             \
+                           TC *_x,                               \
+                           TC *_y,                               \
+-                          unsigned int _N);                     \
++                          unsigned int _EN);                     \
+ 
+ // Define nco APIs
+ LIQUID_NCO_DEFINE_API(LIQUID_NCO_MANGLE_FLOAT, float, liquid_float_complex)

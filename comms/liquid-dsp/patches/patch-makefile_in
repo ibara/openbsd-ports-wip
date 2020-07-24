@@ -1,0 +1,25 @@
+$OpenBSD$
+
+Add soname version number
+
+Index: makefile.in
+--- makefile.in.orig
++++ makefile.in
+@@ -1153,7 +1153,7 @@ benchmark_sources :=						\
+ .PHONY: all
+ 
+ # Shared library
+-SHARED_LIB	= @SH_LIB@
++SHARED_LIB	= @SH_LIB@.${LIBliquid_VERSION}
+ 
+ # liquid library definition
+ libliquid.a: $(objects)
+@@ -1167,7 +1167,7 @@ libliquid.dylib: $(objects)
+ 	$(CC) -dynamiclib -install_name $@ -o $@ $^ $(LDFLAGS) $(LIBS)
+ 
+ # linux, et al
+-libliquid.so: libliquid.a
++libliquid.so.${LIBliquid_VERSION}: libliquid.a
+ 	$(CC) $(CFLAGS) $(LDFLAGS) -shared -Xlinker -soname=$@ -o $@ -Wl,-whole-archive $^ -Wl,-no-whole-archive $(LIBS)
+ 
+ all: libliquid.a $(SHARED_LIB)

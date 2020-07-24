@@ -30,7 +30,7 @@ MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		lang/vala \
-		textproc/py-rdflib
+		textproc/py-rdflib${MODPY_FLAVOR}
 
 LIB_DEPENDS =	devel/gettext \
 		devel/json-glib \

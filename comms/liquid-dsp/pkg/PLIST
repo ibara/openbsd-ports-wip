@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v$
+include/liquid/
+include/liquid/liquid.h
+@static-lib lib/libliquid.a
+@lib lib/libliquid.so.${LIBliquid_VERSION}

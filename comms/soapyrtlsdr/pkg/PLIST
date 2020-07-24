@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v$
+lib/SoapySDR/
+lib/SoapySDR/modules0.7/
+@so lib/SoapySDR/modules0.7/librtlsdrSupport.so

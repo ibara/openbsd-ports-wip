@@ -1,0 +1,14 @@
+CubicSDR is a cross-platform Software-Defined Radio application which
+allows you to navigate the radio spectrum and demodulate any signals you
+might discover. It currently includes several common analog demodulation
+schemes such as AM and FM and will support digital modes in the future.
+Many digital decoding applications are available now that can use the
+analog outputs to process digital signals by "piping" the data from
+CubicSDR to another program using software like Soundflower, Jack Audio
+or VBCable.
+
+CubicSDR supports the readily-available RTL-SDR which is an inexpensive
+SDR device that can be purchased online. Additionally CubicSDR now
+includes support for SDRPlay, HackRF, BladeRF, AirSpy, NetSDR+, Red
+Pitaya, Audio Devices (some platform specific at the moment) or any
+other device with an available SoapySDR support module.

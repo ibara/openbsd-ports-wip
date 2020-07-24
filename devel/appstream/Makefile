@@ -20,11 +20,18 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 intl lmdb soup-2.4 xml2
 WANTLIB += yaml-0
 
+# C11
+COMPILER =	base-clang ports-gcc
+
 MODULES =	devel/meson
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/gobject-introspection \
-		devel/libstemmer-c
+		devel/gperf \
+		devel/libstemmer-c \
+		lang/vala \
+		textproc/gtk-doc \
+		textproc/libxslt
 
 LIB_DEPENDS =	databases/lmdb \
 		devel/libsoup \

@@ -1,7 +1,52 @@
 # $OpenBSD$
 
      SUBDIR =
-     SUBDIR += granite
+     SUBDIR += applications-menu
+     SUBDIR += appstream-data
+     SUBDIR += calendar
+     SUBDIR += default-settings
+     SUBDIR += files
+     SUBDIR += gala
+     SUBDIR += greeter
+     SUBDIR += icons
+     SUBDIR += keyboard
+     SUBDIR += mail
+     SUBDIR += music
+     SUBDIR += onboarding
+     SUBDIR += pantheon-agent-geoclue2
+     SUBDIR += pantheon-agent-polkit
+     SUBDIR += screenshot
+     SUBDIR += session-settings
+     SUBDIR += stylesheet
+     SUBDIR += switchboard
+     SUBDIR += switchboard-plug-a11y
+     SUBDIR += switchboard-plug-about
+     SUBDIR += switchboard-plug-applications
+     SUBDIR += switchboard-plug-datetime
+     SUBDIR += switchboard-plug-display
+     SUBDIR += switchboard-plug-keyboard
+     SUBDIR += switchboard-plug-mouse-touchpad
+     SUBDIR += switchboard-plug-network
+     SUBDIR += switchboard-plug-notifications
+     SUBDIR += switchboard-plug-pantheon-shell
+     SUBDIR += switchboard-plug-power
+     SUBDIR += switchboard-plug-sound
+     SUBDIR += tasks
      SUBDIR += terminal
+     SUBDIR += videos
+     SUBDIR += wallpapers
+     SUBDIR += wingpanel
+     SUBDIR += wingpanel-indicator-a11y
+     SUBDIR += wingpanel-indicator-bluetooth
+     SUBDIR += wingpanel-indicator-datetime
+     SUBDIR += wingpanel-indicator-keyboard
+     SUBDIR += wingpanel-indicator-network
+     SUBDIR += wingpanel-indicator-nightlight
+     SUBDIR += wingpanel-indicator-notifications
+     SUBDIR += wingpanel-indicator-power
+     SUBDIR += wingpanel-indicator-privacy
+     SUBDIR += wingpanel-indicator-session
+     SUBDIR += wingpanel-indicator-sound
+     SUBDIR += xdg-desktop-portal-pantheon
 
 .include <bsd.port.subdir.mk>
