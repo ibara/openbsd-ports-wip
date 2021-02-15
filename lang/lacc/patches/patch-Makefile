@@ -61,6 +61,6 @@ Index: Makefile
  
 -install: bin/release/lacc
 +install: bin/selfhost/lacc
- 	mkdir -p $(LIBDIR_TARGET)/include/
+ 	mkdir -p $(LIBDIR_TARGET)/include/ $(BINDIR)
  	cp $(LIBDIR_SOURCE)/include/*.h $(LIBDIR_TARGET)/include/
  	cp $? $(BINDIR)/lacc

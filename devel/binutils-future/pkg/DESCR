@@ -1,7 +1,0 @@
-binutils-future is an unmodified build of the GNU Binutils, with the
-exception of minor modifications for building and testing purposes,
-taken from the tip of the development tree.
-
-GNU gold, installed as ld in this package, is taken from the most recent
-binutils release, as there are too many necessary patches for it to be
-upstreamed.

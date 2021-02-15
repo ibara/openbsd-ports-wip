@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v$
-include/z80ex/
-include/z80ex/z80ex.h
-include/z80ex/z80ex_common.h
-include/z80ex/z80ex_dasm.h
-@static-lib lib/libz80ex.a
-@lib lib/libz80ex.so.${LIBz80ex_VERSION}
-@static-lib lib/libz80ex_dasm.a
-@lib lib/libz80ex_dasm.so.${LIBz80ex_dasm_VERSION}
