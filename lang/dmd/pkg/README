@@ -1,0 +1,9 @@
+dmd
+===
+dmd is the Digital Mars D compiler.
+
+Caveats
+-------
+Code using Fibers will cause segfaults.
+This is because emulated TLS handles things
+differently than what D expects.

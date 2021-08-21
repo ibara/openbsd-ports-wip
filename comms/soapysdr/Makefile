@@ -1,11 +1,11 @@
 # $OpenBSD$
 
-V =		0.7.2
+V =		0.8.0
 COMMENT =	vendor and platform neutral SDR support library
 PKGNAME =	soapysdr-${V}
 CATEGORIES =	comms
 
-SHARED_LIBS +=	SoapySDR                  0.0 # 0.7
+SHARED_LIBS +=	SoapySDR                  0.0 # 0.8
 
 GH_ACCOUNT =	pothosware
 GH_PROJECT =	SoapySDR
@@ -25,7 +25,7 @@ COMPILER =	base-clang ports-gcc
 MODULES =	devel/cmake
 
 # Optional; broken detection
-CONFIGURE_ARGS =	-DENABLE_PYTHON=OFF \
-			-DENABLE_PYTHON3=OFF
+#CONFIGURE_ARGS =	-DENABLE_PYTHON=OFF \
+#			-DENABLE_PYTHON3=OFF
 
 .include <bsd.port.mk>
