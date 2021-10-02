@@ -1,0 +1,13 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2015/12/29 17:43:31 pascal Exp $
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -351,7 +351,7 @@ override PACKAGE_VERSION=$(IDEVERSION)
+ RCPP?=$(strip $(firstword cpp$(SRCEXEEXT)))
+ ifndef LAZARUS_INSTALL_DIR
+ LAZARUS_INSTALL_DIR=$(INSTALL_PREFIX)/share/lazarus
+-INSTALL_MAN_DIR=$(INSTALL_PREFIX)/share/man
++INSTALL_MAN_DIR=$(INSTALL_PREFIX)/man
+ ifneq ($(findstring $(OS_TARGET),win32 win64),)
+ LAZARUS_INSTALL_DIR=C:\lazarus
+ endif

@@ -1,0 +1,13 @@
+$OpenBSD: patch-ide_environmentopts_pp,v 1.1 2016/03/08 22:05:54 juanfra Exp $
+Index: ide/environmentopts.pp
+--- ide/environmentopts.pp.orig
++++ ide/environmentopts.pp
+@@ -65,7 +65,7 @@ const
+   {$IFDEF Windows}
+   DefaultMakefilename = '$Path($(CompPath))make.exe';
+   {$ELSE}
+-    {$IFDEF FreeBSD}
++    {$IF defined(FreeBSD) or defined(OpenBSD)}
+     DefaultMakefilename = 'gmake';
+     {$ELSE}
+     DefaultMakefilename = 'make';

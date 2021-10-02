@@ -1,0 +1,13 @@
+$OpenBSD: patch-ide_initialsetupproc_pas,v 1.1 2016/03/08 22:05:54 juanfra Exp $
+Index: ide/initialsetupproc.pas
+--- ide/initialsetupproc.pas.orig
++++ ide/initialsetupproc.pas
+@@ -930,7 +930,7 @@ begin
+         if CheckFile(Files[i],Result) then exit;
+ 
+     // check PATH
+-    {$IFDEF FreeBSD}
++    {$IF defined(FreeBSD) or defined(OpenBSD)}
+     AFilename:='gmake';
+     {$ELSE}
+     AFilename:='make';
