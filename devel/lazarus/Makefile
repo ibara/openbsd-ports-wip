@@ -4,8 +4,10 @@ ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		Delphi compatible IDE
 
-V =			2.0.12
-DISTNAME =		lazarus-${V}
+V =			2.2.0
+V_APPEND =		0
+DISTNAME =		lazarus-${V}-${V_APPEND}
+PKGNAME =		lazarus-${V}_${V_APPEND}
 
 FPC_V =			3.2.2
 
