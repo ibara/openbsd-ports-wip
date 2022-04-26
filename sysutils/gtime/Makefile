@@ -6,7 +6,7 @@ PKGNAME =	g${DISTNAME}
 CATEGORIES =	sysutils
 
 HOMEPAGE =	https://www.gnu.org/software/time/
-MAINTAINER =	Your Name <you@example.com>
+MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
