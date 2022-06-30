@@ -1,0 +1,10 @@
+@bin bin/kefir
+@lib lib/libkefir.so.${LIBkefir_VERSION}
+libexec/kefir/
+libexec/kefir/include/
+libexec/kefir/include/amd64/
+libexec/kefir/include/amd64/endian.h
+libexec/kefir/include/machine/
+libexec/kefir/include/machine/endian.h
+libexec/kefir/include/stddef.h
+@static-lib libexec/kefir/libkefirrt.a
